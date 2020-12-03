@@ -3,12 +3,12 @@ import tw from "twin.macro";
 
 export const Page = styled.div`
   ${tw`
-    bg-indigo-100
+    bg-prussian-light
     flex
     flex-col
     font-sans
     min-h-screen
-    text-indigo-900
+    text-prussian-dark
   `}
 `;
 
