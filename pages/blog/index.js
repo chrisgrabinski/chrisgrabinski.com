@@ -1,4 +1,4 @@
-import { getEntries } from "../../lib/contentful";
+import { getEntries } from "@lib/contentful";
 
 import React from "react";
 import PropTypes from "prop-types";

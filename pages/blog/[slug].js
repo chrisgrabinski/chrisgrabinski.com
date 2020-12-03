@@ -1,4 +1,4 @@
-import { getPaths, getEntry } from "../../lib/contentful";
+import { getPaths, getEntry } from "@lib/contentful";
 
 import React from "react";
 import PropTypes from "prop-types";
