@@ -6,6 +6,8 @@ import { Typeform, Unbabel } from "./companies";
 
 import {
   Wrapper,
+  Media,
+  MediaImage,
   Body,
   Heading,
   Title,
@@ -14,7 +16,7 @@ import {
   Companies,
   CompaniesTitle,
   Company,
-  Media,
+  BackgroundImageWrapper,
   BackgroundImage,
 } from "./Hero.styles";
 
@@ -23,7 +25,12 @@ export default function Hero({ description, title }) {
     <Container>
       <Wrapper>
         <Media>
-          <img src="/images/chris-grabinski.jpg" />
+          <MediaImage
+            src="/images/chris-grabinski.jpg"
+            width={1088}
+            height={1088}
+            alt=""
+          />
         </Media>
         <Body>
           <Heading>
@@ -58,10 +65,14 @@ export default function Hero({ description, title }) {
           </Companies>
         </Body>
       </Wrapper>
-      <BackgroundImage
-        src="/images/textures/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg"
-        alt=""
-      />
+      <BackgroundImageWrapper>
+        <BackgroundImage
+          src="/images/textures/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg"
+          alt=""
+          width={2000}
+          height={3000}
+        />
+      </BackgroundImageWrapper>
     </Container>
   );
 }

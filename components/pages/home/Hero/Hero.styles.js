@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 import tw from "twin.macro";
 
+import Image from "next/image";
+
 export const Wrapper = styled.div`
   ${tw`
     gap-8
@@ -21,6 +23,8 @@ export const Media = styled.div`
     z-10
   `}
 `;
+
+export const MediaImage = styled(Image)``;
 
 export const Body = styled.div`
   ${tw`
@@ -74,13 +78,21 @@ export const CompaniesTitle = styled.dt`
 
 export const Company = styled.dd``;
 
-export const BackgroundImage = styled.img`
+export const BackgroundImageWrapper = styled.div`
   ${tw`
     absolute
     w-1/2
     top-0
     right-0
-    object-cover
     h-screen
+    overflow-hidden
+  `}
+`;
+
+export const BackgroundImage = styled(Image)`
+  ${tw`
+    w-full
+    h-full
+    object-cover
   `}
 `;
