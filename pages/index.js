@@ -1,3 +1,5 @@
+import { Layout } from "@components/core";
+
 export default function IndexPage() {
-  return <div>Homepage</div>;
+  return <Layout>Homepage</Layout>;
 }

@@ -4,9 +4,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import Link from "next/link";
 
+import { Layout } from "@components/core";
+
 export default function BlogIndexPage({ posts }) {
   return (
-    <div>
+    <Layout>
       <h1>Blog</h1>
       <ul>
         {posts.map((post) => (
@@ -15,7 +17,7 @@ export default function BlogIndexPage({ posts }) {
           </li>
         ))}
       </ul>
-    </div>
+    </Layout>
   );
 }
 

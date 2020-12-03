@@ -3,11 +3,13 @@ import { getPaths, getEntry } from "@lib/contentful";
 import React from "react";
 import PropTypes from "prop-types";
 
+import { Layout } from "@components/core";
+
 export default function BlogPostPage({ data }) {
   return (
-    <div>
+    <Layout>
       <h1>{data.title}</h1>
-    </div>
+    </Layout>
   );
 }
 
