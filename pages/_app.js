@@ -5,6 +5,8 @@ import { DefaultSeo } from "next-seo";
 
 import DEFAULT_SEO from "@config/seo";
 
+import "@styles/fonts.css";
+
 function MyApp({ Component, pageProps }) {
   return (
     <CacheProvider value={cache}>

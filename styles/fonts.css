@@ -1,0 +1,5 @@
+@font-face {
+  font-family: "Maison";
+  src: url("/fonts/Maison-Regular.woff2") format("woff2"),
+    url("/fonts/Maison-Regular.woff") format("woff");
+}

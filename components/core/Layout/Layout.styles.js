@@ -6,6 +6,7 @@ export const Page = styled.div`
     bg-indigo-100
     flex
     flex-col
+    font-sans
     min-h-screen
     text-indigo-900
   `}

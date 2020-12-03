@@ -16,6 +16,9 @@
       ],
       "@config/*": [
         "config/*"
+      ],
+      "@styles/*": [
+        "styles/*"
       ]
     }
   },
