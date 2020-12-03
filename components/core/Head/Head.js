@@ -6,13 +6,14 @@ import SOCIAL_PROFILES from "@config/social-profiles";
 
 export default function Head() {
   return (
-    <NextHead>
+    <>
+      <NextHead></NextHead>
       <SocialProfileJsonLd
         type="Person"
         name="Chris Grabiński"
         url="https://chrisgrabinski.com"
         sameAs={SOCIAL_PROFILES}
       />
-    </NextHead>
+    </>
   );
 }
