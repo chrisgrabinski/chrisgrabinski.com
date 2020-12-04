@@ -70,7 +70,6 @@ export const Companies = styled.dl`
 
 export const CompaniesTitle = styled.dt`
   ${tw`
-    font-semibold
     text-prussian-dark
     text-xs
     w-full
