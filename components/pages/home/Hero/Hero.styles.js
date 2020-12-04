@@ -21,6 +21,8 @@ export const Media = styled.div`
     relative
     w-2/3
     z-10
+    pt-4
+    md:pt-0
   `}
 `;
 
@@ -41,16 +43,16 @@ export const Heading = styled.div``;
 
 export const Title = styled.h1`
   ${tw`
+    text-5xl
     leading-none
-    text-6xl
   `}
 `;
 
 export const Description = styled.p`
   ${tw`
-    mt-8
+    mt-4
     text-xl
-    opacity-75
+    text-prussian-dark
   `}
 
   max-width: 40ch;
@@ -69,12 +71,10 @@ export const Companies = styled.dl`
 export const CompaniesTitle = styled.dt`
   ${tw`
     font-semibold
-    opacity-75
+    text-prussian-dark
     text-xs
-    tracking-wide
-    uppercase
     w-full
-    mb-4
+    mb-2
   `}
 `;
 
