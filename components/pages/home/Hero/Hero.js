@@ -27,8 +27,8 @@ export default function Hero({ description, title }) {
         <Media>
           <MediaImage
             src="/images/chris-grabinski.jpg"
-            width={1088}
-            height={1088}
+            width={480}
+            height={480}
             alt=""
           />
         </Media>
@@ -69,8 +69,8 @@ export default function Hero({ description, title }) {
         <BackgroundImage
           src="/images/textures/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg"
           alt=""
-          width={2000}
-          height={3000}
+          width={680}
+          height={1020}
         />
       </BackgroundImageWrapper>
     </Container>
