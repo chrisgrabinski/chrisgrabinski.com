@@ -8,7 +8,10 @@ import { Hero } from "@components/pages/home";
 export default function IndexPage() {
   return (
     <>
-      <NextSeo title="Chris Grabiński ・ Frontend Engineer" />
+      <NextSeo
+        title="Chris Grabiński ・ Frontend Engineer"
+        description="Working with product teams to deliver beautiful, user‑friendly, and goal‑driven web experiences."
+      />
       <Layout>
         <Hero
           title={
