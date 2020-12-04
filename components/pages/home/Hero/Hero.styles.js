@@ -32,6 +32,8 @@ export const Body = styled.div`
     grid
     relative
     z-10
+    pb-8
+    md:pt-8
   `}
 `;
 

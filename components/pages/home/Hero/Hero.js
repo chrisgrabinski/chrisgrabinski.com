@@ -37,11 +37,11 @@ export default function Hero({ description, title }) {
             <Title>{title}</Title>
             <Description>{description}</Description>
           </Heading>
-          <Actions>
+          {/* <Actions>
             <a href="/2020-grabinski-christopher.pdf" download>
               Download CV
             </a>
-          </Actions>
+          </Actions> */}
           <Companies>
             <CompaniesTitle>Previously worked with</CompaniesTitle>
             <Company>
