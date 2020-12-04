@@ -50,7 +50,7 @@ export const Description = styled.p`
   ${tw`
     mt-8
     text-xl
-    opacity-75
+    text-prussian-dark
   `}
 
   max-width: 40ch;
@@ -69,7 +69,7 @@ export const Companies = styled.dl`
 export const CompaniesTitle = styled.dt`
   ${tw`
     font-semibold
-    opacity-75
+    text-prussian-dark
     text-xs
     tracking-wide
     uppercase
