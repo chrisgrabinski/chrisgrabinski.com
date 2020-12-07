@@ -1,99 +1,138 @@
 import styled from "@emotion/styled";
 import tw from "twin.macro";
 
-import Image from "next/image";
+import NextImage from "next/image";
 
 export const Wrapper = styled.div`
   ${tw`
-    gap-8
     grid
-    items-center
-    md:gap-16
-    md:grid-cols-2
+    gap-x-4
     min-h-screen
+    pb-12
   `}
+
+  grid-template-columns: auto repeat(6, minmax(0, 128px)) auto;
+  grid-template-rows: 32px min-content 32px 32px 1fr;
+
+  @media (min-width: 768px) {
+    ${tw`
+      items-center
+      gap-x-8
+      pb-0
+    `}
+
+    grid-template-columns: auto repeat(12, minmax(0, 64px)) auto;
+    grid-template-rows: initial;
+  }
 `;
 
-export const Media = styled.div`
-  ${tw`
-    md:order-last
-    md:w-full
-    relative
-    w-2/3
-    z-10
-    pt-4
-    md:pt-0
-  `}
+export const Figure = styled.figure`
+  grid-column: 2 / span 4;
+  grid-row: 2;
+  position: relative;
+  z-index: 1;
+
+  @media (min-width: 768px) {
+    grid-column: 8 / span 6;
+    grid-row: 1;
+    order: 9999;
+  }
 `;
 
-export const MediaImage = styled(Image)``;
+export const Image = styled(NextImage)``;
 
 export const Body = styled.div`
   ${tw`
-    gap-16
-    grid
     relative
     z-10
-    pb-8
-    md:pt-8
   `}
-`;
 
-export const Heading = styled.div``;
+  grid-column: 2 / span 6;
+  grid-row: 4;
+
+  @media (min-width: 768px) {
+    grid-column: 2 / span 6;
+    grid-row: 1;
+  }
+`;
 
 export const Title = styled.h1`
   ${tw`
-    text-5xl
     leading-none
+    text-5xl
   `}
+
+  padding-top: 3px;
+
+  @media (min-width: 768px) {
+    ${tw`
+      pt-0
+    `}
+  }
 `;
 
 export const Description = styled.p`
   ${tw`
     mt-4
-    text-xl
+    text-lg
     text-prussian-dark
   `}
 
   max-width: 40ch;
 `;
 
-export const Actions = styled.div``;
-
 export const Companies = styled.dl`
   ${tw`
     col-gap-8
     flex
     flex-wrap
+    mt-16
   `}
 `;
 
 export const CompaniesTitle = styled.dt`
   ${tw`
+    mb-2
     text-prussian-dark
     text-xs
     w-full
-    mb-2
   `}
 `;
 
 export const Company = styled.dd``;
 
-export const BackgroundImageWrapper = styled.div`
+export const TextureContainer = styled.div`
   ${tw`
-    absolute
-    w-1/2
-    top-0
-    right-0
-    h-screen
     overflow-hidden
+    relative
   `}
+
+  grid-column: 4 / -1;
+  grid-row: 1 / 5;
+
+  @media (min-width: 768px) {
+    ${tw`
+      h-full
+    `}
+
+    grid-column: 10 / -1;
+    grid-row: 1;
+  }
+
+  > * {
+    ${tw`
+      absolute!
+      inset-0
+    `}
+  }
 `;
 
-export const BackgroundImage = styled(Image)`
+export const Texture = styled(NextImage)`
   ${tw`
-    w-full
+    absolute
     h-full
+    inset-0
     object-cover
+    w-full
   `}
 `;

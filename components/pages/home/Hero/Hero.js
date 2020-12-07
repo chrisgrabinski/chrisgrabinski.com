@@ -6,74 +6,63 @@ import { Typeform, Unbabel } from "./companies";
 
 import {
   Wrapper,
-  Media,
-  MediaImage,
+  Figure,
+  Image,
   Body,
-  Heading,
   Title,
   Description,
-  Actions,
   Companies,
   CompaniesTitle,
   Company,
-  BackgroundImageWrapper,
-  BackgroundImage,
+  TextureContainer,
+  Texture,
 } from "./Hero.styles";
 
 export default function Hero({ description, title }) {
   return (
-    <Container>
-      <Wrapper>
-        <Media>
-          <MediaImage
-            src="/images/chris-grabinski.jpg"
-            width={480}
-            height={480}
-            alt=""
-          />
-        </Media>
-        <Body>
-          <Heading>
-            <Title>{title}</Title>
-            <Description>{description}</Description>
-          </Heading>
-          {/* <Actions>
-            <a href="/2020-grabinski-christopher.pdf" download>
-              Download CV
+    <Wrapper>
+      <Figure>
+        <Image
+          src="/images/chris-grabinski.jpg"
+          width={480}
+          height={480}
+          alt=""
+        />
+      </Figure>
+      <Body>
+        <Title>{title}</Title>
+        <Description>{description}</Description>
+        <Companies>
+          <CompaniesTitle>Previously worked with</CompaniesTitle>
+          <Company>
+            <a
+              href="https://www.typeform.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Typeform />
             </a>
-          </Actions> */}
-          <Companies>
-            <CompaniesTitle>Previously worked with</CompaniesTitle>
-            <Company>
-              <a
-                href="https://www.typeform.com"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <Typeform />
-              </a>
-            </Company>
-            <Company>
-              <a
-                href="https://unbabel.com"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <Unbabel />
-              </a>
-            </Company>
-          </Companies>
-        </Body>
-      </Wrapper>
-      <BackgroundImageWrapper>
-        <BackgroundImage
+          </Company>
+          <Company>
+            <a
+              href="https://unbabel.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Unbabel />
+            </a>
+          </Company>
+        </Companies>
+      </Body>
+      <TextureContainer>
+        <Texture
           src="/images/textures/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg"
           alt=""
           width={680}
           height={1020}
         />
-      </BackgroundImageWrapper>
-    </Container>
+      </TextureContainer>
+    </Wrapper>
   );
 }
 
