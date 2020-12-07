@@ -48,7 +48,7 @@ export const Body = styled.div`
   `}
 
   grid-column: 2 / span 6;
-  grid-row: 4;
+  grid-row: 4 / -1;
 
   @media (min-width: 768px) {
     grid-column: 2 / span 6;
