@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
     pb-12
   `}
 
-  grid-template-columns: auto repeat(6, minmax(0, 128px)) auto;
+  grid-template-columns: auto repeat(6, minmax(0, 80px)) auto;
   grid-template-rows: 32px min-content 32px 32px 1fr;
 
   @media (min-width: 768px) {
@@ -36,6 +36,10 @@ export const Figure = styled.figure`
     grid-column: 8 / span 6;
     grid-row: 1;
     order: 9999;
+  }
+
+  > * {
+    vertical-align: middle;
   }
 `;
 
