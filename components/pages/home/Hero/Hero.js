@@ -1,13 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Image from "next/image";
 
-import { Container } from "@components/ui";
 import { Typeform, Unbabel } from "./companies";
 
 import {
   Wrapper,
   Figure,
-  Image,
   Body,
   Title,
   Description,
@@ -15,7 +14,6 @@ import {
   CompaniesTitle,
   Company,
   TextureContainer,
-  Texture,
 } from "./Hero.styles";
 
 export default function Hero({ description, title }) {
@@ -23,10 +21,11 @@ export default function Hero({ description, title }) {
     <Wrapper>
       <Figure>
         <Image
+          alt=""
+          height={480}
+          priority
           src="/images/chris-grabinski.jpg"
           width={480}
-          height={480}
-          alt=""
         />
       </Figure>
       <Body>
@@ -55,11 +54,10 @@ export default function Hero({ description, title }) {
         </Companies>
       </Body>
       <TextureContainer>
-        <Texture
-          src="/images/textures/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg"
+        <Image
           alt=""
-          width={680}
-          height={1020}
+          layout="fill"
+          src="/images/textures/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg"
         />
       </TextureContainer>
     </Wrapper>

@@ -1,8 +1,6 @@
 import styled from "@emotion/styled";
 import tw from "twin.macro";
 
-import NextImage from "next/image";
-
 export const Wrapper = styled.div`
   ${tw`
     grid
@@ -42,8 +40,6 @@ export const Figure = styled.figure`
     vertical-align: middle;
   }
 `;
-
-export const Image = styled(NextImage)``;
 
 export const Body = styled.div`
   ${tw`
@@ -129,14 +125,4 @@ export const TextureContainer = styled.div`
       inset-0
     `}
   }
-`;
-
-export const Texture = styled(NextImage)`
-  ${tw`
-    absolute
-    h-full
-    inset-0
-    object-cover
-    w-full
-  `}
 `;
