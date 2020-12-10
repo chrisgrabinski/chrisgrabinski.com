@@ -57,6 +57,7 @@ export default function Hero({ description, title }) {
         <Image
           alt=""
           layout="fill"
+          objectFit="cover"
           src="/images/textures/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg"
         />
       </TextureContainer>
