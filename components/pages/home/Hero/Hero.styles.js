@@ -83,7 +83,7 @@ export const Description = styled.p`
 
 export const Companies = styled.dl`
   ${tw`
-    col-gap-8
+    gap-x-8
     flex
     flex-wrap
     mt-16
