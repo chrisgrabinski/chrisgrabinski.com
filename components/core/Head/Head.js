@@ -14,6 +14,7 @@ export default function Head() {
         url="https://chrisgrabinski.com"
         sameAs={SOCIAL_PROFILES}
       />
+      <link rel="me" href="https://mastodon.social/@chrisgrabinski" />
     </>
   );
 }
