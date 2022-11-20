@@ -7,14 +7,15 @@ import SOCIAL_PROFILES from "@config/social-profiles";
 export default function Head() {
   return (
     <>
-      <NextHead></NextHead>
+      <NextHead>
+        <link rel="me" href="https://mastodon.social/@chrisgrabinski" />
+      </NextHead>
       <SocialProfileJsonLd
         type="Person"
         name="Chris Grabiński"
         url="https://chrisgrabinski.com"
         sameAs={SOCIAL_PROFILES}
       />
-      <link rel="me" href="https://mastodon.social/@chrisgrabinski" />
     </>
   );
 }
