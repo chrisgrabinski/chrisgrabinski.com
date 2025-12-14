@@ -1,5 +1,3 @@
-import querystring from "querystring";
-
 const client_id = process.env.SPOTIFY_CLIENT_ID;
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
 const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
@@ -9,10 +7,10 @@ const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 
 const getAccessToken = async () => {
   const response = await fetch(TOKEN_ENDPOINT, {
-    body: querystring.stringify({
+    body: new URLSearchParams({
       grant_type: "refresh_token",
-      refresh_token,
-    }),
+      refresh_token: refresh_token || "",
+    }).toString(),
     cache: "no-cache",
     headers: {
       Authorization: `Basic ${basic}`,

@@ -1,20 +1,9 @@
 {
-  "name": "chrisgrabinski.com",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "biome check",
-    "format": "biome format --write"
-  },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.561.0",
     "next": "16.0.10",
-    "querystring": "^0.2.1",
     "radix-ui": "^1.4.3",
     "react": "19.2.1",
     "react-dom": "19.2.1",
@@ -31,5 +20,15 @@
     "babel-plugin-react-compiler": "1.0.0",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "name": "chrisgrabinski.com",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "format": "biome format --write",
+    "lint": "biome check",
+    "start": "next start"
+  },
+  "version": "0.1.0"
 }
