@@ -1,0 +1,54 @@
+import type React from "react";
+import { cn } from "@/lib/styles";
+import { Avatar } from "./avatar";
+import avatarVerifiedMask from "./avatar-verified.mask.svg";
+
+const VerifiedAvatarRoot = ({
+  children,
+  className,
+}: React.ComponentProps<"div">) => {
+  return (
+    <div className={cn("relative isolate inline-block size-min", className)}>
+      {children}
+    </div>
+  );
+};
+
+const VerifiedAvatar = ({
+  className,
+  ...props
+}: React.ComponentProps<typeof Avatar>) => {
+  return (
+    <VerifiedAvatarRoot>
+      <Avatar
+        className={cn("mask-cover align-middle", className)}
+        style={{
+          maskImage: `url(${avatarVerifiedMask.src})`,
+        }}
+        {...props}
+      />
+      <div className="-right-1/8 -bottom-1/8 absolute z-30 size-1/2"></div>
+      <svg
+        className="-right-1/8 -bottom-1/8 absolute z-30 size-1/2"
+        fill="none"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <title>Verified</title>
+        <path
+          className="fill-pink-500"
+          d="M14.7278 3.41409C15.1029 3.78916 15.6116 3.99988 16.142 3.99988H18.0001C19.1047 3.99988 20.0001 4.89531 20.0001 5.99988V7.85797C20.0001 8.38841 20.2108 8.89712 20.5859 9.27219L21.8994 10.5857C22.6804 11.3667 22.6804 12.633 21.8994 13.4141L20.5859 14.7276C20.2108 15.1026 20.0001 15.6113 20.0001 16.1418V17.9999C20.0001 19.1044 19.1047 19.9999 18.0001 19.9999H16.142C15.6116 19.9999 15.1029 20.2106 14.7278 20.5857L13.4143 21.8991C12.6333 22.6802 11.367 22.6802 10.5859 21.8991L9.27243 20.5857C8.89736 20.2106 8.38865 19.9999 7.85822 19.9999H6.00012C4.89555 19.9999 4.00012 19.1044 4.00012 17.9999V16.1418C4.00012 15.6113 3.78941 15.1026 3.41434 14.7276L2.10086 13.4141C1.31981 12.633 1.31981 11.3667 2.10086 10.5857L3.41434 9.27219C3.78941 8.89712 4.00012 8.38841 4.00012 7.85797V5.99988C4.00012 4.89531 4.89555 3.99988 6.00012 3.99988H7.85822C8.38865 3.99988 8.89736 3.78916 9.27243 3.41409L10.5859 2.10061C11.367 1.31957 12.6333 1.31957 13.4143 2.10062L14.7278 3.41409Z"
+        />
+        <path
+          className="stroke-pink-50"
+          d="M16 9L10.5 14.5L8 12"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+        />
+      </svg>
+    </VerifiedAvatarRoot>
+  );
+};
+
+export { VerifiedAvatar };

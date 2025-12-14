@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AuraCard } from "@/app/(homepage)/components/aura-card";
 import { RemoteLogo } from "@/app/(homepage)/components/remote-logo";
 import { SpotifyStatus } from "@/app/(homepage)/components/spotify-status";
 import { TypeformLogo } from "@/app/(homepage)/components/typeform-logo";
@@ -87,6 +88,7 @@ export default function RootPage() {
               </li>
             ))}
           </ul>
+          <AuraCard />
         </div>
         <div className="relative col-start-4 col-end-9 row-start-1 row-end-5 h-full w-full overflow-clip md:col-start-6 md:col-end-9 md:row-start-1 md:row-end-auto md:min-h-dvh">
           <Image

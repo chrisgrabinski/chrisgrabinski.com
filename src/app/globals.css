@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme inline {
+  --font-sans: var(--font-sans);
+
+  --color-background: rgb(239, 240, 251);
+  --color-foreground: rgb(61, 64, 92);
+  --color-foreground-muted: rgb(81, 87, 150);
+}

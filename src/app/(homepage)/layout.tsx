@@ -1,11 +1,4 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
-
-const fontSans = localFont({
-  src: "./fonts/Maison-Regular.woff2",
-  variable: "--font-sans",
-});
 
 export const metadata: Metadata = {
   description:
@@ -21,12 +14,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html
-      className={`${fontSans.variable} bg-background font-sans text-foreground antialiased`}
-      lang="en"
-    >
-      <body>{children}</body>
-    </html>
-  );
+  return children;
 }
