@@ -37,7 +37,7 @@ export default function ComponentPage({
   }
 
   return (
-    <div className="mx-auto grid max-w-4xl gap-12 p-8">
+    <div className="grid gap-12">
       <div className="grid gap-1.5">
         <h1 className="font-semibold text-4xl">{componentData.title}</h1>
         <p className="neutral-500 text-balance text-lg text-neutral-600">
