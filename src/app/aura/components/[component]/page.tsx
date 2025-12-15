@@ -46,6 +46,7 @@ export default async function ComponentPage({
     <div className="grid gap-12">
       <div className="grid gap-1.5">
         <Breadcrumbs
+          hideCurrent
           includeJsonLd
           items={[
             { name: "Home", url: "/aura" },

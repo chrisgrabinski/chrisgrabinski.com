@@ -74,11 +74,13 @@ interface BreadcrumbsProps extends BreadcrumbsRootProps {
     url: React.ComponentProps<typeof Link>["href"];
   }[];
   includeJsonLd?: boolean;
+  hideCurrent?: boolean;
 }
 
 const Breadcrumbs = ({
   items,
   includeJsonLd = false,
+  hideCurrent = false,
   ...props
 }: BreadcrumbsProps) => {
   const jsonLd = {
@@ -92,17 +94,19 @@ const Breadcrumbs = ({
     })),
   };
 
+  const visibleItems = hideCurrent ? items.slice(0, -1) : items;
+
   return (
     <>
       <BreadcrumbsRoot {...props}>
-        {items.map((item, index) => (
+        {visibleItems.map((item, index) => (
           <BreadcrumbsItem key={item.name}>
-            {index === items.length - 1 ? (
+            {index === visibleItems.length - 1 && !hideCurrent ? (
               item.name
             ) : (
               <>
                 <BreadcrumbsLink href={item.url}>{item.name}</BreadcrumbsLink>
-                <BreadcrumbsSeparator />
+                {index < visibleItems.length - 1 && <BreadcrumbsSeparator />}
               </>
             )}
           </BreadcrumbsItem>
