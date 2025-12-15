@@ -5,6 +5,7 @@ import { Avatar } from "@/components/avatar";
 import { CountryAvatar } from "@/components/avatar-country";
 import { VerifiedAvatar } from "@/components/avatar-verified";
 import { Badge } from "@/components/badge";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Button } from "@/components/button";
 import { Card } from "@/components/card";
 import { CheckboxIndicator, CheckboxRoot } from "@/components/checkbox";
@@ -105,6 +106,23 @@ export const components: Component[] = [
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/badge.tsx",
     title: "Badge",
+  },
+  {
+    description:
+      "A breadcrumb navigation component that displays a list of links to the current page's location, helping users understand their path and navigate back through hierarchical structures.",
+    example: (
+      <Breadcrumbs
+        items={[
+          { name: "Home", url: "#" },
+          { name: "Components", url: "#" },
+          { name: "Breadcrumbs", url: "#" },
+        ]}
+      />
+    ),
+    name: "breadcrumbs",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/breadcrumbs.tsx",
+    title: "Breadcrumbs",
   },
   {
     description:

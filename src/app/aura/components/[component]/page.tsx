@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { use } from "react";
 import { ComponentPreview } from "@/app/aura/component-preview";
 import { components } from "@/app/aura/components/components";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 
 const getComponentData = (componentName: string) => {
   return components.find((c) => c.name === componentName);
@@ -45,6 +46,17 @@ export default function ComponentPage({
   return (
     <div className="grid gap-12">
       <div className="grid gap-1.5">
+        <Breadcrumbs
+          includeJsonLd
+          items={[
+            { name: "Home", url: "/aura" },
+            {
+              name: componentData.title,
+              // @ts-expect-error - TODO: Look into dynamic route segments with typed routes
+              url: `/aura/components/${component}`,
+            },
+          ]}
+        />
         <h1 className="font-semibold text-4xl">{componentData.title}</h1>
         <p className="neutral-500 text-balance text-lg text-neutral-600">
           {componentData.description}
