@@ -1,5 +1,6 @@
 import { GhostIcon, StarIcon, TrashIcon } from "lucide-react";
 import avatarImage from "@/app/(homepage)/images/chris-grabinski.jpg";
+import { AudioButton } from "@/components/audio-button";
 import { AuraButton } from "@/components/aura-button";
 import { Avatar } from "@/components/avatar";
 import { CountryAvatar } from "@/components/avatar-country";
@@ -36,6 +37,14 @@ type Component = {
 };
 
 export const components: Component[] = [
+  {
+    description: "A simple button that plays a short audio clip when clicked.",
+    example: <AudioButton size={4} src="/aura/music.mp3" />,
+    name: "audio-button",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/audio-button.tsx",
+    title: "Audio button",
+  },
   {
     description:
       "A branded button component that displays a sparkles icon and animated agent ring, perfect for highlighting primary actions.",
