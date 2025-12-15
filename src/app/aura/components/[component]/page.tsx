@@ -8,6 +8,12 @@ const getComponentData = (componentName: string) => {
   return components.find((c) => c.name === componentName);
 };
 
+export async function generateStaticParams() {
+  return components.map((component) => ({
+    component: component.name,
+  }));
+}
+
 export async function generateMetadata({
   params,
 }: PageProps<"/aura/components/[component]">): Promise<Metadata> {

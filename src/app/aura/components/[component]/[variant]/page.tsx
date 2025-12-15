@@ -10,6 +10,23 @@ const getVariantData = (component: string, variant: string) => {
     ?.variants?.find((v) => v.name === variant);
 };
 
+export async function generateStaticParams() {
+  const params: Array<{ component: string; variant: string }> = [];
+
+  for (const component of components) {
+    if (component.variants) {
+      for (const variant of component.variants) {
+        params.push({
+          component: component.name,
+          variant: variant.name,
+        });
+      }
+    }
+  }
+
+  return params;
+}
+
 export async function generateMetadata({
   params,
 }: PageProps<"/aura/components/[component]/[variant]">): Promise<Metadata> {
