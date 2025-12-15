@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { use } from "react";
 import { ComponentPreview } from "@/app/aura/component-preview";
 import { components } from "@/app/aura/components/components";
 import { Breadcrumbs } from "@/components/breadcrumbs";
@@ -49,15 +48,15 @@ export async function generateMetadata({
   };
 }
 
-export default function VariantPage({
+export default async function VariantPage({
   params,
 }: PageProps<"/aura/components/[component]/[variant]">) {
-  const { component, variant } = use(params);
+  const { component, variant } = await params;
 
   const componentData = getComponentData(component);
 
   if (!componentData) {
-    return {};
+    notFound();
   }
 
   const variantData = getVariantData(component, variant);

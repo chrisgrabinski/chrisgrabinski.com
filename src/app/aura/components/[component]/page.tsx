@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { use } from "react";
 import { ComponentPreview } from "@/app/aura/component-preview";
 import { components } from "@/app/aura/components/components";
 import { Breadcrumbs } from "@/components/breadcrumbs";
@@ -32,10 +31,10 @@ export async function generateMetadata({
   };
 }
 
-export default function ComponentPage({
+export default async function ComponentPage({
   params,
 }: PageProps<"/aura/components/[component]">) {
-  const { component } = use(params);
+  const { component } = await params;
 
   const componentData = getComponentData(component);
 
