@@ -1,6 +1,7 @@
 import { GhostIcon, StarIcon, TrashIcon } from "lucide-react";
 import avatarImage from "@/app/(homepage)/images/chris-grabinski.jpg";
 import { AudioButton } from "@/components/audio-button";
+import { AudioControls } from "@/components/audio-controls";
 import { AuraButton } from "@/components/aura-button";
 import { Avatar } from "@/components/avatar";
 import { CountryAvatar } from "@/components/avatar-country";
@@ -20,6 +21,7 @@ import {
   SegmentedControlItem,
   SegmentedControlRoot,
 } from "@/components/segmented-control";
+import { Slider } from "@/components/slider";
 import { Switch } from "@/components/switch";
 import {
   TooltipContent,
@@ -44,6 +46,19 @@ export const components: Component[] = [
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/audio-button.tsx",
     title: "Audio button",
+  },
+  {
+    description:
+      "A classic audio controls interface with commonly used functionality.",
+    example: (
+      <Card className="w-full">
+        <AudioControls src="/aura/music.mp3" />
+      </Card>
+    ),
+    name: "audio-controls",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/audio-controls.tsx",
+    title: "Audio controls",
   },
   {
     description:
@@ -376,6 +391,14 @@ export const components: Component[] = [
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/segmented-control.tsx",
     title: "Segmented control",
+  },
+  {
+    description: "An input for selecting values from a range of values",
+    example: <Slider defaultValue={[50]} />,
+    name: "slider",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/slider.tsx",
+    title: "Slider",
   },
   {
     description:
