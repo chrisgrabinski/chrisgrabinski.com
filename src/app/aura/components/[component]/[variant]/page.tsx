@@ -106,7 +106,7 @@ export default async function VariantPage({
           </Button>
         </div>
       </div>
-      <ComponentPreview>{componentData.example}</ComponentPreview>
+      <ComponentPreview>{variantData.example}</ComponentPreview>
     </article>
   );
 }
