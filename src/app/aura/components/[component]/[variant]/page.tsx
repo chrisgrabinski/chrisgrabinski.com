@@ -69,7 +69,7 @@ export default async function VariantPage({
 
   return (
     <article className="grid gap-12">
-      <div className="grid gap-3">
+      <div className="grid gap-6">
         <Breadcrumbs
           hideCurrent
           includeJsonLd
@@ -87,24 +87,24 @@ export default async function VariantPage({
             },
           ]}
         />
-        <div>
-          <h1 className="mt-3 font-semibold text-4xl">{variantData.title}</h1>
-          <p className="neutral-500 mt-1.5 text-balance text-lg text-neutral-600">
+        <div className="grid gap-1.5">
+          <h1 className="font-semibold text-4xl">{variantData.title}</h1>
+          <p className="neutral-500 text-balance text-lg text-neutral-600">
             {variantData.description}
           </p>
         </div>
-      </div>
-      <div>
-        <Button asChild size={2}>
-          <a
-            href={variantData.sourceUrl}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <GitHubIcon />
-            View source
-          </a>
-        </Button>
+        <div>
+          <Button asChild size={2}>
+            <a
+              href={variantData.sourceUrl}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <GitHubIcon />
+              View source
+            </a>
+          </Button>
+        </div>
       </div>
       <ComponentPreview>{componentData.example}</ComponentPreview>
     </article>
