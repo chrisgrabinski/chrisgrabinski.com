@@ -13,6 +13,7 @@ import { Card } from "@/components/card";
 import { CheckboxIndicator, CheckboxRoot } from "@/components/checkbox";
 import { CopyToClipboard } from "@/components/copy-to-clipboard";
 import { CountryLabel } from "@/components/country-label";
+import { Dropzone } from "@/components/dropzone";
 import { Filename } from "@/components/filename";
 import { IconBox } from "@/components/icon-box";
 import { IconButton } from "@/components/icon-button";
@@ -270,6 +271,23 @@ export const components: Component[] = [
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/country-label.tsx",
     title: "Country label",
+  },
+  {
+    description:
+      "A dropzone component that allows users to drag and files to upload them.",
+    example: (
+      <Dropzone
+        accept={{
+          "audio/*": [".mp3", ".wav", ".ogg"],
+          "video/*": [".mp4", ".mov", ".avi"],
+        }}
+      />
+    ),
+    name: "dropzone",
+
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/dropzone.tsx",
+    title: "Dropzone",
   },
   {
     description:
