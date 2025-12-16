@@ -1,5 +1,6 @@
-import { GhostIcon, StarIcon, TrashIcon } from "lucide-react";
+import { GhostIcon, ShoppingBagIcon, StarIcon, TrashIcon } from "lucide-react";
 import avatarImage from "@/app/(homepage)/images/chris-grabinski.jpg";
+import { Announcement } from "@/components/announcement";
 import { AudioButton } from "@/components/audio-button";
 import { AudioControls } from "@/components/audio-controls";
 import { AuraButton } from "@/components/aura-button";
@@ -41,6 +42,21 @@ type Component = {
 };
 
 export const components: Component[] = [
+  {
+    description: "A simple button that plays a short audio clip when clicked.",
+    example: (
+      <Announcement
+        buttonLabel="Try it"
+        description="Lean back and enjoy a cup of hot cocoa while our agent finds the best gifts."
+        icon={ShoppingBagIcon}
+        title="Shop smarter this season"
+      />
+    ),
+    name: "announcement",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/announcement.tsx",
+    title: "Announcement",
+  },
   {
     description: "A simple button that plays a short audio clip when clicked.",
     example: <AudioButton size={5} src="/aura/music.mp3" />,
