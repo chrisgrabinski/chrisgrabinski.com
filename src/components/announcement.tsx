@@ -26,7 +26,7 @@ const Announcement = ({
   onClose,
 }: AnnouncementProps) => {
   return (
-    <Card className="flex items-center gap-3 p-4 shadow-lg">
+    <Card className="flex items-center gap-3 p-4 shadow-lg" variant="glass">
       <IconBox className="shrink-0 self-start">
         <Icon />
       </IconBox>

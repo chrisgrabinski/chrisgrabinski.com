@@ -1,16 +1,24 @@
-import { cn } from "@/lib/styles";
+import { cva, type VariantProps } from "class-variance-authority";
 
-type CardProps = React.ComponentProps<"div">;
+const cardVariants = cva("overflow-clip rounded-xl p-6 ring-1 ring-black/5", {
+  defaultVariants: {
+    variant: "default",
+  },
+  variants: {
+    variant: {
+      default: "bg-white",
+      glass: "bg-white/70 backdrop-blur-md backdrop-saturate-150",
+    },
+  },
+});
 
-const Card = ({ children, className, ...props }: CardProps) => {
+type CardVariants = VariantProps<typeof cardVariants>;
+
+type CardProps = React.ComponentProps<"div"> & CardVariants;
+
+const Card = ({ children, className, variant, ...props }: CardProps) => {
   return (
-    <div
-      className={cn(
-        "overflow-clip rounded-xl bg-white p-6 ring-1 ring-neutral-200/50",
-        className,
-      )}
-      {...props}
-    >
+    <div className={cardVariants({ className, variant })} {...props}>
       {children}
     </div>
   );

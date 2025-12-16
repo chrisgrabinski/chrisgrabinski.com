@@ -1,4 +1,5 @@
 import { GhostIcon, ShoppingBagIcon, StarIcon, TrashIcon } from "lucide-react";
+import Image from "next/image";
 import avatarImage from "@/app/(homepage)/images/chris-grabinski.jpg";
 import { Announcement } from "@/components/announcement";
 import { AudioButton } from "@/components/audio-button";
@@ -31,6 +32,7 @@ import {
   TooltipRoot,
   TooltipTrigger,
 } from "@/components/tooltip";
+import pattern from "../../(homepage)/images/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg";
 
 type Component = {
   description: string;
@@ -254,6 +256,43 @@ export const components: Component[] = [
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/card.tsx",
     title: "Card",
+    variants: [
+      {
+        description:
+          "A card variant with a glass-like effect that creates a frosted glass appearance.",
+        example: (
+          <div className="relative grid w-full place-items-center overflow-clip rounded-xl p-12">
+            <Image
+              alt=""
+              className="absolute inset-0 object-cover contrast-200"
+              src={pattern}
+            />
+            <Card
+              className="col-start-1 row-start-1 flex items-center gap-3"
+              variant="glass"
+            >
+              <CountryAvatar
+                code="DE"
+                fallback="Chris Grabiński"
+                size={4}
+                src={avatarImage.src}
+              />
+              <div className="flex flex-col">
+                <p className="flex items-baseline gap-1.5 font-medium text-base">
+                  Chris Grabiński
+                  <Badge size={1}>Admin</Badge>
+                </p>
+                <p className="text-neutral-500 text-sm">mail@example.com</p>
+              </div>
+            </Card>
+          </div>
+        ),
+        name: "glass",
+        sourceUrl:
+          "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/button.tsx",
+        title: "Glass card",
+      },
+    ],
   },
   {
     description:
