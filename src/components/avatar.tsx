@@ -41,7 +41,7 @@ const AvatarRoot = ({
 }: AvatarRootProps) => {
   return (
     <AvatarPrimitive.Root
-      className={avatarVariants({ className, size })}
+      className={cn(avatarVariants({ className, size }))}
       {...props}
     >
       {children}
