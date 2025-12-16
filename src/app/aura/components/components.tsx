@@ -18,6 +18,7 @@ import { Filename } from "@/components/filename";
 import { IconBox } from "@/components/icon-box";
 import { IconButton } from "@/components/icon-button";
 import { InlineToast } from "@/components/inline-toast";
+import { ProgressRing } from "@/components/progress-ring";
 import {
   SegmentedControlItem,
   SegmentedControlRoot,
@@ -42,7 +43,7 @@ type Component = {
 export const components: Component[] = [
   {
     description: "A simple button that plays a short audio clip when clicked.",
-    example: <AudioButton size={4} src="/aura/music.mp3" />,
+    example: <AudioButton size={5} src="/aura/music.mp3" />,
     name: "audio-button",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/audio-button.tsx",
@@ -394,6 +395,14 @@ export const components: Component[] = [
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/inline-toast.tsx",
     title: "Inline toast",
+  },
+  {
+    description: "Indicates progress in a circular shape.",
+    example: <ProgressRing size={5} value={0.45} />,
+    name: "progress-ring",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/progress-ring.tsx",
+    title: "Progress ring",
   },
   {
     description:

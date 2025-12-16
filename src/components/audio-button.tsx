@@ -4,13 +4,14 @@ import { PauseIcon, PlayIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useAudioPlayer } from "react-use-audio-player";
 import { IconButton } from "@/components/icon-button";
+import { ProgressRing } from "@/components/progress-ring";
 import { cn } from "@/lib/styles";
 
 interface AudioButtonProps extends React.ComponentProps<typeof IconButton> {
   src: string;
 }
 
-const AudioButton = ({ className, src, ...props }: AudioButtonProps) => {
+const AudioButton = ({ className, size, src, ...props }: AudioButtonProps) => {
   const frameRef = useRef<number>(0);
   const [progress, setProgress] = useState(0);
 
@@ -42,16 +43,12 @@ const AudioButton = ({ className, src, ...props }: AudioButtonProps) => {
     <IconButton
       className={cn("relative", className)}
       onClick={togglePlayPause}
+      size={size}
       {...props}
     >
-      <div
-        className="mask-contain mask-r-from-black -inset-0.5 absolute rounded-full p-0.5"
-        style={{
-          background: `conic-gradient(from 0deg, var(--color-pink-500) ${percent * 100}%, transparent ${percent * 100}%) border-box`,
-          mask: "linear-gradient(white, white) content-box exclude, linear-gradient(white, white ) border-box",
-        }}
-      />
-      {isPlaying ? <PauseIcon /> : <PlayIcon />}
+      <ProgressRing className="size-full" size={size} value={percent}>
+        {isPlaying ? <PauseIcon /> : <PlayIcon />}
+      </ProgressRing>
     </IconButton>
   );
 };
