@@ -4,7 +4,7 @@ import { cn } from "@/lib/styles";
 import { ButtonPrimitive } from "@/primitives/button";
 
 const switchRootVariants = cva(
-  "inline-flex aspect-[1.75/1] rounded-full bg-neutral-200 transition data-[state=checked]:bg-pink-500",
+  "inline-flex aspect-[1.75/1] rounded-full bg-neutral-100 ring-1 ring-black/10 transition data-[state=checked]:bg-pink-500",
   {
     defaultVariants: {
       size: 3,

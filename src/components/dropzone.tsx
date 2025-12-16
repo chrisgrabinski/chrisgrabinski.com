@@ -19,7 +19,7 @@ const Dropzone = (props: DropzoneProps) => {
   return (
     <Card
       className={cn(
-        "grid place-items-center gap-3 border-2 border-neutral-300 border-dashed p-8 text-center transition",
+        "grid place-items-center gap-3 border border-neutral-300 border-dashed p-8 text-center transition",
         isDragActive && "border-neutral-400",
         isDragReject && "border-red-500 bg-red-50",
       )}

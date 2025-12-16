@@ -1,7 +1,7 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
 const badgeVariants = cva(
-  "inline-grid place-items-center rounded-md bg-neutral-300 px-[0.666ch] font-medium",
+  "inline-grid place-items-center rounded-md bg-neutral-100 px-[0.666ch] font-medium ring-1 ring-black/10",
   {
     defaultVariants: {
       size: 2,

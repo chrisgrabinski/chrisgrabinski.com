@@ -29,7 +29,7 @@ const SliderTrack = ({
   return (
     <SliderPrimitive.Track
       className={cn(
-        "relative h-1.5 flex-1 overflow-clip rounded-full bg-neutral-400",
+        "relative h-1.5 flex-1 overflow-clip rounded-full bg-neutral-100 ring-1 ring-black/10",
         className,
       )}
       {...props}

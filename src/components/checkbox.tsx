@@ -1,8 +1,24 @@
 import { CheckIcon } from "lucide-react";
 import { Checkbox as CheckboxPrimitive } from "radix-ui";
 import { cn } from "@/lib/styles";
+import { ButtonPrimitive } from "@/primitives/button";
 
-const CheckboxRoot = CheckboxPrimitive.Root;
+const CheckboxRoot = ({
+  children,
+  asChild,
+  className,
+  ...props
+}: React.ComponentProps<typeof CheckboxPrimitive.Root>) => {
+  return (
+    <CheckboxPrimitive.Root
+      asChild
+      className={cn("group/checkbox", className)}
+      {...props}
+    >
+      <ButtonPrimitive asChild={asChild}>{children}</ButtonPrimitive>
+    </CheckboxPrimitive.Root>
+  );
+};
 
 const CheckboxIndicator = ({
   className,
@@ -11,7 +27,7 @@ const CheckboxIndicator = ({
   return (
     <CheckboxPrimitive.Indicator
       className={cn(
-        "group/checkbox inline-grid size-8 place-items-center rounded bg-neutral-200 align-middle transition data-[state=checked]:bg-pink-500 [&>svg]:size-2/3",
+        "inline-grid size-8 place-items-center rounded bg-neutral-100 align-middle ring-1 ring-black/10 transition group-hover/checkbox:cursor-pointer group-hover/checkbox:bg-neutral-200 data-[state=checked]:bg-pink-500 [&>svg]:size-2/3",
         className,
       )}
       {...props}

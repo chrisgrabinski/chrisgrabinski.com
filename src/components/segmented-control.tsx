@@ -6,7 +6,7 @@ import { cn } from "@/lib/styles";
 import { ButtonPrimitive } from "@/primitives/button";
 
 const segmentedControlVariants = cva(
-  "flex gap-1 rounded-full bg-neutral-100 p-[0.333ch] font-medium",
+  "flex gap-1 rounded-full bg-neutral-100 p-[0.333ch] font-medium ring-1 ring-black/10",
   {
     defaultVariants: {
       size: 2,
