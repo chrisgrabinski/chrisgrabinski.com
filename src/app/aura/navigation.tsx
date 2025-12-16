@@ -23,7 +23,7 @@ export const Navigation = ({ onSelect }: NavigationProps) => {
 
   return (
     <SidebarMenuRoot>
-      <SidebarMenuGroup heading="Components">
+      <SidebarMenuGroup>
         {components.map((component) => {
           if (component.variants) {
             const componentHref = `/aura/components/${component.name}`;

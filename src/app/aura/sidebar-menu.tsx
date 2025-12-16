@@ -17,13 +17,15 @@ const SidebarMenuGroup = ({
   heading,
 }: {
   children: React.ReactNode;
-  heading: string;
+  heading?: string;
 }) => {
   return (
     <div className="flex flex-col">
-      <span className="px-2 pb-2 font-medium text-neutral-500 text-sm">
-        {heading}
-      </span>
+      {heading && (
+        <span className="px-2 pb-2 font-medium text-neutral-500 text-sm">
+          {heading}
+        </span>
+      )}
       {children}
     </div>
   );

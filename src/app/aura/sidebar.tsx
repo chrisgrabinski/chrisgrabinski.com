@@ -1,27 +1,30 @@
 import { ExternalLinkIcon } from "lucide-react";
 import Link from "next/link";
+import { ScrollArea } from "radix-ui";
 import avatar from "@/app/(homepage)/images/chris-grabinski.jpg";
 import { AuraLogo } from "@/app/aura/aura-logo";
 import { Navigation } from "@/app/aura/navigation";
 import { AgentRing } from "@/components/agent-ring";
 import { Avatar } from "@/components/avatar";
-import { CountryAvatar } from "@/components/avatar-country";
-import { VerifiedAvatar } from "@/components/avatar-verified";
 import { Card } from "@/components/card";
-import { ScrollArea } from "@/components/scroll-area";
 
 export const Sidebar = () => {
   return (
     <div className="sticky top-0 flex h-dvh w-64 shrink-0 flex-col border-neutral-300 border-r">
-      <header className="px-4 py-6">
+      <header className="p-4 pb-0">
         <Link href="/aura">
           <AuraLogo className="text-2xl" />
         </Link>
       </header>
-      <ScrollArea className="flex-1 p-2">
-        <Navigation />
-      </ScrollArea>
-      <footer className="p-4 pb-8">
+      <ScrollArea.Root className="mask-y-from-[calc(100%-32px)] min-h-0 flex-1 overflow-clip px-2">
+        <ScrollArea.Viewport className="size-full">
+          <div className="py-8">
+            <Navigation />
+          </div>
+        </ScrollArea.Viewport>
+        <ScrollArea.Scrollbar orientation="vertical"></ScrollArea.Scrollbar>
+      </ScrollArea.Root>
+      <footer className="p-4 pt-0">
         <Link className="group" href="/">
           <Card className="flex items-center gap-3 overflow-visible p-3 transition duration-300 hover:shadow-md/10">
             <div className="relative flex">
