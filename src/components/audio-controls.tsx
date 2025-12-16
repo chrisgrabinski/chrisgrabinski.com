@@ -13,7 +13,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 import { useAudioPlayer } from "react-use-audio-player";
 import { IconButton } from "@/components/icon-button";
-
+import { PlayButton } from "@/components/play-button";
 import { Scrubber } from "@/components/scrubber";
 
 type AudioControlsProps = {
@@ -62,9 +62,7 @@ const AudioControls = ({ src }: AudioControlsProps) => {
         <IconButton onClick={togglePlayPause} variant="ghost">
           <SkipBackIcon />
         </IconButton>
-        <IconButton onClick={togglePlayPause}>
-          {isPlaying ? <PauseIcon /> : <PlayIcon />}
-        </IconButton>
+        <PlayButton onClick={togglePlayPause} playing={isPlaying} />
         <IconButton onClick={togglePlayPause} variant="ghost">
           <SkipForwardIcon />
         </IconButton>
