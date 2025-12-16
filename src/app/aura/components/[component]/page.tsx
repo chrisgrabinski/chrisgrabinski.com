@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ComponentPreview } from "@/app/aura/component-preview";
 import { components } from "@/app/aura/components/components";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { Button } from "@/components/button";
+import { Card } from "@/components/card";
+import { GitHubIcon } from "@/icons/github";
 
 const getComponentData = (componentName: string) => {
   return components.find((c) => c.name === componentName);
@@ -43,8 +47,8 @@ export default async function ComponentPage({
   }
 
   return (
-    <div className="grid gap-12">
-      <div className="grid gap-1.5">
+    <article className="grid gap-12">
+      <div className="grid gap-3">
         <Breadcrumbs
           hideCurrent
           includeJsonLd
@@ -57,14 +61,44 @@ export default async function ComponentPage({
             },
           ]}
         />
-        <h1 className="font-semibold text-4xl">{componentData.title}</h1>
-        <p className="neutral-500 text-balance text-lg text-neutral-600">
-          {componentData.description}
-        </p>
+        <div>
+          <h1 className="mt-3 font-semibold text-4xl">{componentData.title}</h1>
+          <p className="neutral-500 mt-1.5 text-balance text-lg text-neutral-600">
+            {componentData.description}
+          </p>
+        </div>
       </div>
-      <ComponentPreview sourceUrl={componentData.sourceUrl}>
-        {componentData.example}
-      </ComponentPreview>
-    </div>
+      <div>
+        <Button asChild size={2}>
+          <a
+            href={componentData.sourceUrl}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <GitHubIcon />
+            View source
+          </a>
+        </Button>
+      </div>
+      <ComponentPreview>{componentData.example}</ComponentPreview>
+      {componentData.variants && (
+        <div className="grid gap-6">
+          <h2 className="font-medium text-2xl">Variants</h2>
+          <div className="grid grid-cols-2 gap-6">
+            {componentData.variants.map((variant) => (
+              <Link
+                className="font-medium text-lg"
+                href={`/aura/components/${component}/${variant.name}`}
+                key={variant.name}
+              >
+                <Card className="flex aspect-2/1 flex-col justify-end">
+                  {variant.title}
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+    </article>
   );
 }

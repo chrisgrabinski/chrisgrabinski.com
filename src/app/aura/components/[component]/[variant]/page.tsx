@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { ComponentPreview } from "@/app/aura/component-preview";
 import { components } from "@/app/aura/components/components";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { Button } from "@/components/button";
+import { GitHubIcon } from "@/icons/github";
 
 const getComponentData = (component: string) => {
   return components.find((c) => c.name === component);
@@ -66,8 +68,8 @@ export default async function VariantPage({
   }
 
   return (
-    <div className="grid gap-12">
-      <div className="grid gap-1.5">
+    <article className="grid gap-12">
+      <div className="grid gap-3">
         <Breadcrumbs
           hideCurrent
           includeJsonLd
@@ -85,14 +87,26 @@ export default async function VariantPage({
             },
           ]}
         />
-        <h1 className="font-semibold text-4xl">{variantData.title}</h1>
-        <p className="neutral-500 text-balance text-lg text-neutral-600">
-          {variantData.description}
-        </p>
+        <div>
+          <h1 className="mt-3 font-semibold text-4xl">{variantData.title}</h1>
+          <p className="neutral-500 mt-1.5 text-balance text-lg text-neutral-600">
+            {variantData.description}
+          </p>
+        </div>
       </div>
-      <ComponentPreview sourceUrl={variantData.sourceUrl}>
-        {variantData.example}
-      </ComponentPreview>
-    </div>
+      <div>
+        <Button asChild size={2}>
+          <a
+            href={variantData.sourceUrl}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <GitHubIcon />
+            View source
+          </a>
+        </Button>
+      </div>
+      <ComponentPreview>{componentData.example}</ComponentPreview>
+    </article>
   );
 }

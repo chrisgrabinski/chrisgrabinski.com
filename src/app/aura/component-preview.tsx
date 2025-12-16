@@ -1,18 +1,15 @@
 "use client";
 
-import { Button } from "@/components/button";
 import { Card } from "@/components/card";
 
-import { GitHubIcon } from "@/icons/github";
 import { cn } from "@/lib/styles";
 
 type PreviewProps = {
   children: React.ReactNode;
   title?: string;
-  sourceUrl: string;
 };
 
-const ComponentPreview = ({ children, sourceUrl }: PreviewProps) => {
+const ComponentPreview = ({ children }: PreviewProps) => {
   const view = "preview";
 
   return (
@@ -23,7 +20,7 @@ const ComponentPreview = ({ children, sourceUrl }: PreviewProps) => {
       )}
     >
       <Card
-        className="flex size-full flex-col gap-6 p-4 md:p-6"
+        className="grid size-full flex-col place-items-center gap-6 p-4 md:p-6"
         style={{
           background:
             view === "preview"
@@ -31,16 +28,7 @@ const ComponentPreview = ({ children, sourceUrl }: PreviewProps) => {
               : undefined,
         }}
       >
-        <div className="flex justify-end">
-          <Button asChild size={2}>
-            <a href={sourceUrl} rel="noopener noreferrer" target="_blank">
-              <GitHubIcon />
-              View source
-            </a>
-          </Button>
-        </div>
-        <div className="grid grow place-items-center">{children}</div>
-        <div className="h-8" />
+        {children}
       </Card>
     </div>
   );
