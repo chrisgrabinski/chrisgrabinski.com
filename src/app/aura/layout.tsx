@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/aura">) {
   return (
     <div
-      className={`${geistSans.variable} ${geistMono.variable} pt-22 font-sans text-neutral-900 antialiased lg:flex lg:pt-0`}
+      className={`${geistSans.variable} ${geistMono.variable} bg-white pt-22 font-sans text-neutral-900 antialiased lg:flex lg:pt-0`}
     >
       <div className="lg:hidden">
         <SmallNavigation />

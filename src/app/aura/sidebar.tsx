@@ -10,15 +10,15 @@ import { ScrollArea } from "@/components/scroll-area";
 export const Sidebar = () => {
   return (
     <div className="sticky top-0 flex h-dvh w-64 shrink-0 flex-col border-neutral-300 border-r">
-      <header className="px-3 py-6">
+      <header className="px-4 py-6">
         <Link href="/aura">
           <AuraLogo className="text-2xl" />
         </Link>
       </header>
-      <ScrollArea className="flex-1 p-1.5">
+      <ScrollArea className="flex-1 p-2">
         <Navigation />
       </ScrollArea>
-      <footer className="p-3">
+      <footer className="p-4">
         <Link href="/">
           <Card className="relative flex items-center gap-3 overflow-visible bg-neutral-900 p-3 text-neutral-50">
             <Avatar fallback="Chris Grabinski" size={3} src={avatar.src} />

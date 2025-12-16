@@ -21,7 +21,7 @@ const SidebarMenuGroup = ({
 }) => {
   return (
     <div className="flex flex-col">
-      <span className="px-1.5 pb-1.5 font-medium text-foreground text-sm">
+      <span className="px-2 pb-2 font-medium text-neutral-500 text-sm">
         {heading}
       </span>
       {children}
@@ -42,7 +42,7 @@ const SidebarMenuItemBase = ({
 
   return (
     <ButtonPrimitive asChild {...props}>
-      <Component className="group/sidebar-menu-item flex w-full items-center gap-1.5 rounded-xl p-1.5 text-left text-sm transition hover:bg-neutral-200">
+      <Component className="group/sidebar-menu-item flex w-full items-center gap-2 rounded-xl p-2 text-left font-medium text-sm transition hover:bg-neutral-100">
         {children}
       </Component>
     </ButtonPrimitive>
@@ -104,7 +104,7 @@ const SidebarMenuSubItem = ({
   return (
     <SidebarMenuItem className="relative pl-6" {...props}>
       {children}
-      <div className="-translate-x-1/2 absolute top-0 left-3 h-full w-px bg-neutral-300 transition group-data-[active=true]/sidebar-menu-item:bg-pink-500" />
+      <div className="-translate-x-1/2 absolute top-0 left-3 h-full w-px bg-neutral-200 transition group-data-[active=true]/sidebar-menu-item:bg-pink-500" />
     </SidebarMenuItem>
   );
 };
