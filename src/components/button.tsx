@@ -18,12 +18,12 @@ const buttonVariants = cva(
         6: "h-20 text-2xl",
       },
       variant: {
-        destructive: "bg-red-600 text-red-50 hover:bg-red-700",
+        destructive: "bg-red-500 text-red-50 hover:bg-red-600",
         ghost: "bg-transparent text-inherit hover:bg-neutral-100",
         outline:
-          "bg-transparent text-neutral-800 ring-2 ring-neutral-200 ring-inset hover:border-neutral-400",
-        primary: "bg-pink-600 text-indigo-50 hover:bg-pink-700",
-        secondary: "bg-neutral-800 text-neutral-50",
+          "bg-transparent text-neutral-800 ring-2 ring-neutral-200 ring-inset hover:ring-neutral-300",
+        primary: "bg-pink-500 text-indigo-50 hover:bg-pink-600",
+        secondary: "bg-neutral-800 text-neutral-50 hover:bg-neutral-700",
       },
     },
   },
