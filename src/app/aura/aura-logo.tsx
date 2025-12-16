@@ -1,7 +1,6 @@
 import Image from "next/image";
 import auraLogo from "@/app/aura/aura-logo.svg";
 import { cn } from "@/lib/styles";
-import "@/app/aura/aura-logo.css";
 
 interface GradientProps extends React.ComponentProps<"span"> {
   animated?: boolean;

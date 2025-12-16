@@ -8,3 +8,32 @@
   --color-foreground: rgb(61, 64, 92);
   --color-foreground-muted: rgb(81, 87, 150);
 }
+
+@property --glow-degree {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+
+@keyframes aura-gradient-animation {
+  100% {
+    --glow-degree: 360deg;
+  }
+}
+
+.aura-gradient {
+  background-image: conic-gradient(
+    in oklch from var(--glow-degree),
+    #fee440,
+    #00bbf9,
+    #4361ee,
+    #7209b7,
+    #f72585,
+    #ffb700,
+    #fee440
+  );
+}
+
+.aura-gradient-animation {
+  animation: aura-gradient-animation 5s infinite linear;
+}
