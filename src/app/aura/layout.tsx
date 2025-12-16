@@ -1,11 +1,7 @@
-import { MenuIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Link from "next/link";
-import { AuraLogo } from "@/app/aura/aura-logo";
 import { Sidebar } from "@/app/aura/sidebar";
 import { SmallNavigation } from "@/app/aura/small-navigation";
-import { IconButton } from "@/components/icon-button";
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -26,7 +22,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/aura">) {
   return (
     <div
-      className={`${geistSans.variable} ${geistMono.variable} bg-white pt-22 font-sans text-neutral-900 antialiased lg:flex lg:pt-0`}
+      className={`${geistSans.variable} ${geistMono.variable} min-h-dvh bg-white pt-22 font-sans text-neutral-900 antialiased lg:flex lg:pt-0`}
     >
       <div className="lg:hidden">
         <SmallNavigation />
