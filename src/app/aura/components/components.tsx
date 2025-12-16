@@ -351,7 +351,23 @@ export const components: Component[] = [
           <DataListItem>
             <DataListLabel>Onboarding status</DataListLabel>
             <DataListValue>
-              <Status level={4}>Error</Status>
+              <Status level={1}>Onboarded</Status>
+            </DataListValue>
+          </DataListItem>
+          <DataListItem>
+            <DataListLabel>Contract</DataListLabel>
+            <DataListValue>
+              <CopyToClipboard>
+                <Filename>
+                  peter_parker_united_states_employment_contract.pdf
+                </Filename>
+              </CopyToClipboard>
+            </DataListValue>
+          </DataListItem>
+          <DataListItem>
+            <DataListLabel>Email</DataListLabel>
+            <DataListValue>
+              <CopyToClipboard>mail@example.com</CopyToClipboard>
             </DataListValue>
           </DataListItem>
           <DataListItem>

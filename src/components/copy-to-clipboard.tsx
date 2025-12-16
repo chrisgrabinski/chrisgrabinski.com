@@ -45,7 +45,7 @@ const CopyToClipboard = ({
     <InlineToast
       aria-description={messages.action}
       className={cn(
-        "group/copy-to-clipboard relative inline-flex align-baseline",
+        "group/copy-to-clipboard relative inline-flex min-w-0 align-baseline",
         className,
       )}
       message={messages.success}
@@ -55,7 +55,7 @@ const CopyToClipboard = ({
       <span className="contents" ref={childrenRef}>
         {children}
       </span>
-      <CopyIcon className="ml-[0.5ch] size-[1em] self-center transition group-hover/copy-to-clipboard:stroke-pink-600" />
+      <CopyIcon className="ml-[0.5ch] size-[1em] shrink-0 self-center transition group-hover/copy-to-clipboard:stroke-pink-600" />
     </InlineToast>
   );
 };
