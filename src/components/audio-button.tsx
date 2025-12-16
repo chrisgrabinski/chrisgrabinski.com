@@ -11,7 +11,13 @@ interface AudioButtonProps extends React.ComponentProps<typeof IconButton> {
   src: string;
 }
 
-const AudioButton = ({ className, size, src, ...props }: AudioButtonProps) => {
+const AudioButton = ({
+  className,
+  size,
+  src,
+  style,
+  ...props
+}: AudioButtonProps) => {
   const frameRef = useRef<number>(0);
   const [progress, setProgress] = useState(0);
 
@@ -44,6 +50,7 @@ const AudioButton = ({ className, size, src, ...props }: AudioButtonProps) => {
       className={cn("relative", className)}
       onClick={togglePlayPause}
       size={size}
+      style={{ padding: `clamp(1px, ${size}px, 2px)`, ...style }}
       {...props}
     >
       <ProgressRing className="size-full" size={size} value={percent}>
