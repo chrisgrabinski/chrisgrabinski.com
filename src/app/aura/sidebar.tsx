@@ -1,10 +1,12 @@
+import { ExternalLinkIcon } from "lucide-react";
 import Link from "next/link";
-
 import avatar from "@/app/(homepage)/images/chris-grabinski.jpg";
 import { AuraLogo } from "@/app/aura/aura-logo";
 import { Navigation } from "@/app/aura/navigation";
 import { AgentRing } from "@/components/agent-ring";
 import { Avatar } from "@/components/avatar";
+import { CountryAvatar } from "@/components/avatar-country";
+import { VerifiedAvatar } from "@/components/avatar-verified";
 import { Card } from "@/components/card";
 import { ScrollArea } from "@/components/scroll-area";
 
@@ -23,17 +25,21 @@ export const Sidebar = () => {
         <Link className="group" href="/">
           <Card className="flex items-center gap-3 overflow-visible p-3 transition duration-300 hover:shadow-md/10">
             <div className="relative flex">
-              <div className="pointer-events-none absolute inset-0 z-10 rounded-full opacity-0 transition duration-300 group-hover:opacity-100">
+              <div className="-inset-1 pointer-events-none absolute z-10 scale-75 rounded-full opacity-0 blur-xs transition duration-300 group-hover:scale-100 group-hover:opacity-100 group-hover:blur-none">
                 <AgentRing animated glow />
               </div>
-              <Avatar fallback="Chris Grabinski" size={3} src={avatar.src} />
+              <Avatar
+                className="z-10"
+                fallback="Chris Grabinski"
+                size={3}
+                src={avatar.src}
+              />
             </div>
             <div>
               <p className="text-neutral-600 text-sm">Created by</p>
-              <p className="font-medium text-sm transition duration-300 group-hover:text-pink-500">
-                Chris Grabiński
-              </p>
+              <p className="font-medium text-sm">Chris Grabiński</p>
             </div>
+            <ExternalLinkIcon className="ml-auto size-4 stroke-neutral-400 transition duration-300 group-hover:stroke-neutral-600" />
           </Card>
         </Link>
       </footer>
