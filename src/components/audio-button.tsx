@@ -11,13 +11,7 @@ interface AudioButtonProps extends React.ComponentProps<typeof IconButton> {
   src: string;
 }
 
-const AudioButton = ({
-  className,
-  size,
-  src,
-  style,
-  ...props
-}: AudioButtonProps) => {
+const AudioButton = ({ className, size, src, ...props }: AudioButtonProps) => {
   const frameRef = useRef<number>(0);
   const [progress, setProgress] = useState(0);
 
@@ -47,15 +41,38 @@ const AudioButton = ({
 
   return (
     <IconButton
-      className={cn("relative", className)}
+      className={cn(
+        "group/audio-button relative isolate inline-grid overflow-clip p-[0.25%]",
+        className,
+      )}
       onClick={togglePlayPause}
       size={size}
-      style={{ padding: `clamp(1px, ${size}px, 2px)`, ...style }}
       {...props}
     >
-      <ProgressRing className="size-full" size={size} value={percent}>
-        {isPlaying ? <PauseIcon /> : <PlayIcon />}
+      <div
+        className={cn(
+          "absolute inset-0 bg-radial from-pink-500/50 to-transparent",
+          isPlaying ? "animate-pulse" : "animate-none opacity-0",
+        )}
+      />
+      <ProgressRing
+        className="relative z-10 col-start-1 row-start-1 size-full"
+        size={size}
+        value={percent}
+        variant="gradient"
+      >
+        {isPlaying ? (
+          <PauseIcon className="fill-transparent transition duration-75 group-hover/audio-button:fill-current" />
+        ) : (
+          <PlayIcon className="fill-transparent transition duration-75 group-hover/audio-button:fill-current" />
+        )}
       </ProgressRing>
+      <ProgressRing
+        className="col-start-1 row-start-1 size-full blur-xs"
+        size={size}
+        value={percent}
+        variant="gradient"
+      />
     </IconButton>
   );
 };

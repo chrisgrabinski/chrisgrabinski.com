@@ -23,15 +23,19 @@ const progressRingVariants = cva(
 
 type ProgressRingVariants = VariantProps<typeof progressRingVariants>;
 
-type ProgressRingProps = React.ComponentProps<typeof Progress.Root> &
-  ProgressRingVariants;
+interface ProgressRingProps
+  extends React.ComponentProps<typeof Progress.Root>,
+    ProgressRingVariants {
+  variant?: "solid" | "gradient";
+}
 
 const ProgressRing = ({
   children,
   className,
-  value = 0,
   max = 1,
   size,
+  value = 0,
+  variant = "solid",
   ...props
 }: ProgressRingProps) => {
   const progress = typeof value === "number" ? value / max : 0;
@@ -42,14 +46,23 @@ const ProgressRing = ({
       value={value}
       {...props}
     >
-      <Progress.Indicator
-        className="mask-contain mask-r-from-black absolute inset-0 rounded-full"
+      <div
+        className="absolute inset-0 rounded-full p-[max(1px,5%)]"
         style={{
-          background: `conic-gradient(from 0deg, var(--color-pink-500) ${progress * 100}%, transparent ${progress * 100}%) border-box`,
-          mask: "linear-gradient(white, white) content-box exclude, linear-gradient(white, white ) border-box",
-          padding: `clamp(1px, ${size}px, 3px)`,
+          mask: "linear-gradient(white, white) content-box exclude, linear-gradient(white, white) border-box",
         }}
-      />
+      >
+        <Progress.Indicator
+          className="mask-contain will-change absolute inset-0 rounded-full bg-pink-500"
+          style={{
+            background:
+              variant === "gradient"
+                ? `conic-gradient(from ${progress * 360}deg, transparent 0%, var(--color-pink-500) 7.5%, var(--color-pink-500) 50%, var(--color-pink-400) 75%, var(--color-pink-50) 95%, var(--color-white) 100%) border-box`
+                : undefined,
+            mask: `conic-gradient(from 0deg, white 0%, white ${progress * 100}%, transparent ${progress * 100}%) border-box`,
+          }}
+        />
+      </div>
       {children}
     </Progress.Root>
   );

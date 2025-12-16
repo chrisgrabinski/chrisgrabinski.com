@@ -535,7 +535,7 @@ export const components: Component[] = [
   },
   {
     description: "Indicates progress in a circular shape.",
-    example: <ProgressRing size={5} value={0.45} />,
+    example: <ProgressRing size={6} value={0.65} />,
     name: "progress-ring",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/progress-ring.tsx",
