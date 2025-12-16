@@ -19,9 +19,9 @@ export const Sidebar = () => {
       <ScrollArea className="flex-1 p-2">
         <Navigation />
       </ScrollArea>
-      <footer className="p-4">
+      <footer className="p-4 pb-8">
         <Link className="group" href="/">
-          <Card className="flex items-center gap-3 overflow-visible p-3">
+          <Card className="flex items-center gap-3 overflow-visible p-3 transition duration-300 hover:shadow-md/10">
             <div className="relative flex">
               <div className="pointer-events-none absolute inset-0 z-10 rounded-full opacity-0 transition duration-300 group-hover:opacity-100">
                 <AgentRing animated glow />
@@ -30,7 +30,7 @@ export const Sidebar = () => {
             </div>
             <div>
               <p className="text-neutral-600 text-sm">Created by</p>
-              <p className="duraiton-300 font-medium text-sm transition group-hover:text-pink-500">
+              <p className="font-medium text-sm transition duration-300 group-hover:text-pink-500">
                 Chris Grabiński
               </p>
             </div>
