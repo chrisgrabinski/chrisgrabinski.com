@@ -15,6 +15,16 @@ import { Card } from "@/components/card";
 import { CheckboxIndicator, CheckboxRoot } from "@/components/checkbox";
 import { CopyToClipboard } from "@/components/copy-to-clipboard";
 import { CountryLabel } from "@/components/country-label";
+import {
+  DataListItem,
+  DataListLabel,
+  DataListRoot,
+  DataListSub,
+  DataListSubContent,
+  DataListSubIndicator,
+  DataListSubTrigger,
+  DataListValue,
+} from "@/components/data-list";
 import { Dropzone } from "@/components/dropzone";
 import { Filename } from "@/components/filename";
 import { IconBox } from "@/components/icon-box";
@@ -26,6 +36,7 @@ import {
   SegmentedControlRoot,
 } from "@/components/segmented-control";
 import { Slider } from "@/components/slider";
+import { Status } from "@/components/status";
 import { Switch } from "@/components/switch";
 import {
   TooltipContent,
@@ -323,10 +334,65 @@ export const components: Component[] = [
       "Displays a country flag and name based on an ISO country code, offering a compact and recognizable way to present geographic information.",
     example: <CountryLabel className="text-xl" code="TH" />,
     name: "country-label",
-
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/country-label.tsx",
     title: "Country label",
+  },
+  {
+    description:
+      "A list of data items with labels and values, perfect for displaying key-value pairs or data in a list format.",
+    example: (
+      <Card className="w-full max-w-md">
+        <DataListRoot>
+          <DataListItem>
+            <DataListLabel>Name</DataListLabel>
+            <DataListValue>Peter Parker</DataListValue>
+          </DataListItem>
+          <DataListItem>
+            <DataListLabel>Onboarding status</DataListLabel>
+            <DataListValue>
+              <Status level={4}>Error</Status>
+            </DataListValue>
+          </DataListItem>
+          <DataListItem>
+            <DataListLabel>Country</DataListLabel>
+            <DataListValue>
+              <CountryLabel code="US" />
+            </DataListValue>
+          </DataListItem>
+          <DataListSub>
+            <DataListSubTrigger>
+              Address
+              <DataListSubIndicator />
+            </DataListSubTrigger>
+            <DataListSubContent>
+              <DataListRoot>
+                <DataListItem>
+                  <DataListLabel>Street</DataListLabel>
+                  <DataListValue>410 Chelsea Street</DataListValue>
+                </DataListItem>
+                <DataListItem>
+                  <DataListLabel>City</DataListLabel>
+                  <DataListValue>New York, NY</DataListValue>
+                </DataListItem>
+                <DataListItem>
+                  <DataListLabel>Zip</DataListLabel>
+                  <DataListValue>10001</DataListValue>
+                </DataListItem>
+              </DataListRoot>
+            </DataListSubContent>
+          </DataListSub>
+          <DataListItem>
+            <DataListLabel>Profession</DataListLabel>
+            <DataListValue>Photographer</DataListValue>
+          </DataListItem>
+        </DataListRoot>
+      </Card>
+    ),
+    name: "data-list",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/data-list.tsx",
+    title: "Data list",
   },
   {
     description:
@@ -481,6 +547,19 @@ export const components: Component[] = [
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/slider.tsx",
     title: "Slider",
+  },
+  {
+    description:
+      "Indicates urgency, severity, or importance of a status or alert.",
+    example: (
+      <Status className="text-3xl" level={4}>
+        Error
+      </Status>
+    ),
+    name: "status",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/status.tsx",
+    title: "Status",
   },
   {
     description:
