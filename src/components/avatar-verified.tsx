@@ -1,7 +1,6 @@
 import type React from "react";
 import { cn } from "@/lib/styles";
 import { Avatar } from "./avatar";
-import avatarVerifiedMask from "./avatar-verified.mask.svg";
 
 const VerifiedAvatarRoot = ({
   children,
@@ -21,10 +20,10 @@ const VerifiedAvatar = ({
   return (
     <VerifiedAvatarRoot>
       <Avatar
-        className={cn("mask-cover align-middle", className)}
-        style={{
-          maskImage: `url(${avatarVerifiedMask.src})`,
-        }}
+        className={cn(
+          "mask-cover mask-[url(/aura/avatar-verified.mask.svg)] align-middle",
+          className,
+        )}
         {...props}
       />
       <div className="-right-1/8 -bottom-1/8 absolute z-30 size-1/2"></div>

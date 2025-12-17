@@ -39,10 +39,10 @@ const CountryAvatar = ({ className, code, ...props }: CountryAvatarProps) => {
   return (
     <CountryAvatarRoot>
       <Avatar
-        className={cn("mask-cover align-middle", className)}
-        style={{
-          maskImage: `url(${countryAvatarMask.src})`,
-        }}
+        className={cn(
+          "mask-cover mask-[url(/aura/avatar-country.mask.svg)] align-middle",
+          className,
+        )}
         {...props}
       />
       <CountryAvatarFlag
