@@ -7,6 +7,13 @@ const meta = {
       "LandingPage_HeroSection_V3_final_FINALreallyFINAL_ApprovedByClient_SaturdayNightEdit_20240614_v2_finalfinal_(do-not-use-this-one)_MergedLayers.psd",
   },
   component: Filename,
+  decorators: [
+    (Story) => (
+      <div style={{ maxWidth: "320px" }}>
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     layout: "centered",
   },
