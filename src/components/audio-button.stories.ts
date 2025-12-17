@@ -11,7 +11,7 @@ const meta = {
     onPause: fn(),
     onPlay: fn(),
     onStop: fn(),
-    src: "/aura/music.mp3",
+    src: "/aura/audio-medium.mp3",
   },
   component: AudioButton,
   parameters: {

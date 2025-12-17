@@ -75,7 +75,7 @@ export const components: Component[] = [
   },
   {
     description: "A simple button that plays a short audio clip when clicked.",
-    example: <AudioButton size={5} src="/aura/music.mp3" />,
+    example: <AudioButton size={5} src="/aura/audio-medium.mp3" />,
     name: "audio-button",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/audio-button.tsx",
@@ -88,7 +88,7 @@ export const components: Component[] = [
       "A classic audio controls interface with commonly used functionality.",
     example: (
       <Card className="w-full">
-        <AudioControls src="/aura/music.mp3" />
+        <AudioControls src="/aura/audio-long.mp3" />
       </Card>
     ),
     name: "audio-controls",
