@@ -311,6 +311,7 @@ export const components: Component[] = [
     example: (
       <CheckboxRoot>
         <CheckboxIndicator />
+        Accept terms and conditions
       </CheckboxRoot>
     ),
     name: "checkbox",
@@ -568,7 +569,7 @@ export const components: Component[] = [
     description:
       "Indicates urgency, severity, or importance of a status or alert.",
     example: (
-      <Status className="text-3xl" level={4}>
+      <Status className="text-3xl" level={3}>
         Error
       </Status>
     ),

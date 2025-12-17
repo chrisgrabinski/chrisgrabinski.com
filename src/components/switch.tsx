@@ -59,11 +59,14 @@ const SwitchThumb = ({
   );
 };
 
-const Switch = (props: SwitchRootProps) => {
+const Switch = ({ children, ...props }: SwitchRootProps) => {
   return (
-    <SwitchRoot {...props}>
-      <SwitchThumb />
-    </SwitchRoot>
+    <div className="inline-flex items-center gap-[1ch]">
+      <SwitchRoot {...props}>
+        <SwitchThumb />
+      </SwitchRoot>
+      {children}
+    </div>
   );
 };
 

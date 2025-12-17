@@ -16,9 +16,8 @@ const statusIndicatorVariants = cva(
         0: "text-neutral-300 before:hidden",
         1: "text-green-500 after:from-green-300 after:to-green-700",
         2: "text-yellow-400 after:from-yellow-200 after:to-yellow-500",
-        3: "text-orange-400 after:from-orange-200 after:to-orange-600",
-        4: "text-red-500 before:animate-pulse before:opacity-100 after:from-red-300 after:to-red-600",
-        5: "text-fuchsia-600 before:animate-pulse before:opacity-100 after:from-fuchsia-400 after:to-fuchsia-700",
+        3: "text-red-500 before:animate-pulse before:opacity-100 after:from-red-300 after:to-red-600",
+        4: "text-fuchsia-600 before:animate-pulse before:opacity-100 after:from-fuchsia-400 after:to-fuchsia-700",
       },
     },
   },
@@ -34,11 +33,7 @@ const Status = ({ children, className, level, ...props }: StatusProps) => {
       className={cn("isolate inline-flex items-center gap-[0.5ch]", className)}
       {...props}
     >
-      <span className={cn(statusIndicatorVariants({ level }))}>
-        {/* {typeof level === "number" && level > 0 && (
-          <span className="-inset-1 -z-10 absolute animate-pulse rounded-full bg-current opacity-75 blur-[0.125em]" />
-        )} */}
-      </span>
+      <span className={cn(statusIndicatorVariants({ level }))} />
       {children}
     </span>
   );

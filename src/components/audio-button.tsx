@@ -7,17 +7,36 @@ import { PlayButton } from "@/components/play-button";
 import { ProgressRing } from "@/components/progress-ring";
 
 interface AudioButtonProps extends React.ComponentProps<typeof IconButton> {
+  onEnd?: () => void;
+  onLoad?: () => void;
+  onPause?: () => void;
+  onPlay?: () => void;
+  onStop?: () => void;
   src: string;
 }
 
-const AudioButton = ({ src, ...props }: AudioButtonProps) => {
+const AudioButton = ({
+  onEnd,
+  onLoad,
+  onPause,
+  onPlay,
+  onStop,
+  src,
+  ...props
+}: AudioButtonProps) => {
   const frameRef = useRef<number>(0);
   const [progress, setProgress] = useState(0);
 
   const { duration, getPosition, isPlaying, togglePlayPause } = useAudioPlayer(
     src,
+
     {
       autoplay: false,
+      onend: onEnd,
+      onload: onLoad,
+      onpause: onPause,
+      onplay: onPlay,
+      onstop: onStop,
     },
   );
 
