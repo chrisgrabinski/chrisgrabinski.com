@@ -87,7 +87,7 @@ export default async function ComponentPage({
                 target="_blank"
               >
                 <StorybookIcon />
-                View storybook
+                Storybook
               </a>
             </Button>
           )}

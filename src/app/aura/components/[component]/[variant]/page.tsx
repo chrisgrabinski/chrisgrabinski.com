@@ -113,7 +113,7 @@ export default async function VariantPage({
                 target="_blank"
               >
                 <StorybookIcon />
-                View storybook
+                Storybook
               </a>
             </Button>
           )}
