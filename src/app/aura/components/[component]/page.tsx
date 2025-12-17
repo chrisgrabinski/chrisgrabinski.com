@@ -7,6 +7,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Button } from "@/components/button";
 import { Card } from "@/components/card";
 import { GitHubIcon } from "@/icons/github";
+import { StorybookIcon } from "@/icons/storybook";
 
 const getComponentData = (componentName: string) => {
   return components.find((c) => c.name === componentName);
@@ -67,7 +68,7 @@ export default async function ComponentPage({
             {componentData.description}
           </p>
         </div>
-        <div>
+        <div className="flex flex-wrap gap-3">
           <Button asChild size={2}>
             <a
               href={componentData.sourceUrl}
@@ -78,6 +79,18 @@ export default async function ComponentPage({
               View source
             </a>
           </Button>
+          {componentData.storybookUrl && (
+            <Button asChild size={2} variant="primary">
+              <a
+                href={componentData.storybookUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <StorybookIcon />
+                View storybook
+              </a>
+            </Button>
+          )}
         </div>
       </div>
       <ComponentPreview>{componentData.example}</ComponentPreview>

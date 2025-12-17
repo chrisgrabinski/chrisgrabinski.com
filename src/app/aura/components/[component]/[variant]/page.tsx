@@ -5,6 +5,7 @@ import { components } from "@/app/aura/components/components";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Button } from "@/components/button";
 import { GitHubIcon } from "@/icons/github";
+import { StorybookIcon } from "@/icons/storybook";
 
 const getComponentData = (component: string) => {
   return components.find((c) => c.name === component);
@@ -93,7 +94,7 @@ export default async function VariantPage({
             {variantData.description}
           </p>
         </div>
-        <div>
+        <div className="flex flex-wrap gap-3">
           <Button asChild size={2}>
             <a
               href={variantData.sourceUrl}
@@ -104,6 +105,18 @@ export default async function VariantPage({
               View source
             </a>
           </Button>
+          {variantData.storybookUrl && (
+            <Button asChild size={2} variant="primary">
+              <a
+                href={variantData.storybookUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <StorybookIcon />
+                View storybook
+              </a>
+            </Button>
+          )}
         </div>
       </div>
       <ComponentPreview>{variantData.example}</ComponentPreview>

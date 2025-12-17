@@ -2,7 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { ButtonPrimitive } from "@/primitives/button";
 
 const buttonVariants = cva(
-  "inline-flex place-items-center gap-[0.5ch] rounded-full px-[1.5ch] font-medium transition [&>svg]:size-[1em]",
+  "inline-flex place-items-center gap-[0.5ch] rounded-full px-[1.5ch] align-middle font-medium transition [&>svg]:size-[1em]",
   {
     defaultVariants: {
       size: 3,

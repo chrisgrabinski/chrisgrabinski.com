@@ -47,11 +47,12 @@ import pattern from "../../(homepage)/images/pawel-czerwinski-8uZPynIu-rQ-unspla
 
 type Component = {
   description: string;
+  example: React.ReactNode;
   name: string;
+  sourceUrl: string;
+  storybookUrl?: string;
   title: string;
   variants?: Component[];
-  sourceUrl: string;
-  example: React.ReactNode;
 };
 
 export const components: Component[] = [
@@ -68,6 +69,8 @@ export const components: Component[] = [
     name: "announcement",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/announcement.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/announcement--docs",
     title: "Announcement",
   },
   {
@@ -76,6 +79,8 @@ export const components: Component[] = [
     name: "audio-button",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/audio-button.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/audiobutton--docs",
     title: "Audio button",
   },
   {
@@ -98,6 +103,8 @@ export const components: Component[] = [
     name: "aura-button",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/aura-button.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/aurabutton--docs",
     title: "Aura button",
   },
   {
@@ -112,6 +119,9 @@ export const components: Component[] = [
     name: "avatar",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/avatar.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/avatar--docs",
+
     title: "Avatar",
     variants: [
       {
@@ -131,6 +141,8 @@ export const components: Component[] = [
         name: "country",
         sourceUrl:
           "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/avatar-country.tsx",
+        storybookUrl:
+          "https://storybook.chrisgrabinski.com/?path=/docs/countryavatar--docs",
         title: "Country Avatar",
       },
       {
@@ -149,6 +161,8 @@ export const components: Component[] = [
         name: "verified",
         sourceUrl:
           "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/avatar-verified.tsx",
+        storybookUrl:
+          "https://storybook.chrisgrabinski.com/?path=/docs/verifiedavatar--docs",
         title: "Verified Avatar",
       },
     ],
@@ -160,6 +174,8 @@ export const components: Component[] = [
     name: "badge",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/badge.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/badge--docs",
     title: "Badge",
   },
   {
@@ -177,6 +193,8 @@ export const components: Component[] = [
     name: "breadcrumbs",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/breadcrumbs.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/breadcrumbs--docs",
     title: "Breadcrumbs",
   },
   {
@@ -186,6 +204,8 @@ export const components: Component[] = [
     name: "button",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/button.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/button--docs",
     title: "Button",
     variants: [
       {
@@ -200,6 +220,8 @@ export const components: Component[] = [
         name: "destructive",
         sourceUrl:
           "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/button.tsx",
+        storybookUrl:
+          "https://storybook.chrisgrabinski.com/?path=/story/button--destructive",
         title: "Destructive button",
       },
       {
@@ -213,6 +235,8 @@ export const components: Component[] = [
         name: "ghost",
         sourceUrl:
           "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/button.tsx",
+        storybookUrl:
+          "https://storybook.chrisgrabinski.com/?path=/story/button--ghost",
         title: "Ghost button",
       },
       {
@@ -226,6 +250,8 @@ export const components: Component[] = [
         name: "outline",
         sourceUrl:
           "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/button.tsx",
+        storybookUrl:
+          "https://storybook.chrisgrabinski.com/?path=/story/button--outline",
         title: "Outline button",
       },
       {
@@ -239,6 +265,8 @@ export const components: Component[] = [
         name: "primary",
         sourceUrl:
           "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/button.tsx",
+        storybookUrl:
+          "https://storybook.chrisgrabinski.com/?path=/story/button--primary",
         title: "Primary button",
       },
     ],
@@ -266,6 +294,7 @@ export const components: Component[] = [
     name: "card",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/card.tsx",
+    storybookUrl: "https://storybook.chrisgrabinski.com/?path=/docs/card--docs",
     title: "Card",
     variants: [
       {
@@ -301,6 +330,8 @@ export const components: Component[] = [
         name: "glass",
         sourceUrl:
           "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/button.tsx",
+        storybookUrl:
+          "https://storybook.chrisgrabinski.com/?path=/story/card--glass",
         title: "Glass card",
       },
     ],
@@ -317,6 +348,8 @@ export const components: Component[] = [
     name: "checkbox",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/checkbox.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/checkbox--docs",
     title: "Checkbox",
   },
   {
@@ -328,6 +361,8 @@ export const components: Component[] = [
     name: "copy-to-clipboard",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/copy-to-clipboard.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/copytoclipboard--docs",
     title: "Copy to clipboard",
   },
   {
@@ -337,6 +372,8 @@ export const components: Component[] = [
     name: "country-label",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/country-label.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/countrylabel--docs",
     title: "Country label",
   },
   {
@@ -423,7 +460,6 @@ export const components: Component[] = [
       />
     ),
     name: "dropzone",
-
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/dropzone.tsx",
     title: "Dropzone",
@@ -439,6 +475,8 @@ export const components: Component[] = [
     name: "filename",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/filename.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/filename--docs",
     title: "Filename",
   },
   {
@@ -452,6 +490,8 @@ export const components: Component[] = [
     name: "icon-box",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/icon-box.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/iconbox--docs",
     title: "Icon box",
   },
   {
@@ -465,6 +505,8 @@ export const components: Component[] = [
     name: "icon-button",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/icon-button.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/iconbutton--docs",
     title: "Icon button",
     variants: [
       {
@@ -478,6 +520,8 @@ export const components: Component[] = [
         name: "destructive",
         sourceUrl:
           "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/icon-button.tsx",
+        storybookUrl:
+          "https://storybook.chrisgrabinski.com/?path=/story/iconbutton--destructive",
         title: "Destructive icon button",
       },
       {
@@ -491,6 +535,8 @@ export const components: Component[] = [
         name: "ghost",
         sourceUrl:
           "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/icon-button.tsx",
+        storybookUrl:
+          "https://storybook.chrisgrabinski.com/?path=/story/iconbutton--ghost",
         title: "Ghost icon button",
       },
       {
@@ -504,6 +550,8 @@ export const components: Component[] = [
         name: "outline",
         sourceUrl:
           "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/icon-button.tsx",
+        storybookUrl:
+          "https://storybook.chrisgrabinski.com/?path=/story/iconbutton--outline",
         title: "Outline icon button",
       },
       {
@@ -517,6 +565,8 @@ export const components: Component[] = [
         name: "primary",
         sourceUrl:
           "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/icon-button.tsx",
+        storybookUrl:
+          "https://storybook.chrisgrabinski.com/?path=/story/iconbutton--primary",
         title: "Primary icon button",
       },
     ],
@@ -532,6 +582,8 @@ export const components: Component[] = [
     name: "inline-toast",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/inline-toast.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/inlinetoast--docs",
     title: "Inline toast",
   },
   {
@@ -540,6 +592,8 @@ export const components: Component[] = [
     name: "progress-ring",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/progress-ring.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/progressring--docs",
     title: "Progress ring",
   },
   {
@@ -555,6 +609,8 @@ export const components: Component[] = [
     name: "segmented-control",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/segmented-control.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/segmentedcontrol--docs",
     title: "Segmented control",
   },
   {
@@ -563,6 +619,8 @@ export const components: Component[] = [
     name: "slider",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/slider.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/slider--docs",
     title: "Slider",
   },
   {
@@ -576,6 +634,8 @@ export const components: Component[] = [
     name: "status",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/status.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/status--docs",
     title: "Status",
   },
   {
@@ -585,6 +645,8 @@ export const components: Component[] = [
     name: "switch",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/switch.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/switch--docs",
     title: "Switch",
   },
   {
@@ -603,6 +665,8 @@ export const components: Component[] = [
     name: "tooltip",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/tooltip.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/tooltip--docs",
     title: "Tooltip",
   },
 ];
