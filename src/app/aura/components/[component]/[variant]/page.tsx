@@ -69,7 +69,7 @@ export default async function VariantPage({
   }
 
   return (
-    <article className="grid gap-12">
+    <article className="grid gap-12 pb-12">
       <div className="grid gap-6">
         <Breadcrumbs
           hideCurrent
