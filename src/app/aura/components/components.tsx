@@ -1,71 +1,364 @@
-import { GhostIcon, ShoppingBagIcon, StarIcon, TrashIcon } from "lucide-react";
+import { GhostIcon, StarIcon, TrashIcon } from "lucide-react";
 import Image from "next/image";
 import avatarImage from "@/app/(homepage)/images/chris-grabinski.jpg";
-import { Announcement } from "@/components/announcement";
-import { AudioButton } from "@/components/audio-button";
-import { AudioControls } from "@/components/audio-controls";
+import {
+  AnnouncementDemo,
+  AudioControlsDemo,
+  BadgeDemo,
+  BreadcrumbsDemo,
+  CardDemo,
+  CheckboxDemo,
+  CountryLabelDemo,
+  DataListDemo,
+  DropzoneDemo,
+  FilenameDemo,
+  IconBoxDemo,
+  InlineToastDemo,
+  ProgressRingDemo,
+  SegmentedControlDemo,
+  SliderDemo,
+  StatusDemo,
+  SwitchDemo,
+  TooltipDemo,
+} from "@/app/aura/patterns";
+import { AudioButtonDemo } from "@/app/aura/patterns/audio-button";
+import { CopyToClipboardDemo } from "@/app/aura/patterns/copy-to-clipboard";
+
 import { AuraButton } from "@/components/aura-button";
 import { Avatar } from "@/components/avatar";
 import { CountryAvatar } from "@/components/avatar-country";
 import { VerifiedAvatar } from "@/components/avatar-verified";
 import { Badge } from "@/components/badge";
-import { Breadcrumbs } from "@/components/breadcrumbs";
+
 import { Button } from "@/components/button";
 import { Card } from "@/components/card";
-import { CheckboxIndicator, CheckboxRoot } from "@/components/checkbox";
-import { CopyToClipboard } from "@/components/copy-to-clipboard";
-import { CountryLabel } from "@/components/country-label";
-import {
-  DataListItem,
-  DataListLabel,
-  DataListRoot,
-  DataListSub,
-  DataListSubContent,
-  DataListSubIndicator,
-  DataListSubTrigger,
-  DataListValue,
-} from "@/components/data-list";
-import { Dropzone } from "@/components/dropzone";
-import { Filename } from "@/components/filename";
-import { IconBox } from "@/components/icon-box";
+
 import { IconButton } from "@/components/icon-button";
-import { InlineToast } from "@/components/inline-toast";
-import { ProgressRing } from "@/components/progress-ring";
-import {
-  SegmentedControlItem,
-  SegmentedControlRoot,
-} from "@/components/segmented-control";
-import { Slider } from "@/components/slider";
-import { Status } from "@/components/status";
-import { Switch } from "@/components/switch";
-import {
-  TooltipContent,
-  TooltipRoot,
-  TooltipTrigger,
-} from "@/components/tooltip";
+
 import pattern from "../../(homepage)/images/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg";
 
 type Component = {
   description: string;
-  example: React.ReactNode;
-  name: string;
+  example?: React.ReactNode;
+  name?: string;
   sourceUrl: string;
   storybookUrl?: string;
   title: string;
   variants?: Component[];
 };
 
+export const component: Record<string, Component> = {
+  announcement: {
+    description: "An announcement for a new feature or update.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/announcement.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/announcement--docs",
+    title: "Announcement",
+  },
+  "audio-button": {
+    description: "A simple button that plays a short audio clip when clicked.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/audio-button.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/audiobutton--docs",
+    title: "Audio Button",
+  },
+  "audio-controls": {
+    description:
+      "A classic audio controls interface with commonly used functionality.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/audio-controls.tsx",
+    title: "Audio controls",
+  },
+  "aura-button": {
+    description:
+      "A branded button component that displays a sparkles icon and animated agent ring, perfect for highlighting primary actions.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/aura-button.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/aurabutton--docs",
+    title: "Aura button",
+  },
+  avatar: {
+    description:
+      "Displays user profile pictures with automatic fallback to initials when images are unavailable or fail to load.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/avatar.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/avatar--docs",
+    title: "Avatar",
+  },
+  "avatar/country": {
+    description:
+      "An avatar variant that overlays a country flag in the bottom-right corner, ideal for displaying user location or geographic context.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/avatar-country.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/countryavatar--docs",
+    title: "Country Avatar",
+  },
+  "avatar/verified": {
+    description:
+      "An avatar variant that displays a verified badge overlay in the bottom-right corner, perfect for authenticated or verified accounts.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/avatar-verified.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/verifiedavatar--docs",
+    title: "Verified Avatar",
+  },
+  badge: {
+    description:
+      "A compact label component for displaying status indicators, tags, or metadata with multiple size and variant options.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/badge.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/badge--docs",
+    title: "Badge",
+  },
+  breadcrumbs: {
+    description:
+      "A breadcrumb navigation component that displays a list of links to the current page's location, helping users understand their path and navigate back through hierarchical structures.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/breadcrumbs.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/breadcrumbs--docs",
+    title: "Breadcrumbs",
+  },
+  button: {
+    description:
+      "A versatile button component with multiple variants, sizes, and states that supports loading and disabled states for building interactive interfaces.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/button.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/button--docs",
+    title: "Button",
+  },
+  "button/destructive": {
+    description:
+      "A button variant styled in red for destructive actions like delete or remove operations.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/button.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/story/button--destructive",
+    title: "Destructive button",
+  },
+  "button/ghost": {
+    description:
+      "A button variant with transparent background and subtle hover effect, perfect for secondary actions that don't need emphasis.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/button.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/story/button--ghost",
+    title: "Ghost button",
+  },
+  "button/outline": {
+    description:
+      "A button variant with a visible border and transparent background, ideal for secondary actions that need visual distinction.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/button.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/story/button--outline",
+    title: "Outline button",
+  },
+  "button/primary": {
+    description:
+      "A button variant styled in the brand color for primary actions that require the most user attention and engagement.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/button.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/story/button--primary",
+    title: "Primary button",
+  },
+  card: {
+    description:
+      "A container component with rounded corners and subtle borders that provides a clean way to group and organize related content.",
+    name: "card",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/card.tsx",
+    storybookUrl: "https://storybook.chrisgrabinski.com/?path=/docs/card--docs",
+    title: "Card",
+  },
+  "card/glass": {
+    description:
+      "A card variant with a glass-like effect that creates a frosted glass appearance.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/button.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/story/card--glass",
+    title: "Glass Card",
+  },
+  checkbox: {
+    description:
+      "A checkbox input with custom styling that displays a checkmark icon when selected and supports both controlled and uncontrolled states.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/checkbox.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/checkbox--docs",
+    title: "Checkbox",
+  },
+  "copy-to-clipboard": {
+    description:
+      "A clickable component that copies text content to the clipboard and displays a success toast notification, providing immediate visual feedback to users.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/copy-to-clipboard.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/copytoclipboard--docs",
+    title: "Copy to clipboard",
+  },
+  "country-label": {
+    description:
+      "Displays a country flag and name based on an ISO country code, offering a compact and recognizable way to present geographic information.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/country-label.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/countrylabel--docs",
+    title: "Country label",
+  },
+  "data-list": {
+    description:
+      "A list of data items with labels and values, perfect for displaying key-value pairs or data in a list format.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/data-list.tsx",
+    title: "Data list",
+  },
+  dropzone: {
+    description:
+      "A dropzone component that allows users to drag and files to upload them.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/dropzone.tsx",
+    title: "Dropzone",
+  },
+  filename: {
+    description:
+      "Intelligently truncates long filenames using a center-ellipsis approach that keeps both the beginning and end visible while preserving the file extension.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/filename.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/filename--docs",
+    title: "Filename",
+  },
+  "icon-box": {
+    description:
+      "A bordered container component for displaying icons in a consistent, visually distinct box format with multiple size options.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/icon-box.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/iconbox--docs",
+    title: "Icon box",
+  },
+  "icon-button": {
+    description:
+      "A button component that displays only an icon without text, perfect for compact interfaces, toolbar actions, and space-constrained layouts.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/icon-button.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/iconbutton--docs",
+    title: "Icon button",
+  },
+  "icon-button/destructive": {
+    description:
+      "An icon button variant styled in red for destructive actions like delete or remove operations.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/icon-button.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/story/iconbutton--destructive",
+    title: "Destructive icon button",
+  },
+  "icon-button/ghost": {
+    description:
+      "An icon button variant with transparent background and subtle hover effect, ideal for secondary actions that don't need emphasis.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/icon-button.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/story/iconbutton--ghost",
+    title: "Ghost icon button",
+  },
+  "icon-button/outline": {
+    description:
+      "An icon button variant with a visible border and transparent background, perfect for secondary actions that need visual distinction.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/icon-button.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/story/iconbutton--outline",
+    title: "Outline icon button",
+  },
+  "icon-button/primary": {
+    description:
+      "An icon button variant styled in the brand color for primary actions that require the most user attention and engagement.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/icon-button.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/story/iconbutton--primary",
+    title: "Primary icon button",
+  },
+  "inline-toast": {
+    description:
+      "A clickable component that displays a temporary toast notification above the element when clicked, providing instant visual feedback for user actions.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/inline-toast.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/inlinetoast--docs",
+    title: "Inline toast",
+  },
+  "progress-ring": {
+    description: "Indicates progress in a circular shape.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/progress-ring.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/progressring--docs",
+    title: "Progress ring",
+  },
+  "segmented-control": {
+    description:
+      "A toggle group component that allows users to select a single option from multiple related choices, displayed as a visually connected set of buttons.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/segmented-control.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/segmentedcontrol--docs",
+    title: "Segmented control",
+  },
+  slider: {
+    description: "An input for selecting values from a range of values",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/slider.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/slider--docs",
+    title: "Slider",
+  },
+  status: {
+    description:
+      "Indicates urgency, severity, or importance of a status or alert.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/status.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/status--docs",
+    title: "Status",
+  },
+  switch: {
+    description:
+      "A toggle switch component for binary on/off states with smooth animations, customizable sizes, and a sliding thumb indicator.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/switch.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/switch--docs",
+    title: "Switch",
+  },
+  tooltip: {
+    description:
+      "Displays contextual information in a small popover when users hover over or focus an element, enhancing discoverability and providing helpful guidance.",
+    sourceUrl:
+      "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/tooltip.tsx",
+    storybookUrl:
+      "https://storybook.chrisgrabinski.com/?path=/docs/tooltip--docs",
+    title: "Tooltip",
+  },
+};
+
 export const components: Component[] = [
   {
     description: "A simple button that plays a short audio clip when clicked.",
-    example: (
-      <Announcement
-        buttonLabel="Try it"
-        description="Lean back and enjoy a cup of hot cocoa while our agent finds the best gifts."
-        icon={ShoppingBagIcon}
-        title="Shop smarter this season"
-      />
-    ),
+    example: <AnnouncementDemo.Component />,
     name: "announcement",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/announcement.tsx",
@@ -75,7 +368,7 @@ export const components: Component[] = [
   },
   {
     description: "A simple button that plays a short audio clip when clicked.",
-    example: <AudioButton size={5} src="/aura/audio-medium.mp3" />,
+    example: <AudioButtonDemo.Component />,
     name: "audio-button",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/audio-button.tsx",
@@ -86,11 +379,7 @@ export const components: Component[] = [
   {
     description:
       "A classic audio controls interface with commonly used functionality.",
-    example: (
-      <Card className="w-full">
-        <AudioControls src="/aura/audio-long.mp3" />
-      </Card>
-    ),
+    example: <AudioControlsDemo.Component />,
     name: "audio-controls",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/audio-controls.tsx",
@@ -170,7 +459,7 @@ export const components: Component[] = [
   {
     description:
       "A compact label component for displaying status indicators, tags, or metadata with multiple size and variant options.",
-    example: <Badge>Beta</Badge>,
+    example: <BadgeDemo.Component />,
     name: "badge",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/badge.tsx",
@@ -181,15 +470,7 @@ export const components: Component[] = [
   {
     description:
       "A breadcrumb navigation component that displays a list of links to the current page's location, helping users understand their path and navigate back through hierarchical structures.",
-    example: (
-      <Breadcrumbs
-        items={[
-          { name: "Home", url: "#" },
-          { name: "Components", url: "#" },
-          { name: "Breadcrumbs", url: "#" },
-        ]}
-      />
-    ),
+    example: <BreadcrumbsDemo.Component />,
     name: "breadcrumbs",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/breadcrumbs.tsx",
@@ -274,23 +555,7 @@ export const components: Component[] = [
   {
     description:
       "A container component with rounded corners and subtle borders that provides a clean way to group and organize related content.",
-    example: (
-      <Card className="flex items-center gap-3">
-        <CountryAvatar
-          code="DE"
-          fallback="Chris Grabiński"
-          size={4}
-          src={avatarImage.src}
-        />
-        <div className="flex flex-col">
-          <p className="flex items-baseline gap-1.5 font-medium text-base">
-            Chris Grabiński
-            <Badge size={1}>Admin</Badge>
-          </p>
-          <p className="text-neutral-500 text-sm">mail@example.com</p>
-        </div>
-      </Card>
-    ),
+    example: <CardDemo.Component />,
     name: "card",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/card.tsx",
@@ -339,12 +604,7 @@ export const components: Component[] = [
   {
     description:
       "A checkbox input with custom styling that displays a checkmark icon when selected and supports both controlled and uncontrolled states.",
-    example: (
-      <CheckboxRoot>
-        <CheckboxIndicator />
-        Accept terms and conditions
-      </CheckboxRoot>
-    ),
+    example: <CheckboxDemo.Component />,
     name: "checkbox",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/checkbox.tsx",
@@ -355,9 +615,7 @@ export const components: Component[] = [
   {
     description:
       "A clickable component that copies text content to the clipboard and displays a success toast notification, providing immediate visual feedback to users.",
-    example: (
-      <CopyToClipboard className="text-xl">You can copy me</CopyToClipboard>
-    ),
+    example: <CopyToClipboardDemo.Component />,
     name: "copy-to-clipboard",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/copy-to-clipboard.tsx",
@@ -368,7 +626,7 @@ export const components: Component[] = [
   {
     description:
       "Displays a country flag and name based on an ISO country code, offering a compact and recognizable way to present geographic information.",
-    example: <CountryLabel className="text-xl" code="TH" />,
+    example: <CountryLabelDemo.Component />,
     name: "country-label",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/country-label.tsx",
@@ -379,70 +637,7 @@ export const components: Component[] = [
   {
     description:
       "A list of data items with labels and values, perfect for displaying key-value pairs or data in a list format.",
-    example: (
-      <Card className="w-full max-w-md">
-        <DataListRoot>
-          <DataListItem>
-            <DataListLabel>Name</DataListLabel>
-            <DataListValue>Peter Parker</DataListValue>
-          </DataListItem>
-          <DataListItem>
-            <DataListLabel>Onboarding status</DataListLabel>
-            <DataListValue>
-              <Status level={1}>Onboarded</Status>
-            </DataListValue>
-          </DataListItem>
-          <DataListItem>
-            <DataListLabel>Contract</DataListLabel>
-            <DataListValue>
-              <CopyToClipboard>
-                <Filename>
-                  peter_parker_united_states_employment_contract.pdf
-                </Filename>
-              </CopyToClipboard>
-            </DataListValue>
-          </DataListItem>
-          <DataListItem>
-            <DataListLabel>Email</DataListLabel>
-            <DataListValue>
-              <CopyToClipboard>mail@example.com</CopyToClipboard>
-            </DataListValue>
-          </DataListItem>
-          <DataListItem>
-            <DataListLabel>Country</DataListLabel>
-            <DataListValue>
-              <CountryLabel code="US" />
-            </DataListValue>
-          </DataListItem>
-          <DataListSub>
-            <DataListSubTrigger>
-              Address
-              <DataListSubIndicator />
-            </DataListSubTrigger>
-            <DataListSubContent>
-              <DataListRoot>
-                <DataListItem>
-                  <DataListLabel>Street</DataListLabel>
-                  <DataListValue>410 Chelsea Street</DataListValue>
-                </DataListItem>
-                <DataListItem>
-                  <DataListLabel>City</DataListLabel>
-                  <DataListValue>New York, NY</DataListValue>
-                </DataListItem>
-                <DataListItem>
-                  <DataListLabel>Zip</DataListLabel>
-                  <DataListValue>10001</DataListValue>
-                </DataListItem>
-              </DataListRoot>
-            </DataListSubContent>
-          </DataListSub>
-          <DataListItem>
-            <DataListLabel>Profession</DataListLabel>
-            <DataListValue>Photographer</DataListValue>
-          </DataListItem>
-        </DataListRoot>
-      </Card>
-    ),
+    example: <DataListDemo.Component />,
     name: "data-list",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/data-list.tsx",
@@ -451,14 +646,7 @@ export const components: Component[] = [
   {
     description:
       "A dropzone component that allows users to drag and files to upload them.",
-    example: (
-      <Dropzone
-        accept={{
-          "audio/*": [".mp3", ".wav", ".ogg"],
-          "video/*": [".mp4", ".mov", ".avi"],
-        }}
-      />
-    ),
+    example: <DropzoneDemo.Component />,
     name: "dropzone",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/dropzone.tsx",
@@ -467,11 +655,7 @@ export const components: Component[] = [
   {
     description:
       "Intelligently truncates long filenames using a center-ellipsis approach that keeps both the beginning and end visible while preserving the file extension.",
-    example: (
-      <Filename className="text-xl">
-        LandingPage_HeroSection_V3_final_FINALreallyFINAL_ApprovedByClient_SaturdayNightEdit_20240614_v2_finalfinal_(do-not-use-this-one)_MergedLayers.psd
-      </Filename>
-    ),
+    example: <FilenameDemo.Component />,
     name: "filename",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/filename.tsx",
@@ -482,11 +666,7 @@ export const components: Component[] = [
   {
     description:
       "A bordered container component for displaying icons in a consistent, visually distinct box format with multiple size options.",
-    example: (
-      <IconBox size={4}>
-        <StarIcon />
-      </IconBox>
-    ),
+    example: <IconBoxDemo.Component />,
     name: "icon-box",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/icon-box.tsx",
@@ -574,11 +754,7 @@ export const components: Component[] = [
   {
     description:
       "A clickable component that displays a temporary toast notification above the element when clicked, providing instant visual feedback for user actions.",
-    example: (
-      <InlineToast message="Ta-da!">
-        Something happens when you click me
-      </InlineToast>
-    ),
+    example: <InlineToastDemo.Component />,
     name: "inline-toast",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/inline-toast.tsx",
@@ -588,7 +764,7 @@ export const components: Component[] = [
   },
   {
     description: "Indicates progress in a circular shape.",
-    example: <ProgressRing size={6} value={0.65} />,
+    example: <ProgressRingDemo.Component />,
     name: "progress-ring",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/progress-ring.tsx",
@@ -599,13 +775,7 @@ export const components: Component[] = [
   {
     description:
       "A toggle group component that allows users to select a single option from multiple related choices, displayed as a visually connected set of buttons.",
-    example: (
-      <SegmentedControlRoot defaultValue="desktop" size={3}>
-        <SegmentedControlItem value="mobile">Mobile</SegmentedControlItem>
-        <SegmentedControlItem value="tablet">Tablet</SegmentedControlItem>
-        <SegmentedControlItem value="desktop">Desktop</SegmentedControlItem>
-      </SegmentedControlRoot>
-    ),
+    example: <SegmentedControlDemo.Component />,
     name: "segmented-control",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/segmented-control.tsx",
@@ -615,7 +785,7 @@ export const components: Component[] = [
   },
   {
     description: "An input for selecting values from a range of values",
-    example: <Slider defaultValue={[50]} />,
+    example: <SliderDemo.Component />,
     name: "slider",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/slider.tsx",
@@ -626,11 +796,7 @@ export const components: Component[] = [
   {
     description:
       "Indicates urgency, severity, or importance of a status or alert.",
-    example: (
-      <Status className="text-3xl" level={3}>
-        Error
-      </Status>
-    ),
+    example: <StatusDemo.Component />,
     name: "status",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/status.tsx",
@@ -641,7 +807,7 @@ export const components: Component[] = [
   {
     description:
       "A toggle switch component for binary on/off states with smooth animations, customizable sizes, and a sliding thumb indicator.",
-    example: <Switch />,
+    example: <SwitchDemo.Component />,
     name: "switch",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/switch.tsx",
@@ -652,16 +818,7 @@ export const components: Component[] = [
   {
     description:
       "Displays contextual information in a small popover when users hover over or focus an element, enhancing discoverability and providing helpful guidance.",
-    example: (
-      <TooltipRoot>
-        <TooltipTrigger asChild>
-          <IconButton size={3} variant="ghost">
-            <StarIcon />
-          </IconButton>
-        </TooltipTrigger>
-        <TooltipContent>Add to favorites</TooltipContent>
-      </TooltipRoot>
-    ),
+    example: <TooltipDemo.Component />,
     name: "tooltip",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/tooltip.tsx",

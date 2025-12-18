@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ComponentCanvas } from "@/app/aura/component-canvas";
 import { ComponentPreview } from "@/app/aura/component-preview";
-import { components } from "@/app/aura/components/components";
+import { component as components } from "@/app/aura/components/components";
 import * as patterns from "@/app/aura/patterns";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Button } from "@/components/button";
@@ -12,25 +11,26 @@ import { GitHubIcon } from "@/icons/github";
 import { StorybookIcon } from "@/icons/storybook";
 
 const getComponentData = (componentName: string) => {
-  return components.find((c) => c.name === componentName);
+  if (componentName in components) {
+    return components[componentName as keyof typeof components];
+  }
+
+  notFound();
 };
 
-export async function generateStaticParams() {
-  return components.map((component) => ({
-    component: component.name,
-  }));
-}
+// export async function generateStaticParams() {
+//   return components.map((component) => ({
+//     component: component.name,
+//   }));
+// }
 
 export async function generateMetadata({
   params,
-}: PageProps<"/aura/components/[component]">): Promise<Metadata> {
+}: PageProps<"/aura/components/[...component]">): Promise<Metadata> {
   const { component } = await params;
 
-  const componentData = getComponentData(component);
-
-  if (!componentData) {
-    return {};
-  }
+  const componentName = component.join("/");
+  const componentData = getComponentData(componentName);
 
   return {
     description: componentData.description,
@@ -40,18 +40,19 @@ export async function generateMetadata({
 
 export default async function ComponentPage({
   params,
-}: PageProps<"/aura/components/[component]">) {
+}: PageProps<"/aura/components/[...component]">) {
   const { component } = await params;
 
-  const componentData = getComponentData(component);
+  const componentName = component.join("/");
+  const componentData = getComponentData(componentName);
 
-  if (!componentData) {
-    notFound();
-  }
-
-  const componentPatterns = Object.values(patterns).filter((pattern) =>
-    pattern.components.includes(component),
+  const mainDemo = Object.values(patterns).find(
+    (pattern) => pattern.name === componentName,
   );
+
+  const componentPatterns = Object.values(patterns)
+    .filter((pattern) => pattern.components.includes(componentName))
+    .filter((pattern) => pattern.name !== componentName);
 
   return (
     <article className="grid gap-12 pb-12">
@@ -99,8 +100,8 @@ export default async function ComponentPage({
           )}
         </div>
       </div>
-      <ComponentPreview>{componentData.example}</ComponentPreview>
-      {componentData.variants && (
+      <ComponentPreview>{mainDemo && <mainDemo.Component />}</ComponentPreview>
+      {/* {componentData.variants && (
         <div className="grid gap-6">
           <h2 className="font-medium text-2xl">Variants</h2>
           <div className="grid gap-6 sm:grid-cols-2">
@@ -110,19 +111,19 @@ export default async function ComponentPage({
                 href={`/aura/components/${component}/${variant.name}`}
                 key={variant.name}
               >
-                <Card className="flex flex-col justify-end hover:bg-neutral-50">
+                <Card className="flex flex-col justify-end sm:aspect-2/1">
                   {variant.title}
                 </Card>
               </Link>
             ))}
           </div>
         </div>
-      )}
+      )} */}
       {componentPatterns.length > 0 && (
         <div className="grid gap-6">
           <h2 className="font-medium text-2xl">Examples</h2>
-          {componentPatterns.map(({ Component, title }) => (
-            <div className="grid gap-3" key={title}>
+          {componentPatterns.map(({ Component, name }) => (
+            <div className="grid gap-3" key={name}>
               {/* <h3 className="font-medium text-lg">{title}</h3> */}
               <Card className="p-0">
                 <ComponentCanvas>

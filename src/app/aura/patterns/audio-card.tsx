@@ -1,11 +1,9 @@
 import { PlayIcon, ThumbsUpIcon } from "lucide-react";
-import Image from "next/image";
+
 import { AudioButton } from "@/components/audio-button";
 import { Card } from "@/components/card";
-import albumCover from "../../../../public/aura/album-cover.png";
 
-const title = "Audio Card";
-const description = "";
+const name = "card-audio";
 
 const components = ["card", "audio-button"];
 
@@ -79,6 +77,5 @@ const Component = () => {
 export const AudioCard = {
   Component,
   components,
-  description,
-  title,
+  name,
 };
