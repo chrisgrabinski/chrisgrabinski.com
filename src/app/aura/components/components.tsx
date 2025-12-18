@@ -1,45 +1,5 @@
-import { GhostIcon, StarIcon, TrashIcon } from "lucide-react";
-import Image from "next/image";
-import avatarImage from "@/app/(homepage)/images/chris-grabinski.jpg";
-import {
-  AnnouncementDemo,
-  AudioControlsDemo,
-  BadgeDemo,
-  BreadcrumbsDemo,
-  CardDemo,
-  CheckboxDemo,
-  CountryLabelDemo,
-  DataListDemo,
-  DropzoneDemo,
-  FilenameDemo,
-  IconBoxDemo,
-  InlineToastDemo,
-  ProgressRingDemo,
-  SegmentedControlDemo,
-  SliderDemo,
-  StatusDemo,
-  SwitchDemo,
-  TooltipDemo,
-} from "@/app/aura/patterns";
-import { AudioButtonDemo } from "@/app/aura/patterns/audio-button";
-import { CopyToClipboardDemo } from "@/app/aura/patterns/copy-to-clipboard";
-
-import { AuraButton } from "@/components/aura-button";
-import { Avatar } from "@/components/avatar";
-import { CountryAvatar } from "@/components/avatar-country";
-import { VerifiedAvatar } from "@/components/avatar-verified";
-import { Badge } from "@/components/badge";
-
-import { Button } from "@/components/button";
-import { Card } from "@/components/card";
-
-import { IconButton } from "@/components/icon-button";
-
-import pattern from "../../(homepage)/images/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg";
-
-type Component = {
+export type Component = {
   description: string;
-  example?: React.ReactNode;
   name?: string;
   sourceUrl: string;
   storybookUrl?: string;
@@ -358,7 +318,7 @@ export const component: Record<string, Component> = {
 export const components: Component[] = [
   {
     description: "A simple button that plays a short audio clip when clicked.",
-    example: <AnnouncementDemo.Component />,
+
     name: "announcement",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/announcement.tsx",
@@ -368,7 +328,7 @@ export const components: Component[] = [
   },
   {
     description: "A simple button that plays a short audio clip when clicked.",
-    example: <AudioButtonDemo.Component />,
+
     name: "audio-button",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/audio-button.tsx",
@@ -379,7 +339,7 @@ export const components: Component[] = [
   {
     description:
       "A classic audio controls interface with commonly used functionality.",
-    example: <AudioControlsDemo.Component />,
+
     name: "audio-controls",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/audio-controls.tsx",
@@ -388,7 +348,6 @@ export const components: Component[] = [
   {
     description:
       "A branded button component that displays a sparkles icon and animated agent ring, perfect for highlighting primary actions.",
-    example: <AuraButton size={4}>Ask Aura</AuraButton>,
     name: "aura-button",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/aura-button.tsx",
@@ -399,34 +358,17 @@ export const components: Component[] = [
   {
     description:
       "Displays user profile pictures with automatic fallback to initials when images are unavailable or fail to load.",
-    example: (
-      <div className="flex gap-6">
-        <Avatar fallback="Chris Grabiński" size={7} src={avatarImage.src} />
-        <Avatar fallback="Chris Grabiński" size={7} />
-      </div>
-    ),
     name: "avatar",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/avatar.tsx",
     storybookUrl:
       "https://storybook.chrisgrabinski.com/?path=/docs/avatar--docs",
-
     title: "Avatar",
     variants: [
       {
         description:
           "An avatar variant that overlays a country flag in the bottom-right corner, ideal for displaying user location or geographic context.",
-        example: (
-          <div className="flex gap-6">
-            <CountryAvatar
-              code="DE"
-              fallback="Chris Grabiński"
-              size={7}
-              src={avatarImage.src}
-            />
-            <CountryAvatar code="DE" fallback="Chris Grabiński" size={7} />
-          </div>
-        ),
+
         name: "country",
         sourceUrl:
           "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/avatar-country.tsx",
@@ -437,16 +379,7 @@ export const components: Component[] = [
       {
         description:
           "An avatar variant that displays a verified badge overlay in the bottom-right corner, perfect for authenticated or verified accounts.",
-        example: (
-          <div className="flex gap-6">
-            <VerifiedAvatar
-              fallback="Chris Grabiński"
-              size={7}
-              src={avatarImage.src}
-            />
-            <VerifiedAvatar fallback="Chris Grabiński" size={7} />
-          </div>
-        ),
+
         name: "verified",
         sourceUrl:
           "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/avatar-verified.tsx",
@@ -459,7 +392,7 @@ export const components: Component[] = [
   {
     description:
       "A compact label component for displaying status indicators, tags, or metadata with multiple size and variant options.",
-    example: <BadgeDemo.Component />,
+
     name: "badge",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/badge.tsx",
@@ -470,7 +403,7 @@ export const components: Component[] = [
   {
     description:
       "A breadcrumb navigation component that displays a list of links to the current page's location, helping users understand their path and navigate back through hierarchical structures.",
-    example: <BreadcrumbsDemo.Component />,
+
     name: "breadcrumbs",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/breadcrumbs.tsx",
@@ -481,7 +414,7 @@ export const components: Component[] = [
   {
     description:
       "A versatile button component with multiple variants, sizes, and states that supports loading and disabled states for building interactive interfaces.",
-    example: <Button size={4}>You can click me</Button>,
+
     name: "button",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/button.tsx",
@@ -492,12 +425,7 @@ export const components: Component[] = [
       {
         description:
           "A button variant styled in red for destructive actions like delete or remove operations.",
-        example: (
-          <Button size={4} variant="destructive">
-            <TrashIcon />
-            Delete
-          </Button>
-        ),
+
         name: "destructive",
         sourceUrl:
           "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/button.tsx",
@@ -508,11 +436,7 @@ export const components: Component[] = [
       {
         description:
           "A button variant with transparent background and subtle hover effect, perfect for secondary actions that don't need emphasis.",
-        example: (
-          <Button size={4} variant="ghost">
-            Spooky! 👻
-          </Button>
-        ),
+
         name: "ghost",
         sourceUrl:
           "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/button.tsx",
@@ -523,11 +447,7 @@ export const components: Component[] = [
       {
         description:
           "A button variant with a visible border and transparent background, ideal for secondary actions that need visual distinction.",
-        example: (
-          <Button size={4} variant="outline">
-            You may click me
-          </Button>
-        ),
+
         name: "outline",
         sourceUrl:
           "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/button.tsx",
@@ -538,11 +458,7 @@ export const components: Component[] = [
       {
         description:
           "A button variant styled in the brand color for primary actions that require the most user attention and engagement.",
-        example: (
-          <Button size={4} variant="primary">
-            You must click me
-          </Button>
-        ),
+
         name: "primary",
         sourceUrl:
           "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/button.tsx",
@@ -555,7 +471,7 @@ export const components: Component[] = [
   {
     description:
       "A container component with rounded corners and subtle borders that provides a clean way to group and organize related content.",
-    example: <CardDemo.Component />,
+
     name: "card",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/card.tsx",
@@ -565,33 +481,6 @@ export const components: Component[] = [
       {
         description:
           "A card variant with a glass-like effect that creates a frosted glass appearance.",
-        example: (
-          <div className="relative grid w-full place-items-center overflow-clip rounded-xl p-12">
-            <Image
-              alt=""
-              className="absolute inset-0 object-cover contrast-200"
-              src={pattern}
-            />
-            <Card
-              className="col-start-1 row-start-1 flex items-center gap-3"
-              variant="glass"
-            >
-              <CountryAvatar
-                code="DE"
-                fallback="Chris Grabiński"
-                size={4}
-                src={avatarImage.src}
-              />
-              <div className="flex flex-col">
-                <p className="flex items-baseline gap-1.5 font-medium text-base">
-                  Chris Grabiński
-                  <Badge size={1}>Admin</Badge>
-                </p>
-                <p className="text-neutral-500 text-sm">mail@example.com</p>
-              </div>
-            </Card>
-          </div>
-        ),
         name: "glass",
         sourceUrl:
           "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/button.tsx",
@@ -604,7 +493,7 @@ export const components: Component[] = [
   {
     description:
       "A checkbox input with custom styling that displays a checkmark icon when selected and supports both controlled and uncontrolled states.",
-    example: <CheckboxDemo.Component />,
+
     name: "checkbox",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/checkbox.tsx",
@@ -615,7 +504,7 @@ export const components: Component[] = [
   {
     description:
       "A clickable component that copies text content to the clipboard and displays a success toast notification, providing immediate visual feedback to users.",
-    example: <CopyToClipboardDemo.Component />,
+
     name: "copy-to-clipboard",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/copy-to-clipboard.tsx",
@@ -626,7 +515,7 @@ export const components: Component[] = [
   {
     description:
       "Displays a country flag and name based on an ISO country code, offering a compact and recognizable way to present geographic information.",
-    example: <CountryLabelDemo.Component />,
+
     name: "country-label",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/country-label.tsx",
@@ -637,7 +526,7 @@ export const components: Component[] = [
   {
     description:
       "A list of data items with labels and values, perfect for displaying key-value pairs or data in a list format.",
-    example: <DataListDemo.Component />,
+
     name: "data-list",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/data-list.tsx",
@@ -646,7 +535,7 @@ export const components: Component[] = [
   {
     description:
       "A dropzone component that allows users to drag and files to upload them.",
-    example: <DropzoneDemo.Component />,
+
     name: "dropzone",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/dropzone.tsx",
@@ -655,7 +544,7 @@ export const components: Component[] = [
   {
     description:
       "Intelligently truncates long filenames using a center-ellipsis approach that keeps both the beginning and end visible while preserving the file extension.",
-    example: <FilenameDemo.Component />,
+
     name: "filename",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/filename.tsx",
@@ -666,7 +555,7 @@ export const components: Component[] = [
   {
     description:
       "A bordered container component for displaying icons in a consistent, visually distinct box format with multiple size options.",
-    example: <IconBoxDemo.Component />,
+
     name: "icon-box",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/icon-box.tsx",
@@ -677,11 +566,7 @@ export const components: Component[] = [
   {
     description:
       "A button component that displays only an icon without text, perfect for compact interfaces, toolbar actions, and space-constrained layouts.",
-    example: (
-      <IconButton size={4}>
-        <StarIcon />
-      </IconButton>
-    ),
+
     name: "icon-button",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/icon-button.tsx",
@@ -692,11 +577,7 @@ export const components: Component[] = [
       {
         description:
           "An icon button variant styled in red for destructive actions like delete or remove operations.",
-        example: (
-          <IconButton size={4} variant="destructive">
-            <TrashIcon />
-          </IconButton>
-        ),
+
         name: "destructive",
         sourceUrl:
           "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/icon-button.tsx",
@@ -707,11 +588,7 @@ export const components: Component[] = [
       {
         description:
           "An icon button variant with transparent background and subtle hover effect, ideal for secondary actions that don't need emphasis.",
-        example: (
-          <IconButton size={4} variant="ghost">
-            <GhostIcon />
-          </IconButton>
-        ),
+
         name: "ghost",
         sourceUrl:
           "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/icon-button.tsx",
@@ -722,11 +599,7 @@ export const components: Component[] = [
       {
         description:
           "An icon button variant with a visible border and transparent background, perfect for secondary actions that need visual distinction.",
-        example: (
-          <IconButton size={4} variant="outline">
-            <StarIcon />
-          </IconButton>
-        ),
+
         name: "outline",
         sourceUrl:
           "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/icon-button.tsx",
@@ -737,11 +610,7 @@ export const components: Component[] = [
       {
         description:
           "An icon button variant styled in the brand color for primary actions that require the most user attention and engagement.",
-        example: (
-          <IconButton size={4} variant="primary">
-            <StarIcon />
-          </IconButton>
-        ),
+
         name: "primary",
         sourceUrl:
           "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/icon-button.tsx",
@@ -754,7 +623,7 @@ export const components: Component[] = [
   {
     description:
       "A clickable component that displays a temporary toast notification above the element when clicked, providing instant visual feedback for user actions.",
-    example: <InlineToastDemo.Component />,
+
     name: "inline-toast",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/inline-toast.tsx",
@@ -764,7 +633,7 @@ export const components: Component[] = [
   },
   {
     description: "Indicates progress in a circular shape.",
-    example: <ProgressRingDemo.Component />,
+
     name: "progress-ring",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/progress-ring.tsx",
@@ -775,7 +644,7 @@ export const components: Component[] = [
   {
     description:
       "A toggle group component that allows users to select a single option from multiple related choices, displayed as a visually connected set of buttons.",
-    example: <SegmentedControlDemo.Component />,
+
     name: "segmented-control",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/segmented-control.tsx",
@@ -785,7 +654,7 @@ export const components: Component[] = [
   },
   {
     description: "An input for selecting values from a range of values",
-    example: <SliderDemo.Component />,
+
     name: "slider",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/slider.tsx",
@@ -796,7 +665,7 @@ export const components: Component[] = [
   {
     description:
       "Indicates urgency, severity, or importance of a status or alert.",
-    example: <StatusDemo.Component />,
+
     name: "status",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/status.tsx",
@@ -807,7 +676,7 @@ export const components: Component[] = [
   {
     description:
       "A toggle switch component for binary on/off states with smooth animations, customizable sizes, and a sliding thumb indicator.",
-    example: <SwitchDemo.Component />,
+
     name: "switch",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/switch.tsx",
@@ -818,7 +687,7 @@ export const components: Component[] = [
   {
     description:
       "Displays contextual information in a small popover when users hover over or focus an element, enhancing discoverability and providing helpful guidance.",
-    example: <TooltipDemo.Component />,
+
     name: "tooltip",
     sourceUrl:
       "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/tooltip.tsx",
