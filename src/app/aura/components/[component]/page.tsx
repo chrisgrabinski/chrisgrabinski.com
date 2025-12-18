@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ComponentCanvas } from "@/app/aura/component-canvas";
 import { ComponentPreview } from "@/app/aura/component-preview";
 import { components } from "@/app/aura/components/components";
+import * as patterns from "@/app/aura/patterns";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Button } from "@/components/button";
 import { Card } from "@/components/card";
@@ -46,6 +48,10 @@ export default async function ComponentPage({
   if (!componentData) {
     notFound();
   }
+
+  const componentPatterns = Object.values(patterns).filter((pattern) =>
+    pattern.components.includes(component),
+  );
 
   return (
     <article className="grid gap-12 pb-12">
@@ -104,12 +110,27 @@ export default async function ComponentPage({
                 href={`/aura/components/${component}/${variant.name}`}
                 key={variant.name}
               >
-                <Card className="flex flex-col justify-end sm:aspect-2/1">
+                <Card className="flex flex-col justify-end hover:bg-neutral-50">
                   {variant.title}
                 </Card>
               </Link>
             ))}
           </div>
+        </div>
+      )}
+      {componentPatterns.length > 0 && (
+        <div className="grid gap-6">
+          <h2 className="font-medium text-2xl">Examples</h2>
+          {componentPatterns.map(({ Component, title }) => (
+            <div className="grid gap-3" key={title}>
+              {/* <h3 className="font-medium text-lg">{title}</h3> */}
+              <Card className="p-0">
+                <ComponentCanvas>
+                  <Component />
+                </ComponentCanvas>
+              </Card>
+            </div>
+          ))}
         </div>
       )}
     </article>
