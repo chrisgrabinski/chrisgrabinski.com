@@ -9,10 +9,10 @@ const statusIndicatorVariants = cva(
   ),
   {
     defaultVariants: {
-      level: 0,
+      severity: 0,
     },
     variants: {
-      level: {
+      severity: {
         0: "text-neutral-300 before:hidden",
         1: "text-green-500 after:from-green-300 after:to-green-700",
         2: "text-yellow-400 after:from-yellow-200 after:to-yellow-500",
@@ -27,13 +27,13 @@ type StatusIndicatorVariants = VariantProps<typeof statusIndicatorVariants>;
 
 type StatusProps = React.ComponentProps<"span"> & StatusIndicatorVariants;
 
-const Status = ({ children, className, level, ...props }: StatusProps) => {
+const Status = ({ children, className, severity, ...props }: StatusProps) => {
   return (
     <span
       className={cn("isolate inline-flex items-center gap-[0.5ch]", className)}
       {...props}
     >
-      <span className={cn(statusIndicatorVariants({ level }))} />
+      <span className={cn(statusIndicatorVariants({ severity }))} />
       {children}
     </span>
   );

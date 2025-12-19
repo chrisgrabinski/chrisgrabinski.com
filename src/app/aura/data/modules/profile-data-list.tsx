@@ -34,7 +34,7 @@ export const profileDataList: ModuleData = {
         <DataListItem>
           <DataListLabel>Onboarding status</DataListLabel>
           <DataListValue>
-            <Status level={1}>Onboarded</Status>
+            <Status severity={1}>Onboarded</Status>
           </DataListValue>
         </DataListItem>
         <DataListItem>

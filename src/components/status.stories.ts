@@ -4,7 +4,7 @@ import { Status } from "./status";
 const meta = {
   args: {
     children: "Neutral",
-    level: 0,
+    severity: 0,
   },
   component: Status,
   parameters: {
@@ -21,24 +21,24 @@ export const Neutral: Story = {};
 
 export const Positive: Story = {
   args: {
-    level: 1,
+    severity: 1,
   },
 };
 
 export const Attention: Story = {
   args: {
-    level: 2,
+    severity: 2,
   },
 };
 
 export const Negative: Story = {
   args: {
-    level: 3,
+    severity: 3,
   },
 };
 
 export const Critical: Story = {
   args: {
-    level: 4,
+    severity: 4,
   },
 };
