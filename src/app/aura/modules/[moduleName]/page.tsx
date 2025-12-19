@@ -1,3 +1,4 @@
+import { PuzzleIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ComponentCanvas } from "@/app/aura/component-canvas";
@@ -70,7 +71,10 @@ export default async function TestPage({
       <ComponentPreview>{demo}</ComponentPreview>
       {!!components?.length && (
         <section className="grid gap-6">
-          <h2 className="font-medium text-2xl">Components</h2>
+          <h2 className="flex items-center gap-[0.25ch] font-medium text-2xl">
+            <PuzzleIcon />
+            Sub components
+          </h2>
           <div className="grid gap-6 sm:grid-cols-2">
             {components.map((component) => (
               <div className="flex flex-col gap-3" key={component.name}>

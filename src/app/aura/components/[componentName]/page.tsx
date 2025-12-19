@@ -1,3 +1,4 @@
+import { PackageIcon, PuzzleIcon, ShapesIcon } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -91,7 +92,10 @@ export default async function TestPage({
       <ComponentPreview>{demo}</ComponentPreview>
       {!!variants?.length && (
         <section className="grid gap-6">
-          <h2 className="font-medium text-2xl">Variants</h2>
+          <h2 className="flex items-center gap-[0.25ch] font-medium text-2xl">
+            <ShapesIcon />
+            Variants
+          </h2>
           <div className="grid gap-6 sm:grid-cols-2">
             {variants?.map((variant) => (
               <div className="grid gap-1.5" key={variant.title}>
@@ -106,7 +110,10 @@ export default async function TestPage({
       )}
       {!!subComponents?.length && (
         <section className="grid gap-6">
-          <h2 className="font-medium text-2xl">Components</h2>
+          <h2 className="flex items-center gap-[0.25ch] font-medium text-2xl">
+            <PuzzleIcon />
+            Sub components
+          </h2>
           <div className="grid gap-6 sm:grid-cols-2">
             {subComponents.map((component) => (
               <div className="flex flex-col gap-3" key={component.name}>
@@ -129,7 +136,10 @@ export default async function TestPage({
       )}
       {!!modules?.length && (
         <section className="grid gap-6">
-          <h2 className="font-medium text-2xl">Modules</h2>
+          <h2 className="flex items-center gap-[0.25ch] font-medium text-2xl">
+            <PackageIcon />
+            Modules
+          </h2>
           <div className="grid gap-6">
             {modules.map((module) => (
               <Link
