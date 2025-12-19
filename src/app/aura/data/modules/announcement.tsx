@@ -37,7 +37,8 @@ export const announcement: ModuleData = {
       </IconButton>
     </Card>
   ),
-  description: "An announcement for a new feature or update.",
+  description:
+    "A dismissible banner for promoting features, updates, or important notifications with icon, message, and call-to-action.",
   name: "announcement",
   title: "Announcement",
 };

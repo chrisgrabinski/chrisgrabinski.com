@@ -23,7 +23,8 @@ export const profileCard: ModuleData = {
       </div>
     </Card>
   ),
-  description: "A card for displaying a user's profile information.",
+  description:
+    "A compact card presenting user identity with avatar, name, role badge, and contact information.",
   name: "profile-card",
   title: "Profile Card",
 };

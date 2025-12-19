@@ -88,7 +88,8 @@ export const profileDataList: ModuleData = {
       </DataListRoot>
     </Card>
   ),
-  description: "A list of profile data items.",
+  description:
+    "A comprehensive profile view combining user details, documents, location, and status into an organized, interactive layout.",
   name: "profile-data-list",
   title: "Profile Data List",
 };
