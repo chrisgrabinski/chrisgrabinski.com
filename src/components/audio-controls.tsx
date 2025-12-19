@@ -3,8 +3,6 @@
 import {
   HeadphoneOffIcon,
   HeadphonesIcon,
-  PauseIcon,
-  PlayIcon,
   Repeat1Icon,
   RepeatIcon,
   SkipBackIcon,

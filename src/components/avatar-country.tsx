@@ -4,7 +4,6 @@ import type { CountryAlpha2Code } from "@/constants/countries";
 import { getCountry } from "@/lib/countries";
 import { cn } from "@/lib/styles";
 import { Avatar } from "./avatar";
-import countryAvatarMask from "./avatar-country.mask.svg";
 
 const CountryAvatarRoot = ({
   children,

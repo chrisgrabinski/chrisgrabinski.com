@@ -29,7 +29,7 @@ export const SmallNavigation = () => {
         </header>
         {isOpen && (
           <ScrollArea className="flex-1 bg-white">
-            <div className="px-3">
+            <div className="px-3 pb-12">
               <Navigation onSelect={() => setIsOpen(false)} />
             </div>
           </ScrollArea>

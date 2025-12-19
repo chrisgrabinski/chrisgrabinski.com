@@ -1,4 +1,7 @@
+import * as componentsData from "@/app/aura/data/components";
+
 export default function RootPage() {
+  console.log(componentsData);
   return (
     <div className="grid gap-1.5">
       <h1 className="font-semibold text-4xl">Welcome to Aura</h1>
