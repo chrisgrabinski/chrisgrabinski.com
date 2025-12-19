@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ComponentCanvas } from "@/app/aura/component-canvas";
@@ -13,6 +14,24 @@ const getComponentData = (name: string) => {
     (component) => component.name === name,
   );
 };
+
+export async function generateStaticParams() {
+  return Object.values(componentsData).map((component) => ({
+    componentName: component.name,
+  }));
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps<"/aura/components/[componentName]">): Promise<Metadata> {
+  const { componentName } = await params;
+  const componentData = getComponentData(componentName);
+
+  return {
+    description: componentData?.description,
+    title: componentData?.title,
+  };
+}
 
 export default async function TestPage({
   params,

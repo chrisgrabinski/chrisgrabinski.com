@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ComponentCanvas } from "@/app/aura/component-canvas";
 import { ComponentPreview } from "@/app/aura/component-preview";
@@ -10,6 +11,24 @@ import { GitHubIcon } from "@/icons/github";
 const getModuleData = (name: string) => {
   return Object.values(modulesData).find((module) => module.name === name);
 };
+
+export async function generateStaticParams() {
+  return Object.values(modulesData).map((module) => ({
+    moduleName: module.name,
+  }));
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps<"/aura/modules/[moduleName]">): Promise<Metadata> {
+  const { moduleName } = await params;
+  const moduleData = getModuleData(moduleName);
+
+  return {
+    description: moduleData?.description,
+    title: moduleData?.title,
+  };
+}
 
 export default async function TestPage({
   params,
