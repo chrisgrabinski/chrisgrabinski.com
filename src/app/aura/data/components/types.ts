@@ -1,4 +1,5 @@
 export type ComponentData = {
+  components?: string[];
   demo: React.ReactNode;
   description?: string;
   name: string;

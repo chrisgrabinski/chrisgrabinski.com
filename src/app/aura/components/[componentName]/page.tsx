@@ -44,8 +44,19 @@ export default async function TestPage({
     notFound();
   }
 
-  const { title, description, demo, sourceUrl, storybookUrl, variants } =
-    componentData;
+  const {
+    title,
+    description,
+    components,
+    demo,
+    sourceUrl,
+    storybookUrl,
+    variants,
+  } = componentData;
+
+  const subComponents = Object.values(componentsData).filter((component) =>
+    components?.includes(component.name),
+  );
 
   const modules = Object.values(modulesData).filter((test) =>
     test.components.includes(componentName),
@@ -88,6 +99,29 @@ export default async function TestPage({
                   {variant.demo}
                 </ComponentCanvas>
                 <h3 className="font-medium text-lg">{variant.title}</h3>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+      {!!subComponents?.length && (
+        <section className="grid gap-6">
+          <h2 className="font-medium text-2xl">Components</h2>
+          <div className="grid gap-6 sm:grid-cols-2">
+            {subComponents.map((component) => (
+              <div className="flex flex-col gap-3" key={component.name}>
+                <ComponentCanvas className="aspect-video flex-1">
+                  {component.demo}
+                </ComponentCanvas>
+                <h3 className="font-medium text-lg">
+                  <Link
+                    className="flex h-full flex-col gap-1.5"
+                    href={`/aura/components/${component.name}`}
+                    key={component.name}
+                  >
+                    {component.title}
+                  </Link>
+                </h3>
               </div>
             ))}
           </div>
