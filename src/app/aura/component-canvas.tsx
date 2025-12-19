@@ -1,4 +1,3 @@
-import { Card } from "@/components/card";
 import { cn } from "@/lib/styles";
 
 type ComponentCanvasProps = React.ComponentProps<"div">;
@@ -10,7 +9,7 @@ const ComponentCanvas = ({
   ...props
 }: ComponentCanvasProps) => {
   return (
-    <Card
+    <div
       className={cn(
         "relative grid place-items-center overflow-visible",
         className,
@@ -23,7 +22,7 @@ const ComponentCanvas = ({
       {...props}
     >
       {children}
-    </Card>
+    </div>
   );
 };
 

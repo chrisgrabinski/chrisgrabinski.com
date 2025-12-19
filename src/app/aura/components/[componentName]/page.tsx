@@ -7,6 +7,7 @@ import { ComponentPreview } from "@/app/aura/component-preview";
 import * as componentsData from "@/app/aura/data/components";
 import * as modulesData from "@/app/aura/data/modules";
 import { Button } from "@/components/button";
+import { Card } from "@/components/card";
 import { GitHubIcon } from "@/icons/github";
 import { StorybookIcon } from "@/icons/storybook";
 
@@ -98,12 +99,14 @@ export default async function TestPage({
           </h2>
           <div className="grid gap-6 sm:grid-cols-2">
             {variants?.map((variant) => (
-              <div className="grid gap-1.5" key={variant.title}>
-                <ComponentCanvas key={variant.title}>
+              <Card className="p-0" key={variant.title}>
+                <ComponentCanvas className="p-6" key={variant.title}>
                   {variant.demo}
                 </ComponentCanvas>
-                <h3 className="font-medium text-lg">{variant.title}</h3>
-              </div>
+                <div className="p-6">
+                  <h3 className="font-medium text-lg">{variant.title}</h3>
+                </div>
+              </Card>
             ))}
           </div>
         </section>
@@ -116,20 +119,22 @@ export default async function TestPage({
           </h2>
           <div className="grid gap-6 sm:grid-cols-2">
             {subComponents.map((component) => (
-              <div className="flex flex-col gap-3" key={component.name}>
+              <Card className="p-0" key={component.name}>
                 <ComponentCanvas className="aspect-video flex-1">
                   {component.demo}
                 </ComponentCanvas>
-                <h3 className="font-medium text-lg">
-                  <Link
-                    className="flex h-full flex-col gap-1.5"
-                    href={`/aura/components/${component.name}`}
-                    key={component.name}
-                  >
-                    {component.title}
-                  </Link>
-                </h3>
-              </div>
+                <div className="p-6">
+                  <h3 className="font-medium text-lg">
+                    <Link
+                      className="flex h-full flex-col gap-1.5"
+                      href={`/aura/components/${component.name}`}
+                      key={component.name}
+                    >
+                      {component.title}
+                    </Link>
+                  </h3>
+                </div>
+              </Card>
             ))}
           </div>
         </section>
@@ -147,10 +152,14 @@ export default async function TestPage({
                 href={`/aura/modules/${module.name}`}
                 key={module.name}
               >
-                <ComponentCanvas className="pointer-events-none flex-1">
-                  {module.demo}
-                </ComponentCanvas>
-                <h3 className="font-medium text-lg">{module.title}</h3>
+                <Card className="p-0">
+                  <ComponentCanvas className="pointer-events-none flex-1 p-6">
+                    {module.demo}
+                  </ComponentCanvas>
+                  <div className="p-6">
+                    <h3 className="font-medium text-lg">{module.title}</h3>
+                  </div>
+                </Card>
               </Link>
             ))}
           </div>
