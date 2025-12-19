@@ -1,12 +1,11 @@
 {
-    "editor.codeActionsOnSave": {
-      "source.fixAll.biome": "explicit"
-    },
-    "editor.defaultFormatter": "biomejs.biome",
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
-    "json.schemaDownload.enable": true,
-    "tailwindCSS.classFunctions": ["cn", "clsx", "cva", "tw"],
-    "typescript.preferences.importModuleSpecifier": "non-relative"
-  }
-  
+  "editor.codeActionsOnSave": {
+    "source.fixAll.biome": "explicit"
+  },
+  "editor.defaultFormatter": "biomejs.biome",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "json.schemaDownload.enable": true,
+  "tailwindCSS.classFunctions": ["cn", "clsx", "cva", "tw"],
+  "typescript.preferences.importModuleSpecifier": "non-relative"
+}
