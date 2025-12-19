@@ -7,7 +7,8 @@ export const slider: ComponentData = {
       <Slider defaultValue={[50]} max={100} />
     </div>
   ),
-  description: "A draggable slider for selecting numeric values",
+  description:
+    "An interactive input for selecting numeric values by dragging along a continuous range.",
   name: "slider",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/slider.tsx",

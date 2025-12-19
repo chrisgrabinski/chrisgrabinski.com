@@ -3,7 +3,8 @@ import { Status } from "@/components/status";
 
 export const status: ComponentData = {
   demo: <Status level={1}>Positive</Status>,
-  description: "A status indicator with colored dot and label",
+  description:
+    "Communicates state at a glance with a colored indicator dot and label across five severity levels.",
   name: "status",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/status.tsx",

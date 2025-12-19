@@ -8,7 +8,7 @@ export const filename: ComponentData = {
     </span>
   ),
   description:
-    "A component that displays filenames with smart middle truncation",
+    "Displays filenames with intelligent middle truncation to preserve both the start and file extension.",
   name: "filename",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/filename.tsx",

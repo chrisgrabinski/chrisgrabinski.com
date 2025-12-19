@@ -80,6 +80,8 @@ export const dataList: ComponentData = {
       </DataListRoot>
     </Card>
   ),
+  description:
+    "Organizes key-value pairs into a scannable layout with support for nested, expandable sections.",
   name: "data-list",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/data-list.tsx",

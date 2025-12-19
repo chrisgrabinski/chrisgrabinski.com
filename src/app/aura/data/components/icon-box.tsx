@@ -8,7 +8,8 @@ export const iconBox: ComponentData = {
       <BellIcon />
     </IconBox>
   ),
-  description: "A container for icons with background and border",
+  description:
+    "A decorative container that wraps icons with a colored background and border for visual emphasis.",
   name: "icon-box",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/icon-box.tsx",

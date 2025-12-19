@@ -8,7 +8,8 @@ export const checkbox: ComponentData = {
       Accept terms and conditions
     </CheckboxRoot>
   ),
-  description: "A checkbox input for boolean selections",
+  description:
+    "An interactive control that allows users to select or deselect options with a checkmark indicator.",
   name: "checkbox",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/checkbox.tsx",

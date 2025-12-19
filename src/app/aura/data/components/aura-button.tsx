@@ -3,7 +3,8 @@ import { AuraButton } from "@/components/aura-button";
 
 export const auraButton: ComponentData = {
   demo: <AuraButton size={5}>Ask Aura</AuraButton>,
-  description: "A stylized button with animated gradient ring effect",
+  description:
+    "A styled call-to-action button for interactions with AI agents.",
   name: "aura-button",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/aura-button.tsx",

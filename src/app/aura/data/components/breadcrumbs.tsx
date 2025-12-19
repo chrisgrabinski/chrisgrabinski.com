@@ -11,7 +11,8 @@ export const breadcrumbs: ComponentData = {
       ]}
     />
   ),
-  description: "A navigation component showing the current page hierarchy",
+  description:
+    "A navigation trail that shows the user's current location within the site hierarchy.",
   name: "breadcrumbs",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/breadcrumbs.tsx",

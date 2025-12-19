@@ -7,7 +7,8 @@ export const inlineToast: ComponentData = {
       Something happens when you click me
     </InlineToast>
   ),
-  description: "A clickable element that shows a brief toast message",
+  description:
+    "A clickable element that reveals a brief toast notification on interaction.",
   name: "inline-toast",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/inline-toast.tsx",

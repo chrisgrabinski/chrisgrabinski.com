@@ -4,7 +4,8 @@ import { Button } from "@/components/button";
 
 export const button: ComponentData = {
   demo: <Button size={4}>You can click me</Button>,
-  description: "A button component",
+  description:
+    "Triggers actions and events with support for multiple variants including primary, destructive, ghost, and outline styles.",
   name: "button",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/button.tsx",

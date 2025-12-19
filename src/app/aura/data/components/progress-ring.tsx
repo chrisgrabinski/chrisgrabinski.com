@@ -3,7 +3,8 @@ import { ProgressRing } from "@/components/progress-ring";
 
 export const progressRing: ComponentData = {
   demo: <ProgressRing size={6} value={0.65} />,
-  description: "A circular progress indicator",
+  description:
+    "A circular progress indicator that visualizes completion percentage.",
   name: "progress-ring",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/progress-ring.tsx",

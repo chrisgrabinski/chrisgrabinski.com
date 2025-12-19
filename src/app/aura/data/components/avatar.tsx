@@ -7,7 +7,8 @@ import { VerifiedAvatar } from "@/components/avatar-verified";
 
 export const avatar: ComponentData = {
   demo: <Avatar fallback="Chris Grabinski" size={6} src={avatarImage.src} />,
-  description: "An avatar component with image and fallback support",
+  description:
+    "An image element with a fallback for representing users, complete with optional country flags and verification badges.",
   name: "avatar",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/avatar.tsx",

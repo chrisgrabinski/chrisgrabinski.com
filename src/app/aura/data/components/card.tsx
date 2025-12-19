@@ -5,7 +5,8 @@ import pattern from "../../../(homepage)/images/pawel-czerwinski-8uZPynIu-rQ-uns
 
 export const card: ComponentData = {
   demo: <Card className="p-24" />,
-  description: "A container component with rounded corners and subtle shadow",
+  description:
+    "A versatile container with elevated styling, perfect for grouping related content.",
   name: "card",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/card.tsx",

@@ -3,7 +3,8 @@ import { Link } from "@/components/link";
 
 export const link: ComponentData = {
   demo: <Link href="#">Visit homepage</Link>,
-  description: "A styled link component with hover effects",
+  description:
+    "A hyperlink with refined styling and smooth hover transitions for better visual feedback.",
   name: "link",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/link.tsx",

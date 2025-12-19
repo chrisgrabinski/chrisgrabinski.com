@@ -8,7 +8,8 @@ export const iconButton: ComponentData = {
       <StarIcon />
     </IconButton>
   ),
-  description: "A icon button component",
+  description:
+    "A compact button designed specifically for icon-only actions, available in multiple variants for different contexts.",
   name: "icon-button",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/icon-button.tsx",

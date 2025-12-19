@@ -3,7 +3,8 @@ import { CopyToClipboard } from "@/components/copy-to-clipboard";
 
 export const copyToClipboard: ComponentData = {
   demo: <CopyToClipboard>hello@example.com</CopyToClipboard>,
-  description: "A button that copies text content to clipboard",
+  description:
+    "A clickable element that instantly copies its text content to the clipboard with visual feedback.",
   name: "copy-to-clipboard",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/copy-to-clipboard.tsx",

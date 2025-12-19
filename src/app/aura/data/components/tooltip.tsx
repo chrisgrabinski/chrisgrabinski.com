@@ -18,7 +18,8 @@ export const tooltip: ComponentData = {
       <TooltipContent>Additional information about the trigger.</TooltipContent>
     </TooltipRoot>
   ),
-  description: "A popup that displays information on hover",
+  description:
+    "Displays contextual information in a floating popup when hovering over or focusing on an element.",
   name: "tooltip",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/tooltip.tsx",

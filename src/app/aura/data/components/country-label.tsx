@@ -3,7 +3,8 @@ import { CountryLabel } from "@/components/country-label";
 
 export const countryLabel: ComponentData = {
   demo: <CountryLabel code="US" />,
-  description: "A label displaying a country flag and name",
+  description:
+    "Displays a country with its flag icon and localized name, with support for custom labels.",
   name: "country-label",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/country-label.tsx",

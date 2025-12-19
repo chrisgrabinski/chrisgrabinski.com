@@ -11,7 +11,8 @@ export const segmentedControl: ComponentData = {
       <SegmentedControlItem value="yearly">Yearly</SegmentedControlItem>
     </SegmentedControlRoot>
   ),
-  description: "A toggle group for selecting between options",
+  description:
+    "A compact control for switching between mutually exclusive options with an animated selection indicator.",
   name: "segmented-control",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/segmented-control.tsx",
