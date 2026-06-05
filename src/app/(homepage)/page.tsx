@@ -45,8 +45,6 @@ const profiles = [
 export default async function RootPage() {
   const spotifyData = await getCurrentlyPlaying();
 
-  console.log(spotifyData);
-
   const isPlayingSpotify =
     spotifyData?.is_playing && spotifyData?.currently_playing_type === "track";
 
