@@ -1,6 +1,7 @@
 "use client";
 
 import { Slot } from "radix-ui";
+import { Interaction } from "@/components/interaction";
 import { cn } from "@/lib/styles";
 
 export interface ButtonPrimitiveProps extends React.ComponentProps<"button"> {
@@ -46,18 +47,19 @@ const ButtonPrimitive = ({
   };
 
   return (
-    <Component
-      aria-busy={loading || undefined}
-      aria-disabled={disabled || undefined}
-      className={cn(
-        "cursor-pointer aria-busy:cursor-wait aria-disabled:cursor-not-allowed",
-        "focus-visible:ring-2 focus-visible:ring-neutral-800 focus-visible:ring-offset-2",
-        className,
-      )}
-      onClick={handleClick}
-      type={type || defaultButtonType}
-      {...props}
-    />
+    <Interaction asChild>
+      <Component
+        aria-busy={loading || undefined}
+        aria-disabled={disabled || undefined}
+        className={cn(
+          "cursor-pointer aria-busy:cursor-wait aria-disabled:cursor-not-allowed",
+          className,
+        )}
+        onClick={handleClick}
+        type={type || defaultButtonType}
+        {...props}
+      />
+    </Interaction>
   );
 };
 
