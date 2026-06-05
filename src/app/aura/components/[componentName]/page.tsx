@@ -153,7 +153,10 @@ export default async function TestPage({
                 key={module.name}
               >
                 <Card className="p-0">
-                  <ComponentCanvas className="pointer-events-none flex-1 p-6">
+                  <ComponentCanvas
+                    className="pointer-events-none flex-1 p-6"
+                    inert
+                  >
                     {module.demo}
                   </ComponentCanvas>
                   <div className="p-6">

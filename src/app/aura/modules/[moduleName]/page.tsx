@@ -78,7 +78,7 @@ export default async function TestPage({
           <div className="grid gap-6 sm:grid-cols-2">
             {components.map((component) => (
               <div className="flex flex-col gap-3" key={component.name}>
-                <ComponentCanvas className="aspect-video flex-1">
+                <ComponentCanvas className="aspect-video flex-1" inert>
                   {component.demo}
                 </ComponentCanvas>
                 <h3 className="font-medium text-lg">
