@@ -52,7 +52,7 @@ const DataListItem = ({
   return (
     <Component
       className={cn(
-        "col-span-full col-start-1 grid min-h-8 grid-cols-subgrid gap-x-3 border-neutral-200 not-first:border-t py-1.5",
+        "col-span-full col-start-1 grid min-h-8 grid-cols-subgrid gap-x-3 border-neutral-600 not-first:border-t py-1.5",
         className,
       )}
       {...props}
@@ -76,7 +76,7 @@ const DataListLabel = ({
 
   return (
     <Component
-      className={cn("flex items-center gap-x-4 font-medium", className)}
+      className={cn("flex items-center gap-x-4", className)}
       {...props}
     >
       {children}
@@ -99,7 +99,7 @@ const DataListValue = ({
   return (
     <Component
       className={cn(
-        "m-0 flex min-w-0 items-center gap-x-4 text-neutral-600",
+        "m-0 flex min-w-0 items-center gap-x-4 text-current/60",
         className,
       )}
       {...props}
@@ -223,12 +223,12 @@ const DataListSubContent = ({
 };
 
 export {
-  DataListRoot,
   DataListItem,
   DataListLabel,
-  DataListValue,
+  DataListRoot,
   DataListSub,
-  DataListSubTrigger,
-  DataListSubIndicator,
   DataListSubContent,
+  DataListSubIndicator,
+  DataListSubTrigger,
+  DataListValue,
 };

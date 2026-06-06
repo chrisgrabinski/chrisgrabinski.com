@@ -10,7 +10,7 @@ const AuraButton = ({ children, className, ...props }: AuraButtonProps) => {
     <span className="relative z-10">
       <Button
         className={cn(
-          "relative bg-transparent text-neutral-950 hover:bg-transparent",
+          "relative bg-transparent hover:bg-transparent",
           className,
         )}
         {...props}

@@ -19,11 +19,11 @@ const buttonVariants = cva(
       },
       variant: {
         destructive: "bg-red-500 text-red-50 hover:bg-red-600",
-        ghost: "bg-transparent text-inherit hover:bg-neutral-100",
-        outline:
-          "bg-transparent text-neutral-800 ring-2 ring-neutral-200 ring-inset hover:ring-neutral-300",
-        primary: "bg-pink-500 text-pink-50 hover:bg-pink-600",
+        ghost: "bg-transparent text-inherit hover:bg-neutral-700",
+        outline: "bg-transparent ring-2 ring-current ring-inset",
+        primary: "bg-orange-400 text-orange-50 hover:bg-orange-500",
         secondary: "bg-neutral-800 text-neutral-50 hover:bg-neutral-700",
+        storybook: "bg-pink-500 text-pink-50 hover:bg-pink-600",
       },
     },
   },

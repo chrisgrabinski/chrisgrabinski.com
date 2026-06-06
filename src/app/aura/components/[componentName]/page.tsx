@@ -69,7 +69,7 @@ export default async function TestPage({
       <div>
         <h1 className="font-semibold text-4xl">{title}</h1>
         {description && (
-          <p className="neutral-500 mt-1.5 text-balance text-lg text-neutrmask-t-from-1.5">
+          <p className="mt-1.5 text-balance text-lg text-neutral-400">
             {description}
           </p>
         )}
@@ -82,7 +82,7 @@ export default async function TestPage({
           </a>
         </Button>
         {storybookUrl && (
-          <Button asChild size={2} variant="primary">
+          <Button asChild size={2} variant="storybook">
             <a href={storybookUrl} rel="noopener noreferrer" target="_blank">
               <StorybookIcon />
               Storybook

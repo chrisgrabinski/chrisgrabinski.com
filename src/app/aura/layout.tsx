@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { Sidebar } from "@/app/aura/sidebar";
 import { SmallNavigation } from "@/app/aura/small-navigation";
 
-const geistSans = Geist({
-  subsets: ["latin"],
+const fontBody = localFont({
+  src: "../fonts/Monaspace Neon Var.woff2",
   variable: "--font-sans",
 });
 
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
+const fontMono = localFont({
+  src: "../fonts/Monaspace Neon Var.woff2",
   variable: "--font-mono",
 });
 
@@ -22,16 +22,16 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/aura">) {
   return (
     <div
-      className={`${geistSans.variable} ${geistMono.variable} min-h-dvh bg-white pt-22 font-sans text-neutral-900 antialiased lg:flex lg:pt-0`}
+      className={`${fontBody.variable} ${fontMono.variable} min-h-dvh bg-neutral-950 pt-22 font-light font-sans text-neutral-50 antialiased lg:flex lg:pt-0`}
     >
       <div className="lg:hidden">
         <SmallNavigation />
       </div>
-      <div className="hidden w-64 shrink-0 lg:block">
+      <div className="hidden w-80 shrink-0 lg:block">
         <Sidebar />
       </div>
       <main className="mx-auto max-w-4xl flex-1 p-6">{children}</main>
-      <div className="hidden w-64 2xl:block" />
+      <div className="hidden w-80 2xl:block" />
     </div>
   );
 }

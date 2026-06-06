@@ -10,13 +10,13 @@ import { Card } from "@/components/card";
 
 export const Sidebar = () => {
   return (
-    <div className="sticky top-0 flex h-dvh w-64 shrink-0 flex-col border-neutral-300 border-r">
-      <header className="p-4 pb-0">
+    <div className="sticky top-0 flex h-dvh w-full shrink-0 flex-col">
+      <header className="p-8 pb-0">
         <Link href="/aura">
           <AuraLogo className="text-2xl" />
         </Link>
       </header>
-      <ScrollArea.Root className="mask-y-from-[calc(100%-32px)] min-h-0 flex-1 overflow-clip px-2">
+      <ScrollArea.Root className="mask-y-from-[calc(100%-32px)] min-h-0 flex-1 overflow-clip px-6">
         <ScrollArea.Viewport className="size-full">
           <div className="py-8">
             <Navigation />
@@ -24,11 +24,11 @@ export const Sidebar = () => {
         </ScrollArea.Viewport>
         <ScrollArea.Scrollbar orientation="vertical"></ScrollArea.Scrollbar>
       </ScrollArea.Root>
-      <footer className="p-4 pt-0">
+      <footer className="p-8 pt-0">
         <Link className="group" href="/">
           <Card className="flex items-center gap-3 overflow-visible p-3 transition duration-300 hover:shadow-md/10">
             <div className="relative flex">
-              <div className="-inset-1 pointer-events-none absolute z-10 scale-75 rounded-full opacity-0 blur-xs transition duration-300 group-hover:scale-100 group-hover:opacity-100 group-hover:blur-none">
+              <div className="pointer-events-none absolute -inset-1 z-10 scale-75 rounded-full opacity-0 blur-xs transition duration-300 group-hover:scale-100 group-hover:opacity-100 group-hover:blur-none">
                 <AgentRing animated glow />
               </div>
               <Avatar
@@ -39,10 +39,10 @@ export const Sidebar = () => {
               />
             </div>
             <div>
-              <p className="text-neutral-600 text-sm">Created by</p>
-              <p className="font-medium text-sm">Chris Grabiński</p>
+              <p className="text-[13px] text-neutral-500">Created by</p>
+              <p className="text-sm">Chris Grabiński</p>
             </div>
-            <ExternalLinkIcon className="ml-auto size-4 stroke-neutral-400 transition duration-300 group-hover:stroke-neutral-600" />
+            <ExternalLinkIcon className="ml-auto size-4 stroke-neutral-600 transition duration-300 group-hover:stroke-orange-400" />
           </Card>
         </Link>
       </footer>

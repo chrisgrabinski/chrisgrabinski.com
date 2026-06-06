@@ -22,7 +22,7 @@ const SidebarMenuGroup = ({
   return (
     <div className="flex flex-col">
       {heading && (
-        <span className="px-2 pb-2 font-medium text-neutral-500 text-sm">
+        <span className="px-2 pb-2 font-medium text-[13px] text-neutral-500 text-sm">
           {heading}
         </span>
       )}
@@ -44,7 +44,7 @@ const SidebarMenuItemBase = ({
 
   return (
     <ButtonPrimitive asChild {...props}>
-      <Component className="group/sidebar-menu-item flex w-full items-center gap-2 rounded-xl p-2 text-left font-medium text-sm transition hover:bg-neutral-100">
+      <Component className="group/sidebar-menu-item flex w-full items-center gap-2 rounded-xs px-2 py-1 text-left text-[13px] transition hover:bg-orange-400/10">
         {children}
       </Component>
     </ButtonPrimitive>
@@ -66,7 +66,7 @@ const SidebarMenuItem = ({
     <SidebarMenuItemBase
       asChild
       className={cn(
-        "data-[active=true]:font-medium data-[active=true]:text-pink-500",
+        "data-[active=true]:font-medium data-[active=true]:text-orange-400",
         className,
       )}
       data-active={isActive}
@@ -106,17 +106,17 @@ const SidebarMenuSubItem = ({
   return (
     <SidebarMenuItem className="relative pl-6" {...props}>
       {children}
-      <div className="-translate-x-1/2 absolute top-0 left-3 h-full w-px bg-neutral-200 transition group-data-[active=true]/sidebar-menu-item:bg-pink-500" />
+      <div className="absolute top-0 left-3 h-full w-px -translate-x-1/2 bg-neutral-200 transition group-data-[active=true]/sidebar-menu-item:bg-pink-500" />
     </SidebarMenuItem>
   );
 };
 
 export {
-  SidebarMenuRoot,
   SidebarMenuGroup,
   SidebarMenuItem,
+  SidebarMenuRoot,
   SidebarMenuSub,
-  SidebarMenuSubTrigger,
   SidebarMenuSubContent,
   SidebarMenuSubItem,
+  SidebarMenuSubTrigger,
 };

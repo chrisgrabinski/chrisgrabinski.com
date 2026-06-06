@@ -53,11 +53,11 @@ const ProgressRing = ({
         }}
       >
         <Progress.Indicator
-          className="mask-contain will-change absolute inset-0 rounded-full bg-pink-500"
+          className="mask-contain will-change absolute inset-0 rounded-full bg-orange-400"
           style={{
             background:
               variant === "gradient"
-                ? `conic-gradient(from ${progress * 360}deg, transparent 0%, var(--color-pink-500) 7.5%, var(--color-pink-500) 50%, var(--color-pink-400) 75%, var(--color-pink-50) 95%, var(--color-white) 100%) border-box`
+                ? `conic-gradient(from ${progress * 360}deg, transparent 0%, var(--color-orange-400) 7.5%, var(--color-orange-300) 50%, var(--color-orange-300) 75%, var(--color-orange-50) 95%, var(--color-white) 100%) border-box`
                 : undefined,
             mask: `conic-gradient(from 0deg, white 0%, white ${progress * 100}%, transparent ${progress * 100}%) border-box`,
           }}

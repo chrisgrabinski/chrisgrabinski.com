@@ -7,8 +7,8 @@ const cardVariants = cva("overflow-clip rounded-xl p-6 ring-1 ring-black/5", {
   },
   variants: {
     variant: {
-      default: "bg-white",
-      glass: "bg-white/70 backdrop-blur-md backdrop-saturate-150",
+      default: "bg-neutral-900",
+      glass: "bg-neutral-900/70 backdrop-blur-md backdrop-saturate-150",
     },
   },
 });

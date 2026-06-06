@@ -8,7 +8,7 @@ const Link = ({
 }: React.ComponentProps<typeof NextLink>) => {
   return (
     <NextLink
-      className={cn("transition hover:text-pink-500", className)}
+      className={cn("transition hover:text-orange-400", className)}
       {...props}
     >
       {children}

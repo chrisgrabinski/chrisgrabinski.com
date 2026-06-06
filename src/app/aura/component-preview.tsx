@@ -24,7 +24,7 @@ const ComponentPreview = ({ children }: PreviewProps) => {
         style={{
           background:
             view === "preview"
-              ? "repeating-conic-gradient(hsl(0,0%,95%) 0 25%, hsl(0,0%,100%) 0 50%) 50% / 20px 20px"
+              ? "repeating-conic-gradient(hsl(0,0%,5%) 0 25%, hsl(0,0%,8%) 0 50%) 50% / 20px 20px"
               : undefined,
         }}
       >
