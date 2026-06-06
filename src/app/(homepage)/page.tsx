@@ -112,16 +112,15 @@ export default async function RootPage() {
             )}
             {profiles.map(({ name, icon: Icon, href }) => (
               <li key={name}>
-                <IconButton asChild size={2}>
-                  <a
-                    aria-label={name}
-                    href={href}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <Icon aria-hidden className="h-4 w-4" />
-                  </a>
-                </IconButton>
+                <a
+                  aria-label={name}
+                  className="inline-grid aspect-square h-8 place-items-center rounded-full bg-foreground px-0 text-background text-sm hover:bg-foreground/80 [&_svg]:size-4"
+                  href={href}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <Icon aria-hidden className="h-4 w-4" />
+                </a>
               </li>
             ))}
           </ul>
