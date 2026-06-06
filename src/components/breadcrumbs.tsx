@@ -13,10 +13,7 @@ const BreadcrumbsRoot = ({
 }: BreadcrumbsRootProps) => {
   return (
     <ul
-      className={cn(
-        "flex items-center gap-[0.5ch] text-neutral-400 text-sm",
-        className,
-      )}
+      className={cn("flex items-center gap-[0.5ch] text-sm", className)}
       {...props}
     >
       {children}
@@ -32,7 +29,13 @@ const BreadcrumbsItem = ({
   ...props
 }: BreadcrumbsItemProps) => {
   return (
-    <li className={cn("flex items-center gap-[inherit]", className)} {...props}>
+    <li
+      className={cn(
+        "flex items-center gap-[inherit] text-foreground-muted",
+        className,
+      )}
+      {...props}
+    >
       {children}
     </li>
   );
@@ -48,7 +51,7 @@ const BreadcrumbsLink = ({
   return (
     <Link
       className={cn(
-        "flex items-center gap-[inherit] text-foreground-muted",
+        "flex items-center gap-[inherit] text-foreground no-underline",
         className,
       )}
       {...props}

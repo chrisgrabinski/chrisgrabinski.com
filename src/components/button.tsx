@@ -19,9 +19,10 @@ const buttonVariants = cva(
       },
       variant: {
         destructive: "bg-red-500 text-red-50 hover:bg-red-500/80",
-        ghost: "bg-transparent text-inherit hover:bg-foreground/80",
+        ghost:
+          "bg-transparent text-inherit hover:bg-foreground/80 hover:text-background",
         outline:
-          "bg-transparent ring-2 ring-current ring-inset hover:bg-foreground/80 hover:ring-transparent",
+          "bg-transparent ring-2 ring-current ring-inset hover:bg-foreground/80 hover:text-background hover:ring-transparent",
         primary: "bg-accent text-orange-50 hover:bg-accent/80",
         secondary: "bg-foreground text-background hover:bg-foreground/80",
         storybook: "bg-pink-500 text-pink-50 hover:bg-pink-500/80",

@@ -4,7 +4,7 @@ import { cn } from "@/lib/styles";
 import { ButtonPrimitive } from "@/primitives/button";
 
 const switchRootVariants = cva(
-  "inline-flex aspect-1.75/1 rounded-full bg-neutral-100 ring-1 ring-black/10 transition data-[state=checked]:bg-orange-400",
+  "inline-flex aspect-1.75/1 rounded-full bg-surface transition data-[state=checked]:bg-accent",
   {
     defaultVariants: {
       size: 3,
@@ -54,7 +54,7 @@ const SwitchThumb = ({
       )}
       {...props}
     >
-      <div className="size-full rounded-full bg-black transition group-data-[state=checked]/switch-thumb:bg-white" />
+      <div className="size-full rounded-full bg-foreground transition group-data-[state=checked]/switch-thumb:bg-white" />
     </SwitchPrimitive.Thumb>
   );
 };

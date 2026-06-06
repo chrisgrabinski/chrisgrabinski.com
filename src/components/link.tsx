@@ -8,7 +8,10 @@ const Link = ({
 }: React.ComponentProps<typeof NextLink>) => {
   return (
     <NextLink
-      className={cn("transition hover:text-accent", className)}
+      className={cn(
+        "underline underline-offset-3 transition hover:text-accent",
+        className,
+      )}
       {...props}
     >
       {children}

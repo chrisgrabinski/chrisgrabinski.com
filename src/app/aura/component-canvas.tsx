@@ -11,7 +11,7 @@ const ComponentCanvas = ({
   return (
     <div
       className={cn(
-        "relative grid place-items-center overflow-visible bg-canvas",
+        "relative grid place-items-center overflow-visible bg-canvas p-4",
         className,
       )}
       {...props}

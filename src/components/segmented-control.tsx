@@ -72,7 +72,7 @@ const SegmentedControlItem = ({
       asChild
       className={cn(
         "rounded-full",
-        "px-[1ch] text-foreground-muted transition hover:bg-neutral-800 data-[state=on]:cursor-default data-[state=on]:bg-neutral-200 data-[state=on]:font-medium data-[state=on]:text-neutral-950",
+        "px-[1ch] text-foreground-muted transition hover:bg-foreground/80 hover:text-background data-[state=on]:cursor-default data-[state=on]:bg-foreground data-[state=on]:font-medium data-[state=on]:text-background",
         className,
       )}
       {...props}
