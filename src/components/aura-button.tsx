@@ -13,6 +13,7 @@ const AuraButton = ({ children, className, ...props }: AuraButtonProps) => {
           "relative bg-transparent hover:bg-transparent",
           className,
         )}
+        variant="ghost"
         {...props}
       >
         <SparklesIcon />

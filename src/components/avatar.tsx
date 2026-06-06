@@ -78,7 +78,7 @@ const AvatarFallback = ({ children, ...props }: AvatarFallbackProps) => {
   return (
     <AvatarPrimitive.Fallback
       aria-hidden="true"
-      className="absolute inset-0 z-10 grid select-none place-items-center overflow-clip rounded-full bg-neutral-800 text-shadow-neutral-800"
+      className="absolute inset-0 z-10 grid select-none place-items-center overflow-clip rounded-full bg-surface text-foreground text-shadow-neutral-800"
       {...props}
     >
       {children}

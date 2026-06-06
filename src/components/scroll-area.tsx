@@ -21,7 +21,7 @@ const ScrollArea = ({
         className="relative flex w-3 touch-none select-none p-1"
         orientation="vertical"
       >
-        <ScrollAreaThumb className="relative flex-1 rounded-full bg-neutral-600/33 backdrop-blur-sm" />
+        <ScrollAreaThumb className="relative flex-1 rounded-full bg-accent/33 backdrop-blur-sm" />
       </ScrollAreaScrollbar>
       <ScrollAreaScrollbar orientation="horizontal">
         <ScrollAreaThumb />

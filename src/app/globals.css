@@ -6,10 +6,45 @@
   --font-display: var(--font-display);
   --font-mono: var(--font-mono);
 
-  --color-background: rgb(239, 240, 251);
-  --color-foreground: rgb(61, 64, 92);
+  --color-accent: var(--accent);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 
   --color-foreground-muted: color-mix(in oklab, currentcolor 65%, transparent);
+
+  --color-surface: var(--surface);
+}
+
+:root {
+  --accent: oklch(0.75 0.17 58);
+
+  --background: oklch(0.95 0.03 60);
+  --foreground: oklch(0.25 0.04 60);
+
+  --surface: oklch(1 0 60);
+
+  --bg-canvas:
+    repeating-conic-gradient(hsl(0, 0%, 95%) 0 25%, hsl(0, 0%, 100%) 0 50%) 50%
+    / 20px 20px;
+}
+
+[data-theme="dark"] {
+  --background: oklch(0.15 0.02 60);
+  --foreground: oklch(0.95 0.03 60);
+
+  --surface: oklch(0.25 0.01 60);
+
+  --bg-canvas:
+    repeating-conic-gradient(
+      oklch(0.15 0.0125 60) 0 25%,
+      oklch(0.2 0.0125 60) 0 50%
+    )
+    50% / 20px 20px;
+}
+
+@utility bg-canvas {
+  background: var(--bg-canvas);
 }
 
 @property --glow-degree {

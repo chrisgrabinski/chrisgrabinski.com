@@ -8,7 +8,7 @@ const boxVariants = cva("grid place-items-center [&>svg]:size-1/2", {
   variants: {
     color: {
       green: "bg-green-800 text-green-200",
-      grey: "bg-neutral-800 text-neutral-200",
+      grey: "bg-surface text-foreground",
       red: "bg-red-800 text-red-200",
       yellow: "bg-yellow-800 text-yellow-200",
     },

@@ -22,7 +22,7 @@ const PlayButton = ({
     >
       <div
         className={cn(
-          "absolute inset-0 bg-radial from-orange-400/50 to-transparent",
+          "absolute inset-0 bg-radial from-accent/50 to-transparent",
           playing ? "animate-pulse" : "animate-none opacity-0",
         )}
       />

@@ -46,7 +46,7 @@ const SliderRange = ({
 }: React.ComponentProps<typeof SliderPrimitive.Range>) => {
   return (
     <SliderPrimitive.Range
-      className={cn("absolute h-full bg-orange-400", className)}
+      className={cn("absolute h-full bg-accent", className)}
       {...props}
     >
       {children}

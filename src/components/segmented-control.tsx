@@ -6,7 +6,7 @@ import { cn } from "@/lib/styles";
 import { ButtonPrimitive } from "@/primitives/button";
 
 const segmentedControlVariants = cva(
-  "color-foreground flex gap-1 rounded-full bg-neutral-900 p-[0.333ch] font-medium ring-1 ring-black/10",
+  "color-foreground flex gap-1 rounded-full bg-surface p-[0.333ch]",
   {
     defaultVariants: {
       size: 2,
@@ -72,7 +72,7 @@ const SegmentedControlItem = ({
       asChild
       className={cn(
         "rounded-full",
-        "px-[1ch] text-foreground-muted transition hover:bg-neutral-800 data-[state=on]:cursor-default data-[state=on]:bg-neutral-200 data-[state=on]:text-neutral-950",
+        "px-[1ch] text-foreground-muted transition hover:bg-neutral-800 data-[state=on]:cursor-default data-[state=on]:bg-neutral-200 data-[state=on]:font-medium data-[state=on]:text-neutral-950",
         className,
       )}
       {...props}

@@ -33,15 +33,15 @@ const TooltipContent = ({
   return (
     <TooltipPrimitive.Content
       className={cn(
-        "rounded-md bg-neutral-900 px-2.5 py-1.5 text-neutral-50 text-sm",
+        "rounded-md bg-surface px-2.5 py-1.5 text-neutral-50 text-sm",
         className,
       )}
       {...props}
     >
       {children}
-      <TooltipPrimitive.Arrow className="h-1 w-2 fill-neutral-900" />
+      <TooltipPrimitive.Arrow className="h-1 w-2 fill-surface" />
     </TooltipPrimitive.Content>
   );
 };
 
-export { TooltipRoot, TooltipTrigger, TooltipContent };
+export { TooltipContent, TooltipRoot, TooltipTrigger };

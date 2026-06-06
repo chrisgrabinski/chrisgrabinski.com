@@ -7,6 +7,7 @@ import { UnbabelLogo } from "@/app/(homepage)/components/unbabel-logo";
 import avatar from "@/app/(homepage)/images/chris-grabinski.jpg";
 import texture from "@/app/(homepage)/images/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg";
 import { getCurrentlyPlaying } from "@/app/(homepage)/lib/spotify";
+import { IconButton } from "@/components/icon-button";
 import { GitHubIcon } from "@/icons/github";
 import { InstagramIcon } from "@/icons/instagram";
 import { LinkedInIcon } from "@/icons/linkedin";
@@ -62,7 +63,7 @@ export default async function RootPage() {
       {/* <UkraineBanner /> */}
       <div className="isolate grid grow grid-cols-[24px_repeat(6,1fr)_24px] grid-rows-[48px_auto_repeat(2,24px)_auto] items-center md:grid-cols-[auto_repeat(6,minmax(0px,144px))_auto] md:grid-rows-none md:gap-6">
         <div className="relative z-10 col-start-2 col-end-6 row-start-2 row-end-3 pt-6 md:col-start-5 md:col-end-8 md:row-start-1 md:row-end-auto md:py-6">
-          <Image alt="" src={avatar} />
+          <Image alt="" className="saturate-0" src={avatar} />
         </div>
         <div className="z-10 col-start-2 col-end-8 row-start-4 row-end-6 pb-6 md:col-start-2 md:col-end-5 md:row-start-1 md:row-end-auto md:py-6">
           <h1 className="text-5xl sm:text-6xl">
@@ -111,15 +112,16 @@ export default async function RootPage() {
             )}
             {profiles.map(({ name, icon: Icon, href }) => (
               <li key={name}>
-                <a
-                  aria-label={name}
-                  className="grid h-8 w-8 place-items-center rounded-full bg-foreground text-background outline-0 outline-transparent outline-offset-[3px] transition-all duration-150 focus-visible:outline-2 focus-visible:outline-foreground-muted"
-                  href={href}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <Icon aria-hidden className="h-4 w-4" />
-                </a>
+                <IconButton asChild size={2}>
+                  <a
+                    aria-label={name}
+                    href={href}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <Icon aria-hidden className="h-4 w-4" />
+                  </a>
+                </IconButton>
               </li>
             ))}
           </ul>
@@ -132,6 +134,7 @@ export default async function RootPage() {
             src={texture}
             style={{ filter: "url(#flow)" }}
           />
+          <div className="absolute inset-0 bg-accent mix-blend-color" />
           <svg aria-hidden className="pointer-events-none absolute">
             <title>Noise</title>
             <filter id="noise">

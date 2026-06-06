@@ -9,7 +9,7 @@ import { cn } from "@/lib/styles";
 import { ButtonPrimitive } from "@/primitives/button";
 
 const SidebarMenuRoot = ({ children }: { children: React.ReactNode }) => {
-  return <nav className="grid gap-3">{children}</nav>;
+  return <nav className="grid gap-3 font-mono text-[13px]">{children}</nav>;
 };
 
 const SidebarMenuGroup = ({
@@ -22,9 +22,7 @@ const SidebarMenuGroup = ({
   return (
     <div className="flex flex-col">
       {heading && (
-        <span className="px-2 pb-2 text-[13px] text-foreground-muted text-sm">
-          {heading}
-        </span>
+        <span className="px-2 pb-2 text-foreground-muted">{heading}</span>
       )}
       {children}
     </div>
@@ -44,7 +42,7 @@ const SidebarMenuItemBase = ({
 
   return (
     <ButtonPrimitive asChild {...props}>
-      <Component className="group/sidebar-menu-item flex w-full items-center gap-2 rounded-xs px-2 py-1 text-left text-[13px] transition hover:bg-orange-400/10">
+      <Component className="group/sidebar-menu-item flex w-full items-center gap-2 rounded px-2 py-1 text-left transition hover:bg-accent/10">
         {children}
       </Component>
     </ButtonPrimitive>
@@ -66,7 +64,7 @@ const SidebarMenuItem = ({
     <SidebarMenuItemBase
       asChild
       className={cn(
-        "data-[active=true]:font-medium data-[active=true]:text-orange-400",
+        "data-[active=true]:font-medium data-[active=true]:text-accent",
         className,
       )}
       data-active={isActive}

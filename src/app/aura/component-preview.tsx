@@ -19,15 +19,7 @@ const ComponentPreview = ({ children }: PreviewProps) => {
         "after:clear-both after:table after:content-['']",
       )}
     >
-      <Card
-        className="grid size-full flex-col place-items-center gap-6 p-4 md:p-6"
-        style={{
-          background:
-            view === "preview"
-              ? "repeating-conic-gradient(hsl(0,0%,5%) 0 25%, hsl(0,0%,8%) 0 50%) 50% / 20px 20px"
-              : undefined,
-        }}
-      >
+      <Card className="grid size-full flex-col place-items-center gap-6 bg-canvas p-4 md:p-6">
         {children}
       </Card>
     </div>

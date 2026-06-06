@@ -11,14 +11,9 @@ const ComponentCanvas = ({
   return (
     <div
       className={cn(
-        "relative grid place-items-center overflow-visible",
+        "relative grid place-items-center overflow-visible bg-canvas",
         className,
       )}
-      style={{
-        background:
-          "repeating-conic-gradient(hsl(0,0%,5%) 0 25%, hsl(0,0%,8%) 0 50%) 50% / 20px 20px",
-        ...style,
-      }}
       {...props}
     >
       {children}

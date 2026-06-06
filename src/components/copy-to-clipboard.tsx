@@ -55,7 +55,7 @@ const CopyToClipboard = ({
       <span className="contents" ref={childrenRef}>
         {children}
       </span>
-      <CopyIcon className="ml-[0.5ch] size-[1em] shrink-0 self-center transition group-hover/copy-to-clipboard:stroke-orange-400" />
+      <CopyIcon className="ml-[0.5ch] size-[1em] shrink-0 self-center transition group-hover/copy-to-clipboard:stroke-accent" />
     </InlineToast>
   );
 };
