@@ -149,7 +149,6 @@ export default async function TestPage({
             {modules.map((module) => (
               <Link
                 className="flex h-full flex-col gap-1.5"
-                // @ts-expect-error - TODO: fix link types
                 href={`/aura/modules/${module.name}`}
                 key={module.name}
               >
