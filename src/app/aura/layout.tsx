@@ -21,13 +21,13 @@ export default function RootLayout({ children }: LayoutProps<"/aura">) {
         <SmallNavigation />
       </header>
       <div className="flex grow justify-between gap-8 p-4 md:p-8">
-        <nav className="hidden w-48 md:block">
+        <nav className="hidden w-48 shrink-0 md:block">
           <div className="-mx-2">
             <Navigation />
           </div>
         </nav>
         <main className="grow xl:max-w-4xl">{children}</main>
-        <div className="hidden w-48 xl:block" />
+        <div className="hidden w-48 shrink-0 xl:block" />
       </div>
     </div>
   );

@@ -2,7 +2,6 @@ import { ExternalLinkIcon } from "lucide-react";
 import Link from "next/link";
 import { ScrollArea } from "radix-ui";
 import avatar from "@/app/(homepage)/images/chris-grabinski.jpg";
-import { AuraLogo } from "@/app/aura/aura-logo";
 import { Navigation } from "@/app/aura/navigation";
 import { AgentRing } from "@/components/agent-ring";
 import { Avatar } from "@/components/avatar";

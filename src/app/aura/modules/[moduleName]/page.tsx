@@ -51,7 +51,7 @@ export default async function TestPage({
   return (
     <article className="grid gap-12 pb-12">
       <div>
-        <h1 className="font-semibold text-4xl">{title}</h1>
+        <h1 className="text-4xl">{title}</h1>
         {description && (
           <p className="mt-1.5 text-balance text-foreground-muted text-lg">
             {description}
