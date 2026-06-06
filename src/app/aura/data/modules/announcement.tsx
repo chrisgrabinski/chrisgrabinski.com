@@ -18,7 +18,7 @@ export const announcement: ModuleData = {
       <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-6">
         <div>
           <div className="font-medium text-sm">Shop smarter this season</div>
-          <div className="text-neutral-600 text-sm">
+          <div className="text-foreground-muted text-sm">
             Lean back and enjoy a cup of hot cocoa while our agent finds the
             best gifts.
           </div>

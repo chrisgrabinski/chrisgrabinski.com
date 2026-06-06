@@ -36,7 +36,7 @@ const Announcement = ({
       <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-6">
         <div>
           <div className="font-medium text-sm">{title}</div>
-          <div className="text-neutral-600 text-sm">{description}</div>
+          <div className="text-foreground-muted text-sm">{description}</div>
         </div>
         <Button className="shrink-0" onClick={onClick} size={2}>
           {buttonLabel}
