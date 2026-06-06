@@ -41,7 +41,8 @@ const orderedListItemMarkerVariants = cva("", {
   variants: {
     variant: {
       default: "after:content-['.']",
-      highlight: "min-w-[1lh] rounded-full bg-neutral-300 px-1 text-center",
+      highlight:
+        "min-w-[1lh] rounded-full bg-accent px-1 text-center text-white",
     },
   },
 });
@@ -57,7 +58,7 @@ const OrderedListItem = ({
   children,
   className,
   marker,
-  variant = "highlight",
+  variant = "default",
   ...props
 }: OrderedListItemProps) => {
   const { level } = useList();
@@ -81,4 +82,4 @@ const OrderedListItem = ({
   );
 };
 
-export { OrderedListRoot, OrderedListItem };
+export { OrderedListItem, OrderedListRoot };
