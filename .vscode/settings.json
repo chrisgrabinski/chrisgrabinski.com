@@ -5,6 +5,9 @@
   "editor.defaultFormatter": "biomejs.biome",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
   "json.schemaDownload.enable": true,
   "tailwindCSS.classFunctions": ["cn", "clsx", "cva", "tw"],
   "typescript.preferences.importModuleSpecifier": "non-relative"
