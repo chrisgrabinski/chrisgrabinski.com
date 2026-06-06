@@ -1,9 +1,19 @@
 import "@/app/globals.css";
 import localFont from "next/font/local";
 
-const fontSans = localFont({
+const fontBody = localFont({
   src: "./fonts/Maison-Regular.woff2",
-  variable: "--font-sans",
+  variable: "--font-body",
+});
+
+const fontDisplay = localFont({
+  src: "./fonts/Maison-Regular.woff2",
+  variable: "--font-display",
+});
+
+const fontMono = localFont({
+  src: "./fonts/Maison-Regular.woff2",
+  variable: "--font-mono",
 });
 
 export default function RootLayout({
@@ -13,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      className={`${fontSans.variable} bg-background font-sans text-foreground antialiased`}
+      className={`${fontBody.variable} ${fontDisplay.variable} ${fontMono.variable} bg-background font-body text-foreground antialiased`}
       lang="en"
     >
       <body>{children}</body>

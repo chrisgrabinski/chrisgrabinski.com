@@ -53,7 +53,7 @@ export default async function TestPage({
       <div>
         <h1 className="font-semibold text-4xl">{title}</h1>
         {description && (
-          <p className="mt-1.5 text-balance text-lg text-neutral-400">
+          <p className="mt-1.5 text-balance text-foreground-muted text-lg">
             {description}
           </p>
         )}

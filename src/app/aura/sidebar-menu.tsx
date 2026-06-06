@@ -22,7 +22,7 @@ const SidebarMenuGroup = ({
   return (
     <div className="flex flex-col">
       {heading && (
-        <span className="px-2 pb-2 font-medium text-[13px] text-neutral-500 text-sm">
+        <span className="px-2 pb-2 text-[13px] text-foreground-muted text-sm">
           {heading}
         </span>
       )}

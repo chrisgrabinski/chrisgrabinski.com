@@ -48,7 +48,7 @@ const BreadcrumbsLink = ({
   return (
     <Link
       className={cn(
-        "flex items-center gap-[inherit] text-neutral-600",
+        "flex items-center gap-[inherit] text-foreground-muted",
         className,
       )}
       {...props}
@@ -125,8 +125,8 @@ const Breadcrumbs = ({
 
 export {
   Breadcrumbs,
-  BreadcrumbsRoot,
   BreadcrumbsItem,
   BreadcrumbsLink,
+  BreadcrumbsRoot,
   BreadcrumbsSeparator,
 };
