@@ -11,12 +11,7 @@ import { Card } from "@/components/card";
 export const Sidebar = () => {
   return (
     <div className="sticky top-0 flex h-dvh w-full shrink-0 flex-col">
-      <header className="p-8 pb-0">
-        <Link href="/aura">
-          <AuraLogo className="text-2xl" />
-        </Link>
-      </header>
-      <ScrollArea.Root className="mask-y-from-[calc(100%-32px)] min-h-0 flex-1 overflow-clip px-6">
+      <ScrollArea.Root className="mask-y-from-[calc(100%-32px)] min-h-0 flex-1 overflow-clip">
         <ScrollArea.Viewport className="size-full">
           <div className="py-8">
             <Navigation />
