@@ -1,6 +1,7 @@
 import * as componentsData from "@/app/aura/data/components";
 import { Heading } from "@/components/heading";
 import { Link } from "@/components/link";
+import { Text } from "@/components/text";
 
 export default function RootPage() {
   return (
@@ -8,12 +9,12 @@ export default function RootPage() {
       <Heading as="h1" size={7}>
         Welcome to Aura
       </Heading>
-      <p className="text-balance text-foreground-muted text-lg">
+      <Text as="p" className="mt-2" muted size={5}>
         A collection of modular components and UI patterns designed for modern
         web applications. This project serves as a practical design system,
         focused on refining architectural patterns and testing new development
         concepts.
-      </p>
+      </Text>
       <div className="mt-16">
         <Heading>Components</Heading>
         <div className="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-3">

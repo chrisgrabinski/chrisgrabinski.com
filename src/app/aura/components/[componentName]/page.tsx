@@ -9,6 +9,7 @@ import * as modulesData from "@/app/aura/data/modules";
 import { Button } from "@/components/button";
 import { Card } from "@/components/card";
 import { Heading } from "@/components/heading";
+import { Text } from "@/components/text";
 import { GitHubIcon } from "@/icons/github";
 import { StorybookIcon } from "@/icons/storybook";
 
@@ -72,9 +73,9 @@ export default async function TestPage({
           {title}
         </Heading>
         {description && (
-          <p className="mt-1.5 text-balance text-foreground-muted text-lg">
+          <Text as="p" className="mt-2" muted size={5}>
             {description}
-          </p>
+          </Text>
         )}
       </div>
       <div className="flex flex-wrap gap-3">
@@ -96,10 +97,10 @@ export default async function TestPage({
       <ComponentPreview>{demo}</ComponentPreview>
       {!!variants?.length && (
         <section className="grid gap-6">
-          <h2 className="flex items-center gap-[0.25ch] font-medium text-2xl">
+          <Heading className="flex items-center gap-[0.5ch]">
             <ShapesIcon />
             Variants
-          </h2>
+          </Heading>
           <div className="grid gap-6 sm:grid-cols-2">
             {variants?.map((variant) => (
               <Card className="p-0" key={variant.title}>
@@ -116,10 +117,10 @@ export default async function TestPage({
       )}
       {!!subComponents?.length && (
         <section className="grid gap-6">
-          <h2 className="flex items-center gap-[0.25ch] font-medium text-2xl">
+          <Heading className="flex items-center gap-[0.5ch]">
             <PuzzleIcon />
             Sub components
-          </h2>
+          </Heading>
           <div className="grid gap-6 sm:grid-cols-2">
             {subComponents.map((component) => (
               <Card className="p-0" key={component.name}>
@@ -144,10 +145,10 @@ export default async function TestPage({
       )}
       {!!modules?.length && (
         <section className="grid gap-6">
-          <h2 className="flex items-center gap-[0.25ch] font-medium text-2xl">
+          <Heading className="flex items-center gap-[0.5ch]">
             <PackageIcon />
             Modules
-          </h2>
+          </Heading>
           <div className="grid gap-6">
             {modules.map((module) => (
               <Link

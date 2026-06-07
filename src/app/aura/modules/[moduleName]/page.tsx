@@ -8,6 +8,7 @@ import * as modulesData from "@/app/aura/data/modules";
 import { Button } from "@/components/button";
 import { Heading } from "@/components/heading";
 import { Link } from "@/components/link";
+import { Text } from "@/components/text";
 import { GitHubIcon } from "@/icons/github";
 
 const getModuleData = (name: string) => {
@@ -56,9 +57,9 @@ export default async function TestPage({
           {title}
         </Heading>
         {description && (
-          <p className="mt-1.5 text-balance text-foreground-muted text-lg">
+          <Text as="p" className="mt-2" muted size={5}>
             {description}
-          </p>
+          </Text>
         )}
       </div>
       {sourceUrl && (
@@ -74,10 +75,10 @@ export default async function TestPage({
       <ComponentPreview>{demo}</ComponentPreview>
       {!!components?.length && (
         <section className="grid gap-6">
-          <h2 className="flex items-center gap-[0.25ch] font-medium text-2xl">
+          <Heading className="flex items-center gap-[0.5ch]">
             <PuzzleIcon />
             Sub components
-          </h2>
+          </Heading>
           <div className="grid gap-6 sm:grid-cols-2">
             {components.map((component) => (
               <div className="flex flex-col gap-3" key={component.name}>
