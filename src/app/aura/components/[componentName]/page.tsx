@@ -2,16 +2,14 @@ import { PackageIcon, PuzzleIcon, ShapesIcon } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ArticleHeader } from "@/app/aura/article-header";
 import { ComponentCanvas } from "@/app/aura/component-canvas";
 import { ComponentPreview } from "@/app/aura/component-preview";
 import * as componentsData from "@/app/aura/data/components";
 import * as modulesData from "@/app/aura/data/modules";
-import { Button } from "@/components/button";
+
 import { Card } from "@/components/card";
 import { Heading } from "@/components/heading";
-import { Text } from "@/components/text";
-import { GitHubIcon } from "@/icons/github";
-import { StorybookIcon } from "@/icons/storybook";
 
 const getComponentData = (name: string) => {
   return Object.values(componentsData).find(
@@ -48,15 +46,8 @@ export default async function TestPage({
     notFound();
   }
 
-  const {
-    title,
-    description,
-    components,
-    demo,
-    sourceUrl,
-    storybookUrl,
-    variants,
-  } = componentData;
+  const { title, description, components, demo, sourceUrl, variants } =
+    componentData;
 
   const subComponents = Object.values(componentsData).filter((component) =>
     components?.includes(component.name),
@@ -67,33 +58,22 @@ export default async function TestPage({
   );
 
   return (
-    <article className="grid gap-12 pb-12">
-      <div>
-        <Heading as="h1" size={7}>
-          {title}
-        </Heading>
-        {description && (
-          <Text as="p" className="mt-2" muted size={5}>
-            {description}
-          </Text>
-        )}
-      </div>
-      <div className="flex flex-wrap gap-3">
-        <Button asChild size={2}>
-          <a href={sourceUrl} rel="noopener noreferrer" target="_blank">
-            <GitHubIcon />
-            View source
-          </a>
-        </Button>
-        {storybookUrl && (
-          <Button asChild size={2} variant="storybook">
-            <a href={storybookUrl} rel="noopener noreferrer" target="_blank">
-              <StorybookIcon />
-              Storybook
-            </a>
-          </Button>
-        )}
-      </div>
+    <article className="grid gap-16 pb-16">
+      <ArticleHeader
+        breadcrumbs={[
+          {
+            name: "Components",
+            url: "/aura/components",
+          },
+          {
+            name: title,
+            url: `/aura/components/${componentName}`,
+          },
+        ]}
+        description={description}
+        sourceUrl={sourceUrl}
+        title={title}
+      />
       <ComponentPreview>{demo}</ComponentPreview>
       {!!variants?.length && (
         <section className="grid gap-6">

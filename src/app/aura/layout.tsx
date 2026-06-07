@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/aura">) {
   return (
     <div className="flex min-h-dvh flex-col">
-      <header className="sticky top-0 z-10 flex items-center justify-between bg-linear-180 from-background via-background/60 p-4 md:p-8">
+      <header className="sticky top-0 z-10 flex items-center justify-between bg-linear-180 from-background via-background/60 px-4 py-6 md:p-8">
         <Link className="grid h-8 place-items-center" href="/aura">
           <AuraLogo className="h-7" />
         </Link>

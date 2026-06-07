@@ -1,15 +1,14 @@
 import { PuzzleIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { ArticleHeader } from "@/app/aura/article-header";
 import { ComponentCanvas } from "@/app/aura/component-canvas";
 import { ComponentPreview } from "@/app/aura/component-preview";
 import * as componentsData from "@/app/aura/data/components";
 import * as modulesData from "@/app/aura/data/modules";
-import { Button } from "@/components/button";
+
 import { Heading } from "@/components/heading";
 import { Link } from "@/components/link";
-import { Text } from "@/components/text";
-import { GitHubIcon } from "@/icons/github";
 
 const getModuleData = (name: string) => {
   return Object.values(modulesData).find((module) => module.name === name);
@@ -52,26 +51,21 @@ export default async function TestPage({
 
   return (
     <article className="grid gap-12 pb-12">
-      <div>
-        <Heading as="h1" size={7}>
-          {title}
-        </Heading>
-        {description && (
-          <Text as="p" className="mt-2" muted size={5}>
-            {description}
-          </Text>
-        )}
-      </div>
-      {sourceUrl && (
-        <div className="flex flex-wrap gap-3">
-          <Button asChild size={2}>
-            <a href={sourceUrl} rel="noopener noreferrer" target="_blank">
-              <GitHubIcon />
-              View source
-            </a>
-          </Button>
-        </div>
-      )}
+      <ArticleHeader
+        breadcrumbs={[
+          {
+            name: "Modules",
+            url: "/aura/modules",
+          },
+          {
+            name: title,
+            url: `/aura/modules/${moduleName}`,
+          },
+        ]}
+        description={description}
+        sourceUrl={sourceUrl}
+        title={title}
+      />
       <ComponentPreview>{demo}</ComponentPreview>
       {!!components?.length && (
         <section className="grid gap-6">
