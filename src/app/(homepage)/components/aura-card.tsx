@@ -2,6 +2,7 @@ import { ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
 import { AuraLogo } from "@/app/aura/aura-logo";
 import { Card } from "@/components/card";
+import { Overline } from "@/components/overline";
 
 export const AuraCard = () => {
   return (
@@ -12,9 +13,7 @@ export const AuraCard = () => {
       <Link href="/aura">
         <div className="grid flex-1 gap-2">
           <AuraLogo className="text-lg" />
-          <p className="relative font-mono text-foreground-muted text-xs uppercase leading-none tracking-wide">
-            Components showcase
-          </p>
+          <Overline size={1}>Components showcase</Overline>
         </div>
         <div className="shrink-0">
           <ChevronRightIcon className="text-foreground-muted transition group-hover/aura-card:text-foreground" />

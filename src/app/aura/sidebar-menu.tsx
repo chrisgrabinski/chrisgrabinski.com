@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Collapsible, Slot } from "radix-ui";
 import type React from "react";
+import { Overline } from "@/components/overline";
 import { cn } from "@/lib/styles";
 import { ButtonPrimitive } from "@/primitives/button";
 
@@ -22,7 +23,9 @@ const SidebarMenuGroup = ({
   return (
     <div className="flex flex-col">
       {heading && (
-        <span className="px-2 pb-2 text-foreground-muted">{heading}</span>
+        <Overline className="px-2 pb-2" size={1}>
+          {heading}
+        </Overline>
       )}
       {children}
     </div>

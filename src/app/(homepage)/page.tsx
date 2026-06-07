@@ -8,6 +8,7 @@ import avatar from "@/app/(homepage)/images/chris-grabinski.jpg";
 import texture from "@/app/(homepage)/images/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg";
 import { getCurrentlyPlaying } from "@/app/(homepage)/lib/spotify";
 import { Heading } from "@/components/heading";
+import { Overline } from "@/components/overline";
 import { GitHubIcon } from "@/icons/github";
 import { InstagramIcon } from "@/icons/instagram";
 import { LinkedInIcon } from "@/icons/linkedin";
@@ -70,9 +71,9 @@ export default async function RootPage() {
             Chris
             <br /> Grabiński
           </Heading>
-          <p className="mt-3 text-foreground-muted text-lg">
+          <Overline className="mt-3 block" size={3}>
             Frontend Engineer
-          </p>
+          </Overline>
           <p className="whitespace-balance mt-3 text-lg">
             Working with product teams to deliver beautiful, user‑friendly, and
             goal‑driven web experiences.
