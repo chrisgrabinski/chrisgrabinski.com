@@ -35,7 +35,7 @@ const ArticleHeader = ({
     <header className="grid gap-4">
       {(breadcrumbs || next || previous) && (
         <div className="flex h-8 items-center justify-between">
-          {breadcrumbs && <Breadcrumbs items={breadcrumbs} />}
+          {breadcrumbs && <Breadcrumbs includeJsonLd items={breadcrumbs} />}
           {(next || previous) && (
             <div className="flex gap-2">
               {previous && (
