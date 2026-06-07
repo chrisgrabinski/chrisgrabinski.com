@@ -1,5 +1,5 @@
 import { PuzzleIcon } from "lucide-react";
-import type { Metadata } from "next";
+import type { Metadata, Route } from "next";
 import { notFound } from "next/navigation";
 import { ArticleHeader } from "@/app/aura/article-header";
 import { ComponentCanvas } from "@/app/aura/component-canvas";
@@ -55,11 +55,11 @@ export default async function TestPage({
         breadcrumbs={[
           {
             name: "Modules",
-            url: "/aura/modules",
+            url: "/aura/modules" as Route,
           },
           {
             name: title,
-            url: `/aura/modules/${moduleName}`,
+            url: `/aura/modules/${moduleName}` as Route,
           },
         ]}
         description={description}

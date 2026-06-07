@@ -1,5 +1,5 @@
 import { PackageIcon, PuzzleIcon, ShapesIcon } from "lucide-react";
-import type { Metadata } from "next";
+import type { Metadata, Route } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArticleHeader } from "@/app/aura/article-header";
@@ -63,11 +63,11 @@ export default async function TestPage({
         breadcrumbs={[
           {
             name: "Components",
-            url: "/aura/components",
+            url: "/aura/components" as Route,
           },
           {
             name: title,
-            url: `/aura/components/${componentName}`,
+            url: `/aura/components/${componentName}` as Route,
           },
         ]}
         description={description}
@@ -133,7 +133,7 @@ export default async function TestPage({
             {modules.map((module) => (
               <Link
                 className="flex h-full flex-col gap-1.5"
-                href={`/aura/modules/${module.name}`}
+                href={`/aura/modules/${module.name}` as Route}
                 key={module.name}
               >
                 <Card className="p-0">
