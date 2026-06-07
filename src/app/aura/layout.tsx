@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { AuraLogo } from "@/app/aura/aura-logo";
 import { Navigation } from "@/app/aura/navigation";
-import { Sidebar } from "@/app/aura/sidebar";
+
 import { SmallNavigation } from "@/app/aura/small-navigation";
 
 export const metadata: Metadata = {

@@ -7,7 +7,7 @@ import { UnbabelLogo } from "@/app/(homepage)/components/unbabel-logo";
 import avatar from "@/app/(homepage)/images/chris-grabinski.jpg";
 import texture from "@/app/(homepage)/images/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg";
 import { getCurrentlyPlaying } from "@/app/(homepage)/lib/spotify";
-import { IconButton } from "@/components/icon-button";
+import { Heading } from "@/components/heading";
 import { GitHubIcon } from "@/icons/github";
 import { InstagramIcon } from "@/icons/instagram";
 import { LinkedInIcon } from "@/icons/linkedin";
@@ -66,10 +66,10 @@ export default async function RootPage() {
           <Image alt="" className="saturate-0" src={avatar} />
         </div>
         <div className="z-10 col-start-2 col-end-8 row-start-4 row-end-6 pb-6 md:col-start-2 md:col-end-5 md:row-start-1 md:row-end-auto md:py-6">
-          <h1 className="font-display text-7xl">
+          <Heading as="h1" size={9}>
             Chris
             <br /> Grabiński
-          </h1>
+          </Heading>
           <p className="mt-3 text-foreground-muted text-lg">
             Frontend Engineer
           </p>

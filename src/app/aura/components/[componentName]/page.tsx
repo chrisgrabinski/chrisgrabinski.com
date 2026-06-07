@@ -8,6 +8,7 @@ import * as componentsData from "@/app/aura/data/components";
 import * as modulesData from "@/app/aura/data/modules";
 import { Button } from "@/components/button";
 import { Card } from "@/components/card";
+import { Heading } from "@/components/heading";
 import { GitHubIcon } from "@/icons/github";
 import { StorybookIcon } from "@/icons/storybook";
 
@@ -67,7 +68,9 @@ export default async function TestPage({
   return (
     <article className="grid gap-12 pb-12">
       <div>
-        <h1 className="text-4xl">{title}</h1>
+        <Heading as="h1" size={7}>
+          {title}
+        </Heading>
         {description && (
           <p className="mt-1.5 text-balance text-foreground-muted text-lg">
             {description}
