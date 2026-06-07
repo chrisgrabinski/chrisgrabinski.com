@@ -1,6 +1,7 @@
 import "@/app/globals.css";
 import { ThemeProvider } from "@teispace/next-themes";
 import { getTheme } from "@teispace/next-themes/server";
+import { Instrument_Serif } from "next/font/google";
 import localFont from "next/font/local";
 
 const fontBody = localFont({
@@ -8,9 +9,9 @@ const fontBody = localFont({
   variable: "--font-body",
 });
 
-const fontDisplay = localFont({
-  src: "./fonts/Maison-Regular.woff2",
+const fontDisplay = Instrument_Serif({
   variable: "--font-display",
+  weight: "400",
 });
 
 const fontMono = localFont({

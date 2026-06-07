@@ -66,18 +66,20 @@ export default async function RootPage() {
           <Image alt="" className="saturate-0" src={avatar} />
         </div>
         <div className="z-10 col-start-2 col-end-8 row-start-4 row-end-6 pb-6 md:col-start-2 md:col-end-5 md:row-start-1 md:row-end-auto md:py-6">
-          <h1 className="text-5xl sm:text-6xl">
+          <h1 className="font-display text-7xl">
             Chris
             <br /> Grabiński
           </h1>
-          <p className="mt-3 text-2xl text-foreground-muted">
+          <p className="mt-3 text-foreground-muted text-lg">
             Frontend Engineer
           </p>
           <p className="whitespace-balance mt-3 text-lg">
             Working with product teams to deliver beautiful, user‑friendly, and
             goal‑driven web experiences.
           </p>
-          <p className="mt-6 text-foreground-muted text-xs">Worked with</p>
+          <p className="mt-6 font-mono text-foreground-muted text-xs uppercase tracking-wide">
+            Worked with
+          </p>
           <ul className="mt-3 flex items-center gap-6">
             <li>
               <RemoteLogo className="h-5" />

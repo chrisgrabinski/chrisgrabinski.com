@@ -12,7 +12,9 @@ export const AuraCard = () => {
       <Link href="/aura">
         <div className="grid flex-1 gap-2">
           <AuraLogo className="text-lg" />
-          <p className="relative text-sm leading-none">Components showcase</p>
+          <p className="relative font-mono text-foreground-muted text-xs uppercase leading-none tracking-wide">
+            Components showcase
+          </p>
         </div>
         <div className="shrink-0">
           <ChevronRightIcon className="text-foreground-muted transition group-hover/aura-card:text-foreground" />
