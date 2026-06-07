@@ -63,7 +63,7 @@ export default async function TestPage({
         breadcrumbs={[
           {
             name: "Components",
-            url: "/aura/components/",
+            url: "/aura/components",
           },
           {
             name: title,
