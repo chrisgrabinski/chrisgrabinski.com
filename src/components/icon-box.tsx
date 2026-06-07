@@ -1,16 +1,16 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
-const boxVariants = cva("grid place-items-center [&>svg]:size-1/2", {
+const boxVariants = cva("grid place-items-center border [&>svg]:size-1/2", {
   defaultVariants: {
     color: "grey",
     size: 3,
   },
   variants: {
     color: {
-      green: "bg-green-800 text-green-200",
-      grey: "bg-surface text-foreground",
-      red: "bg-red-800 text-red-200",
-      yellow: "bg-yellow-800 text-yellow-200",
+      green: "border-green-300 bg-green-800 text-green-200",
+      grey: "border-border bg-surface text-foreground",
+      red: "border-red-300 bg-red-800 text-red-200",
+      yellow: "border-yellow-300 bg-yellow-800 text-yellow-200",
     },
     size: {
       1: "size-6 rounded",
