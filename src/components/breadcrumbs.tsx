@@ -1,5 +1,4 @@
 import { ChevronRightIcon, type LucideIcon } from "lucide-react";
-import type { Route } from "next";
 import type React from "react";
 import { Link } from "@/components/link";
 import { Overline } from "@/components/overline";
@@ -41,16 +40,13 @@ const BreadcrumbsItem = ({
   );
 };
 
-interface BreadcrumbsLinkProps<TUrl extends string>
-  extends Omit<React.ComponentProps<typeof Link>, "href"> {
-  href: Route<TUrl> | URL;
-}
+interface BreadcrumbsLinkProps extends React.ComponentProps<typeof Link> {}
 
-const BreadcrumbsLink = <TUrl extends string>({
+const BreadcrumbsLink = ({
   children,
   className,
   ...props
-}: BreadcrumbsLinkProps<TUrl>) => {
+}: BreadcrumbsLinkProps) => {
   return (
     <Link
       className={cn(
@@ -74,21 +70,21 @@ const BreadcrumbsSeparator = ({
   return <ChevronRightIcon className={cn("size-4", className)} {...props} />;
 };
 
-interface BreadcrumbsProps<TUrl extends string> extends BreadcrumbsRootProps {
+interface BreadcrumbsProps extends BreadcrumbsRootProps {
   items: {
     name: string;
-    url: Route<TUrl> | URL;
+    url: React.ComponentProps<typeof Link>["href"];
   }[];
   includeJsonLd?: boolean;
   hideCurrent?: boolean;
 }
 
-const Breadcrumbs = <TUrl extends string>({
+const Breadcrumbs = ({
   items,
   includeJsonLd = false,
   hideCurrent = false,
   ...props
-}: BreadcrumbsProps<TUrl>) => {
+}: BreadcrumbsProps) => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",

@@ -7,7 +7,7 @@ import { IconButton } from "@/components/icon-button";
 import { Text } from "@/components/text";
 import { GitHubIcon } from "@/icons/github";
 
-interface ArticleHeaderProps<TUrl extends string>
+interface ArticleHeaderProps
   extends Omit<React.ComponentProps<"header">, "children"> {
   title: string;
   description?: string;
@@ -20,17 +20,17 @@ interface ArticleHeaderProps<TUrl extends string>
     name: string;
   };
   sourceUrl?: string;
-  breadcrumbs?: React.ComponentProps<typeof Breadcrumbs<TUrl>>["items"];
+  breadcrumbs?: React.ComponentProps<typeof Breadcrumbs>["items"];
 }
 
-const ArticleHeader = <TUrl extends string>({
+const ArticleHeader = ({
   breadcrumbs,
   title,
   description,
   next,
   previous,
   sourceUrl,
-}: ArticleHeaderProps<TUrl>) => {
+}: ArticleHeaderProps) => {
   return (
     <header className="grid gap-4">
       {(breadcrumbs || next || previous) && (
