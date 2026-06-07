@@ -52,7 +52,7 @@ const DataListItem = ({
   return (
     <Component
       className={cn(
-        "col-span-full col-start-1 grid min-h-8 grid-cols-subgrid gap-x-3 border-neutral-600 not-first:border-t py-1.5",
+        "col-span-full col-start-1 grid min-h-8 grid-cols-subgrid gap-x-3 border-border not-first:border-t py-1.5",
         className,
       )}
       {...props}

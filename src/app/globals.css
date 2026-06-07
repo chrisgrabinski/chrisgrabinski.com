@@ -10,6 +10,7 @@
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-border: var(--border);
 
   --color-foreground-muted: color-mix(in oklab, currentcolor 65%, transparent);
 
@@ -21,6 +22,7 @@
 
   --background: oklch(0.95 0.03 60);
   --foreground: oklch(0.25 0.04 60);
+  --border: oklch(0.85 0.02 60);
 
   --surface: oklch(1 0 60);
 
@@ -32,6 +34,7 @@
 [data-theme="dark"] {
   --background: oklch(0.15 0.02 60);
   --foreground: oklch(0.95 0.03 60);
+  --border: oklch(0.4 0.01 60);
 
   --surface: oklch(0.25 0.01 60);
 
