@@ -1,7 +1,6 @@
 import "@/app/globals.css";
 import { ThemeProvider } from "@teispace/next-themes";
 import { getTheme } from "@teispace/next-themes/server";
-import { Instrument_Serif } from "next/font/google";
 import localFont from "next/font/local";
 
 const fontBody = localFont({
@@ -9,9 +8,9 @@ const fontBody = localFont({
   variable: "--font-body",
 });
 
-const fontDisplay = Instrument_Serif({
+const fontDisplay = localFont({
+  src: "./fonts/LibreCaslonCondensed-Medium.woff2",
   variable: "--font-display",
-  weight: "400",
 });
 
 const fontMono = localFont({

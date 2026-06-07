@@ -2,7 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { Slot } from "radix-ui";
 import { cn } from "@/lib/styles";
 
-const headingVariants = cva("font-display", {
+const headingVariants = cva("font-display font-medium", {
   variants: {
     size: {
       1: "text-md",
