@@ -6,7 +6,7 @@ import { CountryAvatar } from "@/components/avatar-country";
 import { VerifiedAvatar } from "@/components/avatar-verified";
 
 export const avatar: ComponentData = {
-  demo: <Avatar fallback="Chris Grabinski" size={6} src={avatarImage.src} />,
+  demo: <Avatar fallback="Chris Grabinski" size={7} src={avatarImage.src} />,
   description:
     "An image element with a fallback for representing users, complete with optional country flags and verification badges.",
   name: "avatar",
@@ -16,7 +16,7 @@ export const avatar: ComponentData = {
   title: "Avatar",
   variants: [
     {
-      demo: <Avatar fallback="Chris Grabinski" size={6} />,
+      demo: <Avatar fallback="Chris Grabiński" size={6} />,
       title: "Fallback",
     },
     {

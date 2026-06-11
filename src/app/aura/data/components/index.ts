@@ -1,6 +1,7 @@
 export { audioButton } from "./audio-button";
 export { auraButton } from "./aura-button";
 export { avatar } from "./avatar";
+export { avatarGroup } from "./avatar-group";
 export { badge } from "./badge";
 export { breadcrumbs } from "./breadcrumbs";
 export { button } from "./button";

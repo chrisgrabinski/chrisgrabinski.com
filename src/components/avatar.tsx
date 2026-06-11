@@ -2,6 +2,8 @@
 
 import { cva, type VariantProps } from "class-variance-authority";
 import { Avatar as AvatarPrimitive } from "radix-ui";
+import { createContext, useContext } from "react";
+import { Pile } from "@/components/pile";
 import { cn } from "@/lib/styles";
 
 const getAvatarFallbackInitials = (name: string): string => {
@@ -9,26 +11,51 @@ const getAvatarFallbackInitials = (name: string): string => {
   return initials.slice(0, 3).join("");
 };
 
-const avatarVariants = cva("relative isolate inline-block font-medium", {
-  defaultVariants: {
-    size: 4,
-  },
-  variants: {
-    size: {
-      1: "size-6 text-xs",
-      2: "size-8 text-sm",
-      3: "size-10 text-base",
-      4: "size-12 text-lg",
-      5: "size-16 text-xl",
-      6: "size-20 text-2xl",
-      7: "size-24 text-3xl",
-      8: "size-32 text-4xl",
-      9: "size-36 text-5xl",
+const avatarVariants = cva(
+  "inline-grid overflow-clip rounded-full bg-surface font-medium text-foreground text-shadow-neutral-800",
+  {
+    variants: {
+      size: {
+        1: "size-6 text-xs",
+        2: "size-8 text-sm",
+        3: "size-10 text-base",
+        4: "size-12 text-lg",
+        5: "size-16 text-xl",
+        6: "size-20 text-2xl",
+        7: "size-24 text-3xl",
+        8: "size-32 text-4xl",
+        9: "size-36 text-5xl",
+      },
     },
   },
-});
+);
 
 type AvatarVariants = VariantProps<typeof avatarVariants>;
+
+type AvatarSize = NonNullable<AvatarVariants["size"]>;
+
+type AvatarContextProps = {
+  size?: AvatarSize;
+};
+
+const AvatarContext = createContext<AvatarContextProps>({
+  size: 4,
+});
+
+type AvatarProviderProps = {
+  children?: React.ReactNode;
+  value: AvatarContextProps;
+};
+
+const AvatarProvider = ({ children, value }: AvatarProviderProps) => {
+  return (
+    <AvatarContext.Provider value={value}>{children}</AvatarContext.Provider>
+  );
+};
+
+const useAvatar = () => {
+  return useContext(AvatarContext);
+};
 
 type AvatarRootProps = React.ComponentProps<typeof AvatarPrimitive.Root> &
   AvatarVariants;
@@ -36,22 +63,26 @@ type AvatarRootProps = React.ComponentProps<typeof AvatarPrimitive.Root> &
 const AvatarRoot = ({
   children,
   className,
-  size,
+  size: providedSize,
   ...props
 }: AvatarRootProps) => {
+  const { size: contextSize } = useAvatar();
+
+  const size = providedSize || contextSize;
+
+  console.log({ contextSize, providedSize, size });
+
   return (
-    <AvatarPrimitive.Root
-      className={cn(avatarVariants({ className, size }))}
-      {...props}
-    >
-      {children}
-    </AvatarPrimitive.Root>
+    <Pile asChild className={cn(avatarVariants({ size }), className)}>
+      <AvatarPrimitive.Root {...props}>{children}</AvatarPrimitive.Root>
+    </Pile>
   );
 };
 
 type AvatarImageProps = React.ComponentProps<typeof AvatarPrimitive.Image>;
 
 const AvatarImage = ({
+  alt = "",
   children,
   className,
   asChild,
@@ -59,10 +90,8 @@ const AvatarImage = ({
 }: AvatarImageProps) => {
   return (
     <AvatarPrimitive.Image
-      className={cn(
-        "absolute inset-0 z-20 overflow-clip rounded-full object-cover",
-        className,
-      )}
+      alt={alt}
+      className={cn("object-cover", className)}
       {...props}
     >
       {children}
@@ -78,7 +107,7 @@ const AvatarFallback = ({ children, ...props }: AvatarFallbackProps) => {
   return (
     <AvatarPrimitive.Fallback
       aria-hidden="true"
-      className="absolute inset-0 z-10 grid select-none place-items-center overflow-clip rounded-full bg-surface text-foreground text-shadow-neutral-800"
+      className="select-none"
       {...props}
     >
       {children}
@@ -115,4 +144,5 @@ const Avatar = ({
   );
 };
 
-export { Avatar, AvatarFallback, AvatarImage, AvatarRoot };
+export type { AvatarSize };
+export { Avatar, AvatarFallback, AvatarImage, AvatarProvider, AvatarRoot };
