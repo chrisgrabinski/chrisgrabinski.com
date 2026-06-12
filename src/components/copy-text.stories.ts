@@ -1,19 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { fn } from "storybook/test";
-import { CopyToClipboard } from "./copy-to-clipboard";
+import { CopyText } from "./copy-text";
 
 const meta = {
   args: {
     children: "Click to copy this text",
     onCopy: fn(),
   },
-  component: CopyToClipboard,
+  component: CopyText,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
-  title: "CopyToClipboard",
-} satisfies Meta<typeof CopyToClipboard>;
+  title: "CopyText",
+} satisfies Meta<typeof CopyText>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

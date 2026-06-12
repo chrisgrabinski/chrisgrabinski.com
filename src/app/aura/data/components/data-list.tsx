@@ -1,6 +1,6 @@
 import type { ComponentData } from "@/app/aura/data/components/types";
 import { Card } from "@/components/card";
-import { CopyToClipboard } from "@/components/copy-to-clipboard";
+import { CopyText } from "@/components/copy-text";
 import { CountryLabel } from "@/components/country-label";
 import {
   DataListItem,
@@ -32,17 +32,17 @@ export const dataList: ComponentData = {
         <DataListItem>
           <DataListLabel>Contract</DataListLabel>
           <DataListValue>
-            <CopyToClipboard>
+            <CopyText>
               <Filename>
                 peter_parker_united_states_employment_contract.pdf
               </Filename>
-            </CopyToClipboard>
+            </CopyText>
           </DataListValue>
         </DataListItem>
         <DataListItem>
           <DataListLabel>Email</DataListLabel>
           <DataListValue>
-            <CopyToClipboard>mail@example.com</CopyToClipboard>
+            <CopyText>mail@example.com</CopyText>
           </DataListValue>
         </DataListItem>
         <DataListItem>
@@ -85,5 +85,5 @@ export const dataList: ComponentData = {
   name: "data-list",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/data-list.tsx",
-  title: "Data list",
+  title: "Data List",
 };

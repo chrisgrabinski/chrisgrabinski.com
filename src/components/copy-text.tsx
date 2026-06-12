@@ -12,7 +12,7 @@ const messages = {
   success: "Copied",
 } as const;
 
-interface CopyToClipboardProps
+interface CopyTextProps
   extends Omit<React.ComponentProps<"button">, "onCopy">,
     Pick<React.ComponentProps<typeof IconButton>, "size"> {
   children: React.ReactNode;
@@ -20,14 +20,14 @@ interface CopyToClipboardProps
   textContent?: string;
 }
 
-const CopyToClipboard = ({
+const CopyText = ({
   children,
   className,
   onCopy,
   size = 2,
   textContent: providedTextContent,
   ...props
-}: CopyToClipboardProps) => {
+}: CopyTextProps) => {
   const childrenRef = useRef<HTMLSpanElement>(null);
 
   const handleCopy = async () => {
@@ -60,4 +60,4 @@ const CopyToClipboard = ({
   );
 };
 
-export { CopyToClipboard };
+export { CopyText };

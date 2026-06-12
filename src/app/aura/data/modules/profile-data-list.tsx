@@ -1,6 +1,6 @@
 import type { ModuleData } from "@/app/aura/data/modules/types";
 import { Card } from "@/components/card";
-import { CopyToClipboard } from "@/components/copy-to-clipboard";
+import { CopyText } from "@/components/copy-text";
 import { CountryLabel } from "@/components/country-label";
 import {
   DataListItem,
@@ -40,17 +40,17 @@ export const profileDataList: ModuleData = {
         <DataListItem>
           <DataListLabel>Contract</DataListLabel>
           <DataListValue>
-            <CopyToClipboard>
+            <CopyText>
               <Filename>
                 peter_parker_united_states_employment_contract.pdf
               </Filename>
-            </CopyToClipboard>
+            </CopyText>
           </DataListValue>
         </DataListItem>
         <DataListItem>
           <DataListLabel>Email</DataListLabel>
           <DataListValue>
-            <CopyToClipboard>mail@example.com</CopyToClipboard>
+            <CopyText>mail@example.com</CopyText>
           </DataListValue>
         </DataListItem>
         <DataListItem>
