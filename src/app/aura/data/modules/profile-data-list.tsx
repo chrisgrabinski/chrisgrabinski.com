@@ -18,7 +18,7 @@ import { Status } from "@/components/status";
 export const profileDataList: ModuleData = {
   components: [
     "card",
-    "copy-to-clipboard",
+    "copy-text",
     "country-label",
     "data-list",
     "filename",

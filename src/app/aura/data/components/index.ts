@@ -7,7 +7,7 @@ export { breadcrumbs } from "./breadcrumbs";
 export { button } from "./button";
 export { card } from "./card";
 export { checkbox } from "./checkbox";
-export { copyToClipboard } from "./copy-to-clipboard";
+export { copyText } from "./copy-text";
 export { countryLabel } from "./country-label";
 export { dataList } from "./data-list";
 export { filename } from "./filename";

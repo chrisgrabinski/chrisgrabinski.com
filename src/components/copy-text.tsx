@@ -45,7 +45,7 @@ const CopyText = ({
     <InlineToast
       aria-description={messages.action}
       className={cn(
-        "group/copy-to-clipboard relative inline-flex min-w-0 align-baseline",
+        "group/copy-text relative inline-flex min-w-0 align-baseline",
         className,
       )}
       message={messages.success}
@@ -55,7 +55,7 @@ const CopyText = ({
       <span className="contents" ref={childrenRef}>
         {children}
       </span>
-      <CopyIcon className="ml-[0.5ch] size-[1em] shrink-0 self-center transition group-hover/copy-to-clipboard:stroke-accent" />
+      <CopyIcon className="ml-[0.5ch] size-[1em] shrink-0 self-center transition group-hover/copy-text:stroke-accent" />
     </InlineToast>
   );
 };

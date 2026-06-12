@@ -6,7 +6,7 @@ export const copyText: ComponentData = {
   demo: <CopyText>hello@example.com</CopyText>,
   description:
     "A clickable element that instantly copies its text content to the clipboard with visual feedback.",
-  name: "copy-to-clipboard",
+  name: "copy-text",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/copy-text.tsx",
   storybookUrl:
