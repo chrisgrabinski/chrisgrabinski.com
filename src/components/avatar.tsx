@@ -70,8 +70,6 @@ const AvatarRoot = ({
 
   const size = providedSize || contextSize;
 
-  console.log({ contextSize, providedSize, size });
-
   return (
     <Pile asChild className={cn(avatarVariants({ size }), className)}>
       <AvatarPrimitive.Root {...props}>{children}</AvatarPrimitive.Root>
