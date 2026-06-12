@@ -22,8 +22,7 @@ export const avatarGroup: ComponentData = {
   description: "A list of avatars displayed with a partial overlap.",
   name: "avatar-group",
   sourceUrl:
-    "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/avatar.tsx",
-  storybookUrl: "https://storybook.chrisgrabinski.com/?path=/docs/avatar--docs",
+    "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/avatar-group.tsx",
   title: "Avatar Group",
   variants: [
     {
