@@ -20,6 +20,7 @@ export { orderedList } from "./ordered-list";
 export { playButton } from "./play-button";
 export { progressRing } from "./progress-ring";
 export { segmentedControl } from "./segmented-control";
+export { separatorList } from "./separator-list";
 export { slider } from "./slider";
 export { status } from "./status";
 export { switchComponent } from "./switch";

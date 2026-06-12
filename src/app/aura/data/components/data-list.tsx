@@ -16,6 +16,7 @@ import { Filename } from "@/components/filename";
 import { Status } from "@/components/status";
 
 export const dataList: ComponentData = {
+  components: ["separator-list"],
   demo: (
     <Card className="w-full max-w-md">
       <DataListRoot>

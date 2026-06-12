@@ -3,6 +3,10 @@
 import { ChevronDownIcon } from "lucide-react";
 import { Collapsible, Slot } from "radix-ui";
 import { createContext, useContext, useState } from "react";
+import {
+  SeparatorListItem,
+  SeparatorListRoot,
+} from "@/components/separator-list";
 import { cn } from "@/lib/styles";
 import { ButtonPrimitive } from "@/primitives/button";
 
@@ -25,15 +29,17 @@ const DataListRoot = ({
   const Component = asChild ? Slot.Root : "dl";
 
   return (
-    <Component
-      className={cn(
-        "group/data-list col-span-full col-start-1 grid grid-cols-[2fr_3fr] text-sm",
-        className,
-      )}
-      {...props}
-    >
-      {children}
-    </Component>
+    <SeparatorListRoot asChild>
+      <Component
+        className={cn(
+          "group/data-list col-span-full col-start-1 grid grid-cols-[2fr_3fr] text-sm",
+          className,
+        )}
+        {...props}
+      >
+        {children}
+      </Component>
+    </SeparatorListRoot>
   );
 };
 
@@ -50,15 +56,17 @@ const DataListItem = ({
   const Component = asChild ? Slot.Root : "div";
 
   return (
-    <Component
-      className={cn(
-        "col-span-full col-start-1 grid min-h-8 grid-cols-subgrid gap-x-3 border-border not-first:border-t py-1.5",
-        className,
-      )}
-      {...props}
-    >
-      {children}
-    </Component>
+    <SeparatorListItem asChild>
+      <Component
+        className={cn(
+          "col-span-full col-start-1 grid min-h-8 grid-cols-subgrid gap-x-3",
+          className,
+        )}
+        {...props}
+      >
+        {children}
+      </Component>
+    </SeparatorListItem>
   );
 };
 
