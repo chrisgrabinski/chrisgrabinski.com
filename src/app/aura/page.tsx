@@ -1,7 +1,7 @@
 import * as componentsData from "@/app/aura/data/components";
 import { Heading } from "@/components/heading";
-import { Link } from "@/components/link";
 import { Text } from "@/components/text";
+import { TextLink } from "@/components/text-link";
 
 export default function RootPage() {
   return (
@@ -20,13 +20,13 @@ export default function RootPage() {
         <div className="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-3">
           {Object.values(componentsData).map((component) => {
             return (
-              <Link
+              <TextLink
                 // @ts-expect-error - TODO: fix link types
                 href={`/aura/components/${component.name}`}
                 key={component.name}
               >
                 {component.title}
-              </Link>
+              </TextLink>
             );
           })}
         </div>

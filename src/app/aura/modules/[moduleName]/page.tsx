@@ -8,7 +8,7 @@ import * as componentsData from "@/app/aura/data/components";
 import * as modulesData from "@/app/aura/data/modules";
 
 import { Heading } from "@/components/heading";
-import { Link } from "@/components/link";
+import { Link } from "@/components/text-link";
 
 const getModuleData = (name: string) => {
   return Object.values(modulesData).find((module) => module.name === name);
