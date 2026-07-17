@@ -2,6 +2,7 @@ import "@/app/globals.css";
 import { ThemeProvider } from "@teispace/next-themes";
 import { getTheme } from "@teispace/next-themes/server";
 import localFont from "next/font/local";
+import { DeveloperConsole } from "@/app/developer-console";
 
 const fontBody = localFont({
   src: "./fonts/Maison-Regular.woff2",
@@ -32,6 +33,7 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <body>
+        <DeveloperConsole />
         <ThemeProvider initialTheme={initialTheme ?? undefined}>
           {children}
         </ThemeProvider>
