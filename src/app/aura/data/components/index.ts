@@ -23,6 +23,7 @@ export { separatorList } from "./separator-list";
 export { slider } from "./slider";
 export { status } from "./status";
 export { switchComponent } from "./switch";
+export { tabs } from "./tabs";
 export { textLink } from "./text-link";
 export { tooltip } from "./tooltip";
 export { unorderedList } from "./unordered-list";
