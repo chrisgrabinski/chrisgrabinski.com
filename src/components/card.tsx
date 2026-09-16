@@ -2,7 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { Slot } from "radix-ui";
 import { cn } from "@/lib/styles";
 
-const cardVariants = cva("overflow-clip rounded-lg p-6", {
+const cardVariants = cva("overflow-clip rounded-lg p-4", {
   defaultVariants: {
     variant: "default",
   },
