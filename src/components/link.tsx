@@ -1,7 +1,7 @@
 import NextLink from "next/link";
 import { cn } from "@/lib/styles";
 
-const TextLink = ({
+const Link = ({
   children,
   className,
   ...props
@@ -19,4 +19,4 @@ const TextLink = ({
   );
 };
 
-export { TextLink };
+export { Link };

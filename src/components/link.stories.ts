@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import { TextLink } from "./text-link";
+import { Link } from "./link";
 
 const meta = {
   args: {
     children: "A standard link",
     href: "#",
   },
-  component: TextLink,
+  component: Link,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
-  title: "TextLink",
-} satisfies Meta<typeof TextLink>;
+  title: "Link",
+} satisfies Meta<typeof Link>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

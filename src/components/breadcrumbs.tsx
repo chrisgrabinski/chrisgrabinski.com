@@ -1,7 +1,7 @@
 import { ChevronRightIcon, type LucideIcon } from "lucide-react";
 import type React from "react";
+import { Link } from "@/components/link";
 import { Overline } from "@/components/overline";
-import { TextLink } from "@/components/text-link";
 import { cn } from "@/lib/styles";
 
 type BreadcrumbsRootProps = React.ComponentProps<"ul">;
@@ -40,7 +40,7 @@ const BreadcrumbsItem = ({
   );
 };
 
-interface BreadcrumbsLinkProps extends React.ComponentProps<typeof TextLink> {}
+interface BreadcrumbsLinkProps extends React.ComponentProps<typeof Link> {}
 
 const BreadcrumbsLink = ({
   children,
@@ -48,7 +48,7 @@ const BreadcrumbsLink = ({
   ...props
 }: BreadcrumbsLinkProps) => {
   return (
-    <TextLink
+    <Link
       className={cn(
         "flex items-center gap-[inherit] text-foreground no-underline",
         className,
@@ -56,7 +56,7 @@ const BreadcrumbsLink = ({
       {...props}
     >
       {children}
-    </TextLink>
+    </Link>
   );
 };
 
