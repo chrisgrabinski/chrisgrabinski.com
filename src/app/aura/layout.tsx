@@ -14,13 +14,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/aura">) {
   return (
     <div className="flex min-h-dvh flex-col">
-      <header className="sticky top-0 z-10 flex items-center justify-between bg-linear-180 from-background via-background/60 px-4 py-6 md:p-8">
+      <header className="sticky top-0 z-10 flex h-20 items-center justify-between bg-linear-180 from-background via-background/60 px-4 md:px-8">
         <Link className="grid h-8 place-items-center" href="/aura">
           <AuraLogo className="h-7" />
         </Link>
         <SmallNavigation />
       </header>
-      <div className="flex grow justify-between gap-8 p-4 md:p-8">
+      <div className="flex grow justify-between gap-8 px-4 md:px-8">
         <nav className="hidden w-48 shrink-0 md:block">
           <div className="-mx-2">
             <Navigation />
