@@ -50,6 +50,13 @@
   background: var(--bg-canvas);
 }
 
+@utility focus-ring {
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: var(--accent);
+  outline-offset: 2px;
+}
+
 @property --glow-degree {
   syntax: "<angle>";
   inherits: true;
