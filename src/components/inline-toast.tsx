@@ -29,13 +29,13 @@ const InlineToast = ({
   return (
     <ButtonPrimitive
       aria-live="polite"
-      className="relative"
+      className="focus-visible:focus-ring relative rounded-action"
       onClick={handleClick}
       {...props}
     >
       {children}
       {isVisible && (
-        <span className="-translate-x-1/2 -translate-y-1.5 fade-in slide-in-from-bottom-15 pointer-events-none absolute bottom-full left-1/2 animate-in cursor-default rounded-full bg-neutral-800 px-[1ch] py-1 text-neutral-50 text-xs">
+        <span className="fade-in slide-in-from-bottom-15 pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 -translate-y-1.5 animate-in cursor-default rounded-tooltip bg-neutral-800 px-[1ch] py-1 text-neutral-50 text-xs">
           {message}
         </span>
       )}
