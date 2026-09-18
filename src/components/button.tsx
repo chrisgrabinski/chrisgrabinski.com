@@ -22,7 +22,7 @@ const buttonVariants = cva(
         ghost:
           "bg-transparent text-inherit hover:bg-foreground/80 hover:text-background",
         outline:
-          "bg-transparent ring-2 ring-current ring-inset hover:bg-foreground/80 hover:text-background hover:ring-transparent",
+          "border bg-transparent hover:border-transparent hover:bg-foreground/80 hover:text-background",
         primary: "bg-accent text-orange-50 hover:bg-accent/80",
         secondary: "bg-foreground text-background hover:bg-foreground/80",
         storybook: "bg-pink-500 text-pink-50 hover:bg-pink-500/80",
@@ -32,6 +32,8 @@ const buttonVariants = cva(
 );
 
 type ButtonVariants = VariantProps<typeof buttonVariants>;
+
+export type ButtonVariant = NonNullable<ButtonVariants["variant"]>;
 
 type ButtonProps = React.ComponentProps<typeof ButtonPrimitive> &
   ButtonVariants;

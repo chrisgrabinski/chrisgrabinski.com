@@ -5,6 +5,7 @@ export { avatarGroup } from "./avatar-group";
 export { badge } from "./badge";
 export { breadcrumbs } from "./breadcrumbs";
 export { button } from "./button";
+export { buttonGroup } from "./button-group";
 export { callout } from "./callout";
 export { card } from "./card";
 export { checkbox } from "./checkbox";
