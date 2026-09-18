@@ -5,6 +5,7 @@ import { Navigation } from "@/app/aura/navigation";
 
 import { SmallNavigation } from "@/app/aura/small-navigation";
 import { ThemeSwitcher } from "@/app/aura/theme-switcher";
+import { Pile } from "@/components/pile";
 
 export const metadata: Metadata = {
   description:
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/aura">) {
   return (
-    <div>
+    <Pile>
       <div className="relative z-10 flex min-h-dvh flex-col">
         <header className="sticky top-0 z-10">
           <div className="relative z-10 flex h-18 items-center justify-between bg-linear-180 from-background via-background/60 px-4 md:px-8">
@@ -40,7 +41,7 @@ export default function RootLayout({ children }: LayoutProps<"/aura">) {
         </div>
       </div>
       <div className="-translate-1/2 fixed top-1/2 left-1/2 aspect-square min-h-dvh min-w-dvw bg-radial from-accent/5 via-transparent duration-1000" />
-      <div className="fixed inset-0 animate-grain bg-[url('/aura/grain.png')] bg-repeat opacity-15 transition-all dark:opacity-10 dark:invert" />
-    </div>
+      <div className="size-full animate-grain bg-[url('/aura/grain.png')] bg-repeat opacity-15 transition-all dark:opacity-10 dark:invert" />
+    </Pile>
   );
 }
