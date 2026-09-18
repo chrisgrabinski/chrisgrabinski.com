@@ -6,48 +6,34 @@
   --font-display: var(--font-display);
   --font-mono: var(--font-mono);
 
-  --color-accent: var(--accent);
+  --color-accent: light-dark(oklch(0.75 0.17 58), oklch(0.75 0.17 58));
 
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-border: var(--border);
+  --color-background: light-dark(oklch(0.95 0.03 60), oklch(0.05 0.03 60));
+  --color-foreground: light-dark(oklch(0.25 0.04 60), oklch(0.95 0.04 60));
+  --color-border: light-dark(oklch(0.85 0.02 60), oklch(0.75 0.02 60));
 
   --color-foreground-muted: color-mix(in oklab, currentcolor 65%, transparent);
 
-  --color-surface: var(--surface);
+  --color-surface: light-dark(oklch(1 0 60), oklch(0.25 0.01 60));
 }
 
 :root {
-  --accent: oklch(0.75 0.17 58);
+  --canvas-1: light-dark(hsl(0, 0%, 95%), oklch(0.15 0.0125 60));
+  --canvas-2: light-dark(hsl(0, 0%, 100%), oklch(0.2 0.0125 60));
+}
 
-  --background: oklch(0.95 0.03 60);
-  --foreground: oklch(0.25 0.04 60);
-  --border: oklch(0.85 0.02 60);
-
-  --surface: oklch(1 0 60);
-
-  --bg-canvas:
-    repeating-conic-gradient(hsl(0, 0%, 95%) 0 25%, hsl(0, 0%, 100%) 0 50%) 50%
-    / 20px 20px;
+[data-theme="light"] {
+  color-scheme: light;
 }
 
 [data-theme="dark"] {
-  --background: oklch(0.15 0.02 60);
-  --foreground: oklch(0.95 0.03 60);
-  --border: oklch(0.4 0.01 60);
-
-  --surface: oklch(0.25 0.01 60);
-
-  --bg-canvas:
-    repeating-conic-gradient(
-      oklch(0.15 0.0125 60) 0 25%,
-      oklch(0.2 0.0125 60) 0 50%
-    )
-    50% / 20px 20px;
+  color-scheme: dark;
 }
 
 @utility bg-canvas {
-  background: var(--bg-canvas);
+  background:
+    repeating-conic-gradient(var(--canvas-1) 0 25%, var(--canvas-2) 0 50%) 50% /
+    20px 20px;
 }
 
 @utility focus-ring {
