@@ -16,7 +16,7 @@ export { filename } from "./filename";
 export { iconBox } from "./icon-box";
 export { iconButton } from "./icon-button";
 export { inlineToast } from "./inline-toast";
-export { Link } from "./link";
+export { link } from "./link";
 export { list } from "./list";
 export { orderedList } from "./ordered-list";
 export { playButton } from "./play-button";

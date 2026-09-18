@@ -1,8 +1,8 @@
 import type { ComponentData } from "@/app/aura/data/components/types";
-import { Link as TextLink } from "@/components/link";
+import { Link } from "@/components/link";
 
-export const Link: ComponentData = {
-  demo: <TextLink href="#">Visit homepage</TextLink>,
+export const link: ComponentData = {
+  demo: <Link href="#">Visit homepage</Link>,
   description:
     "A hyperlink with refined styling and smooth hover transitions for better visual feedback.",
   name: "link",
