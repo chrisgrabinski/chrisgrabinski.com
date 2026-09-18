@@ -18,15 +18,17 @@ export default function RootLayout({ children }: LayoutProps<"/aura">) {
     <Pile className="min-h-dvh w-full">
       <div className="relative z-10 w-full">
         <header className="sticky top-0 z-10">
-          <div className="relative z-10 flex h-18 items-center justify-between bg-linear-180 from-background via-background/60 px-4 md:px-8">
+          <div className="relative z-10 flex h-18 items-center justify-between gap-8 bg-linear-180 from-background via-background/60 px-4 md:px-8">
             <Link
               className="focus-visible:focus-ring grid h-8 place-items-center rounded-action"
               href="/aura"
             >
               <AuraLogo className="h-7" />
             </Link>
-            <ThemeSwitcher />
-            <SmallNavigation />
+            <div className="flex items-center gap-2">
+              <ThemeSwitcher />
+              <SmallNavigation />
+            </div>
           </div>
           <div className="mask-b-from-40% mask-b-to-100% absolute inset-0 backdrop-blur-xs backdrop-saturate-200" />
         </header>

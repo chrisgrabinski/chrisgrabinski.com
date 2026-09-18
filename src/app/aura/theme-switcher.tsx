@@ -15,6 +15,7 @@ export const ThemeSwitcher = () => {
     <IconButton
       aria-label={`Switch to ${resolvedTheme === "light" ? "dark" : "light"} theme`}
       onClick={handleSwitchTheme}
+      size={2}
       variant="ghost"
     >
       {resolvedTheme === "light" ? <MoonIcon /> : <SunIcon />}
