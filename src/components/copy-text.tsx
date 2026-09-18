@@ -45,7 +45,7 @@ const CopyText = ({
     <InlineToast
       aria-description={messages.action}
       className={cn(
-        "group/copy-text relative inline-flex min-w-0 align-baseline",
+        "group/copy-text relative inline-flex min-w-0 rounded-action align-baseline",
         className,
       )}
       message={messages.success}

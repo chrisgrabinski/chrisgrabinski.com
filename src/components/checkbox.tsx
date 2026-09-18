@@ -13,7 +13,7 @@ const CheckboxRoot = ({
     <CheckboxPrimitive.Root
       asChild
       className={cn(
-        "group/checkbox inline-flex items-center gap-[1ch]",
+        "group/checkbox inline-flex items-center gap-[1ch] rounded-action",
         className,
       )}
       {...props}
@@ -30,13 +30,14 @@ const CheckboxIndicator = ({
   return (
     <CheckboxPrimitive.Indicator
       className={cn(
-        "inline-grid size-4 place-items-center rounded bg-surface align-middle ring-1 ring-black/10 transition group-hover/checkbox:cursor-pointer group-hover/checkbox:bg-neutral-200 data-[state=checked]:bg-accent [&>svg]:size-2/3",
+        "inline-grid size-4 place-items-center rounded-checkbox bg-surface align-middle ring-1 ring-black/10 transition group-hover/checkbox:cursor-pointer group-hover/checkbox:bg-neutral-200",
+        "data-[state=checked]:bg-accent",
         className,
       )}
       {...props}
       forceMount
     >
-      <CheckIcon className="stroke-white transition group-data-[state=unchecked]/checkbox:opacity-0" />
+      <CheckIcon className="size-2/3 stroke-white transition group-data-[state=unchecked]/checkbox:opacity-0" />
     </CheckboxPrimitive.Indicator>
   );
 };

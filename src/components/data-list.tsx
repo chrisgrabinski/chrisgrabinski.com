@@ -184,7 +184,7 @@ const DataListSubTrigger = ({
       <DataListLabel asChild>
         <Collapsible.Trigger
           asChild
-          className={cn("col-span-full", className)}
+          className={cn("col-span-full rounded-action", className)}
           {...props}
         >
           <ButtonPrimitive>{children}</ButtonPrimitive>

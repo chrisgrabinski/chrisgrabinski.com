@@ -45,7 +45,7 @@ const SidebarMenuItemBase = ({
 
   return (
     <ButtonPrimitive asChild {...props}>
-      <Component className="group/sidebar-menu-item flex w-full items-center gap-2 rounded px-2 py-1 text-left transition hover:bg-accent/10">
+      <Component className="group/sidebar-menu-item flex w-full items-center gap-2 rounded-action px-2 py-1 text-left transition hover:bg-accent/10">
         {children}
       </Component>
     </ButtonPrimitive>

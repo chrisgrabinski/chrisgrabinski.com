@@ -22,6 +22,9 @@
   --radius-avatar: var(--radius-full);
   --radius-badge: var(--radius-full);
   --radius-card: var(--radius-lg);
+  --radius-checkbox: var(--radius-sm);
+  --radius-switch: var(--radius-full);
+  --radius-tooltip: var(--radius-md);
 }
 
 :root {

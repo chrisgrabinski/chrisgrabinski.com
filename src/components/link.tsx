@@ -9,7 +9,7 @@ const Link = ({
   return (
     <NextLink
       className={cn(
-        "underline underline-offset-3 transition hover:text-accent",
+        "focus-visible:focus-ring rounded-action underline underline-offset-3 transition hover:text-accent",
         className,
       )}
       {...props}
