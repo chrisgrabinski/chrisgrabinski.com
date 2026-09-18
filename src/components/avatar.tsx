@@ -12,7 +12,7 @@ const getAvatarFallbackInitials = (name: string): string => {
 };
 
 const avatarVariants = cva(
-  "inline-grid overflow-clip rounded-full bg-surface font-medium text-foreground text-shadow-neutral-800",
+  "inline-grid overflow-clip rounded-avatar bg-surface font-medium text-foreground text-shadow-neutral-800",
   {
     variants: {
       size: {

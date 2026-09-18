@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@theme inline {
+@theme {
   --font-body: var(--font-body);
   --font-display: var(--font-display);
   --font-mono: var(--font-mono);
@@ -15,6 +15,13 @@
   --color-foreground-muted: color-mix(in oklab, currentcolor 65%, transparent);
 
   --color-surface: light-dark(oklch(1 0 60), oklch(0.25 0.01 60));
+
+  --radius-full: calc(infinity * 1px);
+
+  --radius-action: var(--radius-md);
+  --radius-avatar: var(--radius-full);
+  --radius-badge: var(--radius-full);
+  --radius-card: var(--radius-lg);
 }
 
 :root {
@@ -39,7 +46,7 @@
 @utility focus-ring {
   outline-width: 2px;
   outline-style: solid;
-  outline-color: var(--accent);
+  outline-color: var(--color-accent);
   outline-offset: 2px;
 }
 
