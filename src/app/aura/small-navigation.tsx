@@ -37,7 +37,7 @@ export const SmallNavigation = () => {
         <DrawerTitle asChild>
           <VisuallyHidden>Navigation</VisuallyHidden>
         </DrawerTitle>
-        <div className="sticky top-0 z-10 flex h-20 items-center justify-end gap-4 bg-surface">
+        <div className="sticky top-0 z-10 flex h-18 items-center justify-end gap-4 bg-surface">
           <DrawerClose asChild>
             <IconButton aria-label="Toggle menu" className="ml-auto" size={2}>
               <XIcon />
