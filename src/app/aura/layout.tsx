@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/aura">) {
   return (
-    <Pile>
-      <div className="relative z-10 flex min-h-dvh flex-col">
+    <Pile className="min-h-dvh w-full">
+      <div className="relative z-10 w-full">
         <header className="sticky top-0 z-10">
           <div className="relative z-10 flex h-18 items-center justify-between bg-linear-180 from-background via-background/60 px-4 md:px-8">
             <Link
