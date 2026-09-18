@@ -50,7 +50,7 @@ const BreadcrumbsLink = ({
   return (
     <Link
       className={cn(
-        "flex items-center gap-[inherit] text-foreground no-underline",
+        "focus-visible:focus-ring flex items-center gap-[inherit] rounded-action text-foreground no-underline",
         className,
       )}
       {...props}
