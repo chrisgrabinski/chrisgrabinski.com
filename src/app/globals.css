@@ -7,6 +7,7 @@
   --font-mono: var(--font-mono);
 
   --color-accent: light-dark(oklch(0.75 0.17 58), oklch(0.75 0.17 58));
+  --color-negative: var(--color-red-500);
 
   --color-background: light-dark(oklch(0.95 0.03 60), oklch(0.05 0.03 60));
   --color-foreground: light-dark(oklch(0.25 0.04 60), oklch(0.95 0.04 60));
@@ -33,6 +34,7 @@
 
   * {
     outline-color: var(--color-accent);
+    border-color: var(--color-border);
   }
 }
 
