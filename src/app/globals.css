@@ -26,6 +26,10 @@
   --radius-checkbox: var(--radius-sm);
   --radius-switch: var(--radius-full);
   --radius-tooltip: var(--radius-md);
+
+  --shadow-glow:
+    0 0 2px var(--color-accent), 0 0 4px var(--color-accent),
+    0 0 16px var(--color-accent);
 }
 
 :root {
