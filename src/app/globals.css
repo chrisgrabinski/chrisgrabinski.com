@@ -32,6 +32,8 @@
   --canvas-1: light-dark(hsl(0, 0%, 95%), oklch(0.15 0.0125 60));
   --canvas-2: light-dark(hsl(0, 0%, 100%), oklch(0.2 0.0125 60));
 
+  scrollbar-gutter: stable;
+
   * {
     outline-color: var(--color-accent);
     border-color: var(--color-border);
