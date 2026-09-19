@@ -1,11 +1,8 @@
-import Image from "next/image";
 import * as componentsData from "@/app/aura/(docs)/data/components";
 import { AuraLogo } from "@/app/aura/aura-logo";
-import { ThemeSwitcher } from "@/app/aura/theme-switcher";
 import { Link } from "@/components/link";
 import { Overline } from "@/components/overline";
 import { Text } from "@/components/text";
-import auraBackground from "./aura-background.png";
 
 export default function RootPage() {
   return (
