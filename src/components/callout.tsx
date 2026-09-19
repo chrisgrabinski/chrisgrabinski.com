@@ -67,10 +67,12 @@ const Callout = ({
       className={cn("flex gap-2", calloutVariants({ status }), className)}
       {...props}
     >
-      <Icon className="size-6" />
+      <Icon className="size-6 shrink-0" />
       <div>
         <div className="text-pretty">{title}</div>
-        <div className="mt-0.5 text-pretty text-sm">{description}</div>
+        <div className="mt-0.5 text-pretty text-foreground-muted">
+          {description}
+        </div>
       </div>
       {onDismiss && (
         <IconButton onClick={onDismiss} size={1} variant="ghost">
