@@ -58,7 +58,7 @@ export default async function TestPage({
   );
 
   return (
-    <article className="grid gap-16 pb-16">
+    <article className="grid gap-8 pb-16">
       <ArticleHeader
         breadcrumbs={[
           {

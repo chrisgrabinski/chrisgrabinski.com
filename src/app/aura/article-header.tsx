@@ -52,12 +52,12 @@ const ArticleHeader = ({
           )}
         </div>
       )}
-      <div className="grid gap-2">
+      <div className="mt-8 grid gap-2">
         <Heading as="h1" size={7}>
           {title}
         </Heading>
         {description && (
-          <Text as="p" muted size={5}>
+          <Text as="p" className="text-pretty" muted size={5}>
             {description}
           </Text>
         )}
