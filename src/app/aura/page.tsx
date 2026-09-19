@@ -7,7 +7,8 @@ import { Text } from "@/components/text";
 export default function RootPage() {
   return (
     <div className="grid">
-      <div className="col-span-full h-[50dvh] bg-linear-to-t from-accent via-purple-500 to-blue-900" />
+      <div className="mask-b-from-25% mask-b-to-100% fixed inset-x-0 top-0 z-10 h-18 bg-linear-to-b from-background/80 to-transparent backdrop-blur-sm backdrop-saturate-200" />
+      <div className="z-20 col-span-full h-[50dvh] bg-linear-to-t from-accent via-purple-500 to-blue-900" />
       <div className="mx-auto flex w-full max-w-7xl flex-col items-start gap-8 p-8 lg:flex-row">
         <div className="grid shrink-0 gap-4">
           <AuraLogo className="h-10" />
