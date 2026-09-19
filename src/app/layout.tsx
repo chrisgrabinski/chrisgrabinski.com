@@ -1,4 +1,4 @@
-import "@/app/globals.css";
+import "@/styles/global.css";
 import { ThemeProvider } from "@teispace/next-themes";
 import { getTheme } from "@teispace/next-themes/server";
 import localFont from "next/font/local";
