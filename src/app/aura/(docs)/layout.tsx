@@ -9,7 +9,7 @@ export default function RootLayout({ children }: LayoutProps<"/aura">) {
   return (
     <div className="relative z-10 flex min-h-full w-full flex-col gap-4">
       <header className="sticky top-0 z-10">
-        <div className="relative z-10 flex h-18 items-center justify-between gap-8 bg-linear-180 from-background via-background/60 px-4 md:px-8">
+        <div className="relative z-10 flex h-18 items-center justify-between gap-8 px-4 md:px-8">
           <Link
             className="focus-visible:focus-ring grid h-8 place-items-center rounded-action"
             href="/aura"
@@ -21,7 +21,7 @@ export default function RootLayout({ children }: LayoutProps<"/aura">) {
             <SmallNavigation />
           </div>
         </div>
-        <div className="mask-b-from-40% mask-b-to-100% absolute inset-0 backdrop-blur-xs backdrop-saturate-200" />
+        <div className="mask-b-from-25% mask-b-to-100% fixed inset-x-0 top-0 h-18 bg-linear-to-b from-background/80 to-transparent backdrop-blur-sm backdrop-saturate-200" />
       </header>
       <div className="flex grow justify-between gap-8 px-4 md:px-8">
         <nav className="hidden w-48 shrink-0 md:block">
