@@ -1,0 +1,95 @@
+import type { ModuleData } from "@/app/aura/(docs)/data/modules/types";
+import { Card } from "@/components/card";
+import { CopyText } from "@/components/copy-text";
+import { CountryLabel } from "@/components/country-label";
+import {
+  DataListItem,
+  DataListLabel,
+  DataListRoot,
+  DataListSub,
+  DataListSubContent,
+  DataListSubIndicator,
+  DataListSubTrigger,
+  DataListValue,
+} from "@/components/data-list";
+import { Filename } from "@/components/filename";
+import { Status } from "@/components/status";
+
+export const profileDataList: ModuleData = {
+  components: [
+    "card",
+    "copy-text",
+    "country-label",
+    "data-list",
+    "filename",
+    "status",
+  ],
+  demo: (
+    <Card className="w-full max-w-md">
+      <DataListRoot>
+        <DataListItem>
+          <DataListLabel>Name</DataListLabel>
+          <DataListValue>Peter Parker</DataListValue>
+        </DataListItem>
+        <DataListItem>
+          <DataListLabel>Onboarding status</DataListLabel>
+          <DataListValue>
+            <Status severity={1}>Onboarded</Status>
+          </DataListValue>
+        </DataListItem>
+        <DataListItem>
+          <DataListLabel>Contract</DataListLabel>
+          <DataListValue>
+            <CopyText>
+              <Filename>
+                peter_parker_united_states_employment_contract.pdf
+              </Filename>
+            </CopyText>
+          </DataListValue>
+        </DataListItem>
+        <DataListItem>
+          <DataListLabel>Email</DataListLabel>
+          <DataListValue>
+            <CopyText>mail@example.com</CopyText>
+          </DataListValue>
+        </DataListItem>
+        <DataListItem>
+          <DataListLabel>Country</DataListLabel>
+          <DataListValue>
+            <CountryLabel code="US" />
+          </DataListValue>
+        </DataListItem>
+        <DataListSub>
+          <DataListSubTrigger>
+            Address
+            <DataListSubIndicator />
+          </DataListSubTrigger>
+          <DataListSubContent>
+            <DataListRoot>
+              <DataListItem>
+                <DataListLabel>Street</DataListLabel>
+                <DataListValue>410 Chelsea Street</DataListValue>
+              </DataListItem>
+              <DataListItem>
+                <DataListLabel>City</DataListLabel>
+                <DataListValue>New York, NY</DataListValue>
+              </DataListItem>
+              <DataListItem>
+                <DataListLabel>Zip</DataListLabel>
+                <DataListValue>10001</DataListValue>
+              </DataListItem>
+            </DataListRoot>
+          </DataListSubContent>
+        </DataListSub>
+        <DataListItem>
+          <DataListLabel>Profession</DataListLabel>
+          <DataListValue>Photographer</DataListValue>
+        </DataListItem>
+      </DataListRoot>
+    </Card>
+  ),
+  description:
+    "A comprehensive profile view combining user details, documents, location, and status into an organized, interactive layout.",
+  name: "profile-data-list",
+  title: "Profile Data List",
+};

@@ -1,7 +1,7 @@
 "use client";
 
-import * as componentsData from "@/app/aura/data/components";
-import * as modulesData from "@/app/aura/data/modules";
+import * as componentsData from "@/app/aura/(docs)/data/components";
+import * as modulesData from "@/app/aura/(docs)/data/modules";
 import {
   SidebarMenuGroup,
   SidebarMenuItem,
