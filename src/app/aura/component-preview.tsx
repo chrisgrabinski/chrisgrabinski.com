@@ -10,8 +10,6 @@ type PreviewProps = {
 };
 
 const ComponentPreview = ({ children }: PreviewProps) => {
-  const view = "preview";
-
   return (
     <div
       className={cn(
@@ -19,7 +17,7 @@ const ComponentPreview = ({ children }: PreviewProps) => {
         "after:clear-both after:table after:content-['']",
       )}
     >
-      <Card className="grid size-full flex-col place-items-center gap-6 bg-canvas p-4 md:p-6">
+      <Card className="isolate grid size-full flex-col place-items-center gap-6 bg-canvas p-4 md:p-6">
         {children}
       </Card>
     </div>
