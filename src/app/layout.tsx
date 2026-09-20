@@ -1,22 +1,16 @@
 import "@/styles/global.css";
+
 import { ThemeProvider } from "@teispace/next-themes";
 import { getTheme } from "@teispace/next-themes/server";
+import { GeistMono } from "geist/font/mono";
+import { GeistSans } from "geist/font/sans";
 import localFont from "next/font/local";
 import { DeveloperConsole } from "@/app/developer-console";
-
-const fontBody = localFont({
-  src: "./fonts/Maison-Regular.woff2",
-  variable: "--font-body",
-});
+import { cn } from "@/lib/styles";
 
 const fontDisplay = localFont({
   src: "./fonts/LibreCaslonCondensed-Medium.woff2",
   variable: "--font-display",
-});
-
-const fontMono = localFont({
-  src: "./fonts/Monaspace Neon Var.woff2",
-  variable: "--font-mono",
 });
 
 export default async function RootLayout({
@@ -28,7 +22,12 @@ export default async function RootLayout({
 
   return (
     <html
-      className={`${fontBody.variable} ${fontDisplay.variable} ${fontMono.variable} bg-background font-body text-foreground antialiased`}
+      className={cn(
+        "bg-background font-body text-foreground antialiased",
+        GeistSans.variable,
+        fontDisplay.variable,
+        GeistMono.variable,
+      )}
       lang="en"
       suppressHydrationWarning
     >

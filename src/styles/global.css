@@ -2,9 +2,9 @@
 @import "tw-animate-css";
 
 @theme {
-  --font-body: var(--font-body);
+  --font-body: var(--font-geist-sans);
   --font-display: var(--font-display);
-  --font-mono: var(--font-mono);
+  --font-mono: var(--font-geist-mono);
 
   --color-accent: light-dark(oklch(0.75 0.17 58), oklch(0.75 0.17 58));
   --color-negative: var(--color-red-500);
@@ -40,6 +40,14 @@
     outline-color: var(--color-accent);
     border-color: var(--color-border);
   }
+}
+
+html {
+  font-feature-settings:
+    "ss03" 1,
+    "ss04" 1,
+    "ss05" 1,
+    "ss08" 1;
 }
 
 [data-theme="light"] {

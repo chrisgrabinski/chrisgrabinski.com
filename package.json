@@ -3,6 +3,7 @@
     "@teispace/next-themes": "^2.0.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "geist": "^1.7.2",
     "lucide-react": "^1.17.0",
     "next": "16.2.7",
     "radix-ui": "^1.4.3",
