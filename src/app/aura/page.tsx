@@ -1,7 +1,10 @@
-import Link from "next/link";
+import NextLink from "next/link";
+import avatarImage from "@/app/(homepage)/images/chris-grabinski.jpg";
 import * as componentsData from "@/app/aura/(docs)/data/components";
 import { AuraLogo } from "@/app/aura/aura-logo";
 import { BlurContainer } from "@/app/aura/blur-container";
+import { Avatar } from "@/components/avatar";
+import { Link } from "@/components/link";
 import { Overline } from "@/components/overline";
 import { Text } from "@/components/text";
 
@@ -17,6 +20,14 @@ export default function RootPage() {
             A collection of modular components and UI patterns designed for
             modern web applications.
           </Text>
+          <div className="flex items-center gap-2">
+            <Avatar
+              aria-hidden
+              fallback="Chris Grabiński"
+              src={avatarImage.src}
+            />
+            by <Link href="/">Chris Grabiński</Link>
+          </div>
         </div>
         <div className="flex w-full grow flex-col gap-4">
           <div className="hidden h-10 lg:block" />
@@ -24,13 +35,13 @@ export default function RootPage() {
           <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
             {Object.values(componentsData).map((component) => {
               return (
-                <Link
+                <NextLink
                   className="border-2 p-4 font-mono hover:text-accent"
                   href={`/aura/components/${component.name}`}
                   key={component.name}
                 >
                   {component.title}
-                </Link>
+                </NextLink>
               );
             })}
           </div>
