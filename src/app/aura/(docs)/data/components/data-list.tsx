@@ -12,7 +12,7 @@ import {
   DataListSubTrigger,
   DataListValue,
 } from "@/components/data-list";
-import { Filename } from "@/components/filename";
+import { MiddleTruncate } from "@/components/middle-truncate";
 import { Status } from "@/components/status";
 
 export const dataList: ComponentData = {
@@ -34,7 +34,7 @@ export const dataList: ComponentData = {
           <DataListLabel>Contract</DataListLabel>
           <DataListValue>
             <CopyText>
-              <Filename>peter_parker_united_states_employment_contract.pdf</Filename>
+              <MiddleTruncate>peter_parker_united_states_employment_contract.pdf</MiddleTruncate>
             </CopyText>
           </DataListValue>
         </DataListItem>

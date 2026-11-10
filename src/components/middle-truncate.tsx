@@ -8,23 +8,23 @@ const hasTextOverflow = (refs: React.RefObject<HTMLElement | null>[]) => {
   return refs.some((ref) => ref?.current && ref?.current?.scrollWidth > ref?.current?.offsetWidth);
 };
 
-interface FilenameProps extends React.ComponentProps<"span"> {
+interface MiddleTruncateProps extends React.ComponentProps<"span"> {
   children: string;
 }
 
-const Filename = ({ children, className, ...props }: FilenameProps) => {
+const MiddleTruncate = ({ children, className, ...props }: MiddleTruncateProps) => {
   const [isTruncated, setIsTruncated] = useState(false);
 
   const rootRef = useRef<HTMLSpanElement>(null);
-  const fileNameStartRef = useRef<HTMLSpanElement>(null);
-  const fileNameEndRef = useRef<HTMLSpanElement>(null);
+  const startRef = useRef<HTMLSpanElement>(null);
+  const endRef = useRef<HTMLSpanElement>(null);
 
-  const fileNameMiddle = Math.ceil(children.length / 2);
-  const fileNameParts = [children.slice(0, fileNameMiddle), children.slice(fileNameMiddle)];
+  const middle = Math.ceil(children.length / 2);
+  const parts = [children.slice(0, middle), children.slice(middle)];
 
   useResizeObserver({
     onResize: () => {
-      if (hasTextOverflow([fileNameStartRef, fileNameEndRef])) {
+      if (hasTextOverflow([startRef, endRef])) {
         setIsTruncated(true);
       } else {
         setIsTruncated(false);
@@ -59,9 +59,9 @@ const Filename = ({ children, className, ...props }: FilenameProps) => {
               isTruncated && "text-clip",
             )}
             key="start"
-            ref={fileNameStartRef}
+            ref={startRef}
           >
-            {fileNameParts[0]}
+            {parts[0]}
           </span>,
           <span
             className={cn(
@@ -69,9 +69,9 @@ const Filename = ({ children, className, ...props }: FilenameProps) => {
               isTruncated && "text-clip",
             )}
             key="end"
-            ref={fileNameEndRef}
+            ref={endRef}
           >
-            {fileNameParts[1]}
+            {parts[1]}
           </span>,
         ]}
       </span>
@@ -79,4 +79,4 @@ const Filename = ({ children, className, ...props }: FilenameProps) => {
   );
 };
 
-export { Filename };
+export { MiddleTruncate };

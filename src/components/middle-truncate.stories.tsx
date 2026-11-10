@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import { Filename } from "./filename";
+import { MiddleTruncate } from "./middle-truncate";
 
 const meta = {
   args: {
     children:
       "LandingPage_HeroSection_V3_final_FINALreallyFINAL_ApprovedByClient_SaturdayNightEdit_20240614_v2_finalfinal_(do-not-use-this-one)_MergedLayers.psd",
   },
-  component: Filename,
+  component: MiddleTruncate,
   decorators: [
     (Story) => (
       <div style={{ maxWidth: "320px" }}>
@@ -18,8 +18,8 @@ const meta = {
     layout: "centered",
   },
   tags: ["autodocs"],
-  title: "Filename",
-} satisfies Meta<typeof Filename>;
+  title: "MiddleTruncate",
+} satisfies Meta<typeof MiddleTruncate>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
