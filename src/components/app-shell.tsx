@@ -59,7 +59,7 @@ const AppShellPanel = ({
   return (
     <motion.div
       className={cn(
-        "fixed inset-y-0 left-0 z-90 flex p-2 md:static",
+        "fixed inset-y-0 left-0 z-90 flex md:static",
         direction === "left" && "justify-end",
         className,
       )}
@@ -102,7 +102,7 @@ const AppShellMain = ({ children, className, ...props }: AppShellMainProps): Rea
   return (
     <main
       className={cn(
-        "grow scrollbar-thin scrollbar-thumb-accent/10 scrollbar-track-transparent scrollbar-gutter-stable overflow-clip overflow-y-auto rounded-lg p-2",
+        "grow scrollbar-thin scrollbar-thumb-accent/10 scrollbar-track-transparent scrollbar-gutter-stable overflow-clip overflow-y-auto rounded-lg",
         className,
       )}
       {...props}
