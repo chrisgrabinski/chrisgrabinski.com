@@ -39,10 +39,9 @@ const MiddleTruncate = ({ children, className, ...props }: MiddleTruncateProps) 
       {...props}
     >
       {isTruncated && (
-        <span
-          aria-hidden
-          className="pointer-events-none absolute left-1/2 -translate-x-1/2 after:content-['…']"
-        />
+        <span aria-hidden className="pointer-events-none absolute left-1/2 -translate-x-1/2">
+          …
+        </span>
       )}
       <span
         className={cn(
