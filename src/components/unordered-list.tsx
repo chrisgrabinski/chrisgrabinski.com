@@ -37,4 +37,4 @@ const UnorderedListItem = ({
   );
 };
 
-export { UnorderedListRoot, UnorderedListItem };
+export { UnorderedListItem, UnorderedListRoot };

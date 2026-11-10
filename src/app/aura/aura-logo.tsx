@@ -28,27 +28,29 @@ const AuraLogo = ({
     >
       <div className="pointer-events-none absolute inset-0 opacity-50 blur-[0.75em] transition duration-500 group-hover/aura-logo:opacity-100">
         <Gradient
-          className="mask-contain absolute inset-0"
+          className="absolute inset-0 mask-contain"
           style={{ maskImage: `url(${auraLogo.src})` }}
         />
       </div>
       <div className="pointer-events-none absolute inset-0 opacity-75 blur-[0.5em] transition duration-400 group-hover/aura-logo:opacity-75">
         <Gradient
-          className="mask-contain absolute inset-0"
+          className="absolute inset-0 mask-contain"
           style={{ maskImage: `url(${auraLogo.src})` }}
         />
       </div>
       <div className="pointer-events-none absolute inset-0 opacity-75 blur-[0.125em] transition duration-300 group-hover/aura-logo:opacity-100">
         <Gradient
-          className="mask-contain absolute inset-0"
+          className="absolute inset-0 mask-contain"
           style={{ maskImage: `url(${auraLogo.src})` }}
         />
       </div>
 
       <svg
+        aria-label="Aura"
         className="absolute inset-0 size-full"
         fill="currentColor"
         height="64"
+        role="img"
         viewBox="0 0 208 64"
         width="208"
         xmlns="http://www.w3.org/2000/svg"
