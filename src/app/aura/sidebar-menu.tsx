@@ -23,7 +23,7 @@ const SidebarMenuGroup = ({
   return (
     <div className="flex flex-col gap-0.5">
       {heading && (
-        <Overline className="px-2 pb-2" size={1}>
+        <Overline className="pb-2" size={1}>
           {heading}
         </Overline>
       )}
@@ -41,7 +41,7 @@ const SidebarMenuItemBase = ({ asChild, children, ...props }: SidebarMenuItemBas
 
   return (
     <ButtonPrimitive asChild {...props}>
-      <Component className="group/sidebar-menu-item flex h-8 w-full items-center gap-2 rounded-action px-2 text-left transition hover:bg-accent/25">
+      <Component className="group/sidebar-menu-item flex h-6 w-full items-center gap-2 rounded-action text-left transition">
         {children}
       </Component>
     </ButtonPrimitive>
@@ -58,10 +58,7 @@ const SidebarMenuItem = ({ children, className, ...props }: SidebarMenuItemProps
   return (
     <SidebarMenuItemBase
       asChild
-      className={cn(
-        "data-[active=true]:bg-accent data-[active=true]:font-bold data-[active=true]:shadow-glow dark:data-[active=true]:text-background",
-        className,
-      )}
+      className={cn("data-[active=true]:font-bold data-[active=true]:text-accent", className)}
       data-active={isActive}
     >
       <Link {...props}>{children}</Link>

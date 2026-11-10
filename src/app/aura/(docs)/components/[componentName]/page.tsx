@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import * as componentsData from "@/app/aura/(docs)/data/components";
 import * as modulesData from "@/app/aura/(docs)/data/modules";
+import { PageHeader } from "@/app/aura/(docs)/page-header";
 import { ArticleHeader } from "@/app/aura/article-header";
 import { ComponentCanvas } from "@/app/aura/component-canvas";
 import { ComponentPreview } from "@/app/aura/component-preview";
@@ -53,7 +54,7 @@ export default async function TestPage({ params }: PageProps<"/aura/components/[
 
   return (
     <article className="grid gap-8 pb-16">
-      <ArticleHeader
+      <PageHeader
         breadcrumbs={[
           {
             name: "Components",
@@ -64,83 +65,85 @@ export default async function TestPage({ params }: PageProps<"/aura/components/[
             url: `/aura/components/${componentName}` as Route,
           },
         ]}
-        description={description}
-        sourceUrl={sourceUrl}
-        title={title}
       />
-      <ComponentPreview>{demo}</ComponentPreview>
-      {!!variants?.length && (
-        <section className="grid gap-6">
-          <Heading className="flex items-center gap-[0.5ch]">
-            <ShapesIcon />
-            Variants
-          </Heading>
-          <div className="grid gap-6 sm:grid-cols-2">
-            {variants?.map((variant) => (
-              <Card className="p-0" key={variant.title}>
-                <ComponentCanvas className="p-6" key={variant.title}>
-                  {variant.demo}
-                </ComponentCanvas>
-                <div className="p-6">
-                  <h3 className="text-lg font-medium">{variant.title}</h3>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </section>
-      )}
-      {!!subComponents?.length && (
-        <section className="grid gap-6">
-          <Heading className="flex items-center gap-[0.5ch]">
-            <PuzzleIcon />
-            Sub components
-          </Heading>
-          <div className="grid gap-6 sm:grid-cols-2">
-            {subComponents.map((component) => (
-              <Card className="p-0" key={component.name}>
-                <ComponentCanvas className="aspect-video flex-1">{component.demo}</ComponentCanvas>
-                <div className="p-6">
-                  <h3 className="text-lg font-medium">
-                    <Link
-                      className="flex h-full flex-col gap-1.5"
-                      href={`/aura/components/${component.name}`}
-                      key={component.name}
-                    >
-                      {component.title}
-                    </Link>
-                  </h3>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </section>
-      )}
-      {!!modules?.length && (
-        <section className="grid gap-6">
-          <Heading className="flex items-center gap-[0.5ch]">
-            <PackageIcon />
-            Modules
-          </Heading>
-          <div className="grid gap-6">
-            {modules.map((module) => (
-              <Link
-                className="flex h-full flex-col gap-1.5"
-                href={`/aura/modules/${module.name}` as Route}
-                key={module.name}
-              >
-                <Card className="p-0">
-                  <ComponentCanvas className="pointer-events-none flex-1 p-6" inert>
-                    {module.demo}
+      <div className="mx-auto grid w-full max-w-3xl gap-12">
+        <ArticleHeader description={description} sourceUrl={sourceUrl} title={title} />
+        <ComponentPreview>{demo}</ComponentPreview>
+        {!!variants?.length && (
+          <section className="grid gap-6">
+            <Heading className="flex items-center gap-[0.5ch]">
+              <ShapesIcon />
+              Variants
+            </Heading>
+            <div className="grid gap-6 sm:grid-cols-2">
+              {variants?.map((variant) => (
+                <Card className="p-0" key={variant.title}>
+                  <ComponentCanvas className="p-6" key={variant.title}>
+                    {variant.demo}
                   </ComponentCanvas>
                   <div className="p-6">
-                    <h3 className="text-lg font-medium">{module.title}</h3>
+                    <h3 className="text-lg font-medium">{variant.title}</h3>
                   </div>
                 </Card>
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
+              ))}
+            </div>
+          </section>
+        )}
+        {!!subComponents?.length && (
+          <section className="grid gap-6">
+            <Heading className="flex items-center gap-[0.5ch]">
+              <PuzzleIcon />
+              Sub components
+            </Heading>
+            <div className="grid gap-6 sm:grid-cols-2">
+              {subComponents.map((component) => (
+                <Card className="p-0" key={component.name}>
+                  <ComponentCanvas className="aspect-video flex-1">
+                    {component.demo}
+                  </ComponentCanvas>
+                  <div className="p-6">
+                    <h3 className="text-lg font-medium">
+                      <Link
+                        className="flex h-full flex-col gap-1.5"
+                        href={`/aura/components/${component.name}`}
+                        key={component.name}
+                      >
+                        {component.title}
+                      </Link>
+                    </h3>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </section>
+        )}
+        {!!modules?.length && (
+          <section className="grid gap-6">
+            <Heading className="flex items-center gap-[0.5ch]">
+              <PackageIcon />
+              Modules
+            </Heading>
+            <div className="grid gap-6">
+              {modules.map((module) => (
+                <Link
+                  className="flex h-full flex-col gap-1.5"
+                  href={`/aura/modules/${module.name}` as Route}
+                  key={module.name}
+                >
+                  <Card className="p-0">
+                    <ComponentCanvas className="pointer-events-none flex-1 p-6" inert>
+                      {module.demo}
+                    </ComponentCanvas>
+                    <div className="p-6">
+                      <h3 className="text-lg font-medium">{module.title}</h3>
+                    </div>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
     </article>
   );
 }

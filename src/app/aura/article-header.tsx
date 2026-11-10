@@ -1,6 +1,4 @@
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
-import type React from "react";
-import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Button } from "@/components/button";
 import { Heading } from "@/components/heading";
 import { IconButton } from "@/components/icon-button";
@@ -19,22 +17,13 @@ interface ArticleHeaderProps extends Omit<React.ComponentProps<"header">, "child
     name: string;
   };
   sourceUrl?: string;
-  breadcrumbs?: React.ComponentProps<typeof Breadcrumbs>["items"];
 }
 
-const ArticleHeader = ({
-  breadcrumbs,
-  title,
-  description,
-  next,
-  previous,
-  sourceUrl,
-}: ArticleHeaderProps) => {
+const ArticleHeader = ({ title, description, next, previous, sourceUrl }: ArticleHeaderProps) => {
   return (
     <header className="grid gap-4">
-      {(breadcrumbs || next || previous) && (
+      {(next || previous) && (
         <div className="flex h-8 items-center justify-between">
-          {breadcrumbs && <Breadcrumbs includeJsonLd items={breadcrumbs} />}
           {(next || previous) && (
             <div className="flex gap-2">
               {previous && (

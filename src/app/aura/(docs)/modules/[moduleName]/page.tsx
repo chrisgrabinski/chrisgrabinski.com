@@ -3,6 +3,7 @@ import type { Metadata, Route } from "next";
 import { notFound } from "next/navigation";
 import * as componentsData from "@/app/aura/(docs)/data/components";
 import * as modulesData from "@/app/aura/(docs)/data/modules";
+import { PageHeader } from "@/app/aura/(docs)/page-header";
 import { ArticleHeader } from "@/app/aura/article-header";
 import { ComponentCanvas } from "@/app/aura/component-canvas";
 import { ComponentPreview } from "@/app/aura/component-preview";
@@ -48,7 +49,7 @@ export default async function TestPage({ params }: PageProps<"/aura/modules/[mod
 
   return (
     <article className="grid gap-12 pb-12">
-      <ArticleHeader
+      <PageHeader
         breadcrumbs={[
           {
             name: "Modules",
@@ -59,38 +60,38 @@ export default async function TestPage({ params }: PageProps<"/aura/modules/[mod
             url: `/aura/modules/${moduleName}` as Route,
           },
         ]}
-        description={description}
-        sourceUrl={sourceUrl}
-        title={title}
       />
-      <ComponentPreview>{demo}</ComponentPreview>
-      {!!components?.length && (
-        <section className="grid gap-6">
-          <Heading className="flex items-center gap-[0.5ch]">
-            <PuzzleIcon />
-            Sub components
-          </Heading>
-          <div className="grid gap-6 sm:grid-cols-2">
-            {components.map((component) => (
-              <div className="flex flex-col gap-3" key={component.name}>
-                <ComponentCanvas className="aspect-video flex-1" inert>
-                  {component.demo}
-                </ComponentCanvas>
-                <h3 className="text-lg font-medium">
-                  <Link
-                    className="flex h-full flex-col gap-1.5"
-                    // @ts-expect-error - TODO: fix link types
-                    href={`/aura/components/${component.name}`}
-                    key={component.name}
-                  >
-                    {component.title}
-                  </Link>
-                </h3>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
+      <div className="mx-auto grid w-full max-w-3xl gap-12">
+        <ArticleHeader description={description} sourceUrl={sourceUrl} title={title} />
+        <ComponentPreview>{demo}</ComponentPreview>
+        {!!components?.length && (
+          <section className="grid gap-6">
+            <Heading className="flex items-center gap-[0.5ch]">
+              <PuzzleIcon />
+              Sub components
+            </Heading>
+            <div className="grid gap-6 sm:grid-cols-2">
+              {components.map((component) => (
+                <div className="flex flex-col gap-3" key={component.name}>
+                  <ComponentCanvas className="aspect-video flex-1" inert>
+                    {component.demo}
+                  </ComponentCanvas>
+                  <h3 className="text-lg font-medium">
+                    <Link
+                      className="flex h-full flex-col gap-1.5"
+                      // @ts-expect-error - TODO: fix link types
+                      href={`/aura/components/${component.name}`}
+                      key={component.name}
+                    >
+                      {component.title}
+                    </Link>
+                  </h3>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
     </article>
   );
 }
