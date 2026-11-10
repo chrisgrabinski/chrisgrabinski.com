@@ -16,6 +16,10 @@ import { SpotifyIcon } from "@/icons/spotify";
 import { ThreadsIcon } from "@/icons/threads";
 import { XIcon } from "@/icons/x";
 
+// One seamless turbulence tile. The offset travels exactly one tile, so the
+// loop restart lands on the same pattern and the flow never reverses.
+const flowTileSize = 400;
+
 const profiles = [
   {
     href: "https://github.com/chrisgrabinski",
@@ -155,22 +159,34 @@ export default async function RootPage() {
             </filter>
             <filter
               colorInterpolationFilters="sRGB"
-              height="100%"
+              height="300%"
               id="flow"
               width="100%"
               x="0"
               y="0"
             >
-              <feTurbulence baseFrequency="0.05 0.1" id="turbulence" numOctaves="3" seed="2" />
-              <feDisplacementMap in="SourceGraphic" scale="20" />
-              <animate
-                attributeName="baseFrequency"
-                dur="60s"
-                keyTimes="0;0.5;1"
-                repeatCount="indefinite"
-                values="0.05 0.1;0.1 0.05;0.05 0.1"
-                xlinkHref="#turbulence"
+              <feTurbulence
+                baseFrequency="0.05 0.1"
+                height={flowTileSize}
+                numOctaves="3"
+                result="noise"
+                seed="2"
+                stitchTiles="stitch"
+                width={flowTileSize}
+                x="0"
+                y="0"
               />
+              <feTile in="noise" result="tiled" />
+              <feOffset dx="0" dy="0" in="tiled" result="scroll">
+                <animate
+                  attributeName="dy"
+                  dur="24s"
+                  from={-flowTileSize}
+                  repeatCount="indefinite"
+                  to="0"
+                />
+              </feOffset>
+              <feDisplacementMap in="SourceGraphic" in2="scroll" scale="20" />
             </filter>
           </svg>
         </div>
