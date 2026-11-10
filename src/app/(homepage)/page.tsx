@@ -65,7 +65,7 @@ export default async function RootPage() {
           <Image alt="" className="saturate-0" src={avatar} />
         </div>
         <div className="z-10 col-start-2 col-end-8 row-start-4 row-end-6 pb-6 md:col-start-2 md:col-end-5 md:row-start-1 md:row-end-auto md:py-6">
-          <Heading as="h1" size={9}>
+          <Heading as="h1" className="ml-[-0.125ch]" size={9}>
             Chris
             <br /> Grabiński
           </Heading>
