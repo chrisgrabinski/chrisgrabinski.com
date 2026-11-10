@@ -23,11 +23,7 @@ export const SmallNavigation = () => {
   return (
     <DrawerRoot onOpenChange={setOpen} open={matches ? false : open}>
       <DrawerTrigger asChild>
-        <IconButton
-          aria-label="Toggle menu"
-          className="group relative z-10 md:hidden"
-          size={2}
-        >
+        <IconButton aria-label="Toggle menu" className="group relative z-10 md:hidden" size={2}>
           <XIcon className="group-data-[state=closed]:hidden" />
           <MenuIcon className="group-data-[state=open]:hidden" />
         </IconButton>

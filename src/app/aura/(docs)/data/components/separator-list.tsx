@@ -4,10 +4,7 @@ import type { ComponentData } from "@/app/aura/(docs)/data/components/types";
 import { Avatar } from "@/components/avatar";
 import { Card } from "@/components/card";
 import { Overline } from "@/components/overline";
-import {
-  SeparatorListItem,
-  SeparatorListRoot,
-} from "@/components/separator-list";
+import { SeparatorListItem, SeparatorListRoot } from "@/components/separator-list";
 
 export const separatorList: ComponentData = {
   demo: (

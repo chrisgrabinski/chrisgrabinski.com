@@ -16,11 +16,7 @@ const subtitles = [
   "The transition is natural. The results are permanent.",
 ];
 
-const message = [
-  ...logo,
-  "",
-  subtitles[Math.floor(Math.random() * subtitles.length)],
-];
+const message = [...logo, "", subtitles[Math.floor(Math.random() * subtitles.length)]];
 
 const DeveloperConsole = () => {
   useEffect(() => {

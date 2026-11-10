@@ -13,7 +13,6 @@ export const checkbox: ComponentData = {
   name: "checkbox",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/checkbox.tsx",
-  storybookUrl:
-    "https://storybook.chrisgrabinski.com/?path=/docs/checkbox--docs",
+  storybookUrl: "https://storybook.chrisgrabinski.com/?path=/docs/checkbox--docs",
   title: "Checkbox",
 };

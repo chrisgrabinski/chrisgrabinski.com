@@ -1,7 +1,6 @@
 import avatarImageOne from "@/app/(homepage)/images/chris-grabinski.jpg";
 import avatarImageTwo from "@/app/(homepage)/images/joanna-horanin.jpg";
 import type { ComponentData } from "@/app/aura/(docs)/data/components/types";
-
 import { Avatar } from "@/components/avatar";
 import { AvatarGroupItem, AvatarGroupRoot } from "@/components/avatar-group";
 

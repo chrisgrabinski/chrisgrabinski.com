@@ -1,25 +1,19 @@
 "use client";
 
 import { BanIcon, FilePlus2Icon } from "lucide-react";
-
 import { type DropzoneProps, useDropzone } from "react-dropzone";
 import { Card } from "@/components/card";
 import { IconBox } from "@/components/icon-box";
 import { cn } from "@/lib/styles";
 
 const Dropzone = (props: DropzoneProps) => {
-  const {
-    getRootProps,
-    getInputProps,
-    isDragActive,
-    isDragAccept,
-    isDragReject,
-  } = useDropzone(props);
+  const { getRootProps, getInputProps, isDragActive, isDragAccept, isDragReject } =
+    useDropzone(props);
 
   return (
     <Card
       className={cn(
-        "grid place-items-center gap-3 border border-neutral-700 border-dashed p-8 text-center transition",
+        "grid place-items-center gap-3 border border-dashed border-neutral-700 p-8 text-center transition",
         isDragActive && "border-neutral-400",
         isDragReject && "border-red-500 bg-red-50",
       )}
@@ -30,9 +24,7 @@ const Dropzone = (props: DropzoneProps) => {
       </IconBox>
       <div>
         <p className="font-medium">
-          {isDragActive && isDragAccept
-            ? "Drop files here"
-            : "Click or drag and drop files here"}
+          {isDragActive && isDragAccept ? "Drop files here" : "Click or drag and drop files here"}
         </p>
         <p className="text-neutral-500">Audio or video files up to 50MB each</p>
       </div>

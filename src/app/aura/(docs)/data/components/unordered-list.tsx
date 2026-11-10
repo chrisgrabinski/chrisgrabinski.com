@@ -1,9 +1,5 @@
 import type { ComponentData } from "@/app/aura/(docs)/data/components/types";
-
-import {
-  UnorderedListItem,
-  UnorderedListRoot,
-} from "@/components/unordered-list";
+import { UnorderedListItem, UnorderedListRoot } from "@/components/unordered-list";
 
 export const unorderedList: ComponentData = {
   components: ["list"],

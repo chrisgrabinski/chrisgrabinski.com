@@ -10,7 +10,7 @@ import { Card } from "@/components/card";
 export const Sidebar = () => {
   return (
     <div className="sticky top-0 flex h-dvh w-full shrink-0 flex-col">
-      <ScrollArea.Root className="mask-y-from-[calc(100%-32px)] min-h-0 flex-1 overflow-clip">
+      <ScrollArea.Root className="min-h-0 flex-1 overflow-clip mask-y-from-[calc(100%-32px)]">
         <ScrollArea.Viewport className="size-full">
           <div className="py-8">
             <Navigation />
@@ -25,12 +25,7 @@ export const Sidebar = () => {
               <div className="pointer-events-none absolute -inset-1 z-10 scale-75 rounded-full opacity-0 blur-xs transition duration-300 group-hover:scale-100 group-hover:opacity-100 group-hover:blur-none">
                 <AgentRing animated glow />
               </div>
-              <Avatar
-                className="z-10"
-                fallback="Chris Grabinski"
-                size={3}
-                src={avatar.src}
-              />
+              <Avatar className="z-10" fallback="Chris Grabinski" size={3} src={avatar.src} />
             </div>
             <div>
               <p className="text-[13px] text-neutral-500">Created by</p>

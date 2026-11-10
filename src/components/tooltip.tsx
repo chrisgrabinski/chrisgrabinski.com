@@ -32,10 +32,7 @@ const TooltipContent = ({
 }: React.ComponentProps<typeof TooltipPrimitive.Content>) => {
   return (
     <TooltipPrimitive.Content
-      className={cn(
-        "rounded-tooltip bg-surface px-2.5 py-1.5 text-neutral-50 text-sm",
-        className,
-      )}
+      className={cn("rounded-tooltip bg-surface px-2.5 py-1.5 text-sm text-neutral-50", className)}
       {...props}
     >
       {children}

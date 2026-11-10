@@ -60,16 +60,8 @@ const AudioButton = ({
   return (
     <PlayButton onClick={togglePlayPause} playing={isPlaying} {...props}>
       <div className="absolute inset-[2.5%]">
-        <ProgressRing
-          className="absolute inset-0 size-full"
-          value={percent}
-          variant="gradient"
-        />
-        <ProgressRing
-          className="size-full blur-xs"
-          value={percent}
-          variant="gradient"
-        />
+        <ProgressRing className="absolute inset-0 size-full" value={percent} variant="gradient" />
+        <ProgressRing className="size-full blur-xs" value={percent} variant="gradient" />
       </div>
     </PlayButton>
   );

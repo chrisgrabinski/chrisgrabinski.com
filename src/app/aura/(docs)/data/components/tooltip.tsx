@@ -1,11 +1,7 @@
 import { InfoIcon } from "lucide-react";
 import type { ComponentData } from "@/app/aura/(docs)/data/components/types";
 import { IconButton } from "@/components/icon-button";
-import {
-  TooltipContent,
-  TooltipRoot,
-  TooltipTrigger,
-} from "@/components/tooltip";
+import { TooltipContent, TooltipRoot, TooltipTrigger } from "@/components/tooltip";
 
 export const tooltip: ComponentData = {
   demo: (
@@ -23,7 +19,6 @@ export const tooltip: ComponentData = {
   name: "tooltip",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/tooltip.tsx",
-  storybookUrl:
-    "https://storybook.chrisgrabinski.com/?path=/docs/tooltip--docs",
+  storybookUrl: "https://storybook.chrisgrabinski.com/?path=/docs/tooltip--docs",
   title: "Tooltip",
 };

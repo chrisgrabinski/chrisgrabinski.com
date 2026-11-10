@@ -6,7 +6,6 @@ import * as modulesData from "@/app/aura/(docs)/data/modules";
 import { ArticleHeader } from "@/app/aura/article-header";
 import { ComponentCanvas } from "@/app/aura/component-canvas";
 import { ComponentPreview } from "@/app/aura/component-preview";
-
 import { Heading } from "@/components/heading";
 import { Link } from "@/components/link";
 
@@ -32,9 +31,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function TestPage({
-  params,
-}: PageProps<"/aura/modules/[moduleName]">) {
+export default async function TestPage({ params }: PageProps<"/aura/modules/[moduleName]">) {
   const { moduleName } = await params;
 
   const moduleData = getModuleData(moduleName);
@@ -79,7 +76,7 @@ export default async function TestPage({
                 <ComponentCanvas className="aspect-video flex-1" inert>
                   {component.demo}
                 </ComponentCanvas>
-                <h3 className="font-medium text-lg">
+                <h3 className="text-lg font-medium">
                   <Link
                     className="flex h-full flex-col gap-1.5"
                     // @ts-expect-error - TODO: fix link types

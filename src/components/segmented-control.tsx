@@ -23,10 +23,7 @@ const segmentedControlVariants = cva(
 
 type SegmentedControlVariants = VariantProps<typeof segmentedControlVariants>;
 
-type SegmentedControlRootProps = Omit<
-  ToggleGroup.ToggleGroupSingleProps,
-  "type"
-> &
+type SegmentedControlRootProps = Omit<ToggleGroup.ToggleGroupSingleProps, "type"> &
   SegmentedControlVariants;
 
 const SegmentedControlRoot = ({

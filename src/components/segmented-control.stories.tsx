@@ -1,8 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import {
-  SegmentedControlItem,
-  SegmentedControlRoot,
-} from "./segmented-control";
+import { SegmentedControlItem, SegmentedControlRoot } from "./segmented-control";
 
 const meta = {
   args: {
@@ -14,9 +11,13 @@ const meta = {
   },
   render: ({ children, ...args }) => (
     <SegmentedControlRoot {...args}>
-      <SegmentedControlItem value="mobile">Mobile</SegmentedControlItem>
-      <SegmentedControlItem value="tablet">Tablet</SegmentedControlItem>
-      <SegmentedControlItem value="desktop">Desktop</SegmentedControlItem>
+      {children ?? (
+        <>
+          <SegmentedControlItem value="mobile">Mobile</SegmentedControlItem>
+          <SegmentedControlItem value="tablet">Tablet</SegmentedControlItem>
+          <SegmentedControlItem value="desktop">Desktop</SegmentedControlItem>
+        </>
+      )}
     </SegmentedControlRoot>
   ),
   subcomponents: { SegmentedControlItem },

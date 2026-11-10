@@ -8,7 +8,6 @@ export const playButton: ComponentData = {
   name: "play-button",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/play-button.tsx",
-  storybookUrl:
-    "https://storybook.chrisgrabinski.com/?path=/docs/playbutton--docs",
+  storybookUrl: "https://storybook.chrisgrabinski.com/?path=/docs/playbutton--docs",
   title: "Play Button",
 };

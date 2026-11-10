@@ -1,5 +1,4 @@
 import type { ComponentData } from "@/app/aura/(docs)/data/components/types";
-
 import { ListItem, ListMarker, ListRoot } from "@/components/list";
 
 export const list: ComponentData = {

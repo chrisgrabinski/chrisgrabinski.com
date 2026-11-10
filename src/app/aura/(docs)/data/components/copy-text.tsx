@@ -9,7 +9,6 @@ export const copyText: ComponentData = {
   name: "copy-text",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/copy-text.tsx",
-  storybookUrl:
-    "https://storybook.chrisgrabinski.com/?path=/docs/CopyText--docs",
+  storybookUrl: "https://storybook.chrisgrabinski.com/?path=/docs/CopyText--docs",
   title: "Copy Text",
 };

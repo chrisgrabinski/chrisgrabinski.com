@@ -19,8 +19,7 @@ export const buttonGroup: ComponentData = {
       </ButtonGroupItem>
     </ButtonGroupRoot>
   ),
-  description:
-    "Groups related buttons into a connected control that shares size and variant.",
+  description: "Groups related buttons into a connected control that shares size and variant.",
   name: "button-group",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/button-group.tsx",

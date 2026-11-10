@@ -16,7 +16,6 @@ export const breadcrumbs: ComponentData = {
   name: "breadcrumbs",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/breadcrumbs.tsx",
-  storybookUrl:
-    "https://storybook.chrisgrabinski.com/?path=/docs/breadcrumbs--docs",
+  storybookUrl: "https://storybook.chrisgrabinski.com/?path=/docs/breadcrumbs--docs",
   title: "Breadcrumbs",
 };

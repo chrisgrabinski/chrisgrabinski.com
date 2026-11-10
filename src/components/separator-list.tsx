@@ -5,12 +5,7 @@ interface SeparatorListRootProps extends React.ComponentProps<"ul"> {
   asChild?: boolean;
 }
 
-const SeparatorListRoot = ({
-  asChild,
-  children,
-  className,
-  ...props
-}: SeparatorListRootProps) => {
+const SeparatorListRoot = ({ asChild, children, className, ...props }: SeparatorListRootProps) => {
   const Component = asChild ? Slot.Root : "ul";
 
   return (
@@ -24,12 +19,7 @@ interface SeparatorListItemProps extends React.ComponentProps<"li"> {
   asChild?: boolean;
 }
 
-const SeparatorListItem = ({
-  asChild,
-  children,
-  className,
-  ...props
-}: SeparatorListItemProps) => {
+const SeparatorListItem = ({ asChild, children, className, ...props }: SeparatorListItemProps) => {
   const Component = asChild ? Slot.Root : "li";
 
   return (

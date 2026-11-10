@@ -8,19 +8,15 @@ import { IconButton } from "@/components/icon-button";
 export const announcement: ModuleData = {
   components: ["card", "icon-box", "icon-button", "button"],
   demo: (
-    <Card
-      className="relative flex items-center gap-3 p-4 pr-12 shadow-lg sm:pr-4"
-      variant="glass"
-    >
+    <Card className="relative flex items-center gap-3 p-4 pr-12 shadow-lg sm:pr-4" variant="glass">
       <IconBox className="shrink-0 self-start">
         <ShoppingBagIcon />
       </IconBox>
       <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-6">
         <div>
-          <div className="font-medium text-sm">Shop smarter this season</div>
-          <div className="text-foreground-muted text-sm">
-            Lean back and enjoy a cup of hot cocoa while our agent finds the
-            best gifts.
+          <div className="text-sm font-medium">Shop smarter this season</div>
+          <div className="text-sm text-foreground-muted">
+            Lean back and enjoy a cup of hot cocoa while our agent finds the best gifts.
           </div>
         </div>
         <Button className="shrink-0" size={2}>

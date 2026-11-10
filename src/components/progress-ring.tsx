@@ -2,30 +2,26 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { Progress } from "radix-ui";
 import { cn } from "@/lib/styles";
 
-const progressRingVariants = cva(
-  "relative grid place-items-center rounded-full",
-  {
-    defaultVariants: {
-      size: 3,
-    },
-    variants: {
-      size: {
-        1: "size-6",
-        2: "size-8",
-        3: "size-10",
-        4: "size-12",
-        5: "size-16",
-        6: "size-20",
-      },
+const progressRingVariants = cva("relative grid place-items-center rounded-full", {
+  defaultVariants: {
+    size: 3,
+  },
+  variants: {
+    size: {
+      1: "size-6",
+      2: "size-8",
+      3: "size-10",
+      4: "size-12",
+      5: "size-16",
+      6: "size-20",
     },
   },
-);
+});
 
 type ProgressRingVariants = VariantProps<typeof progressRingVariants>;
 
 interface ProgressRingProps
-  extends React.ComponentProps<typeof Progress.Root>,
-    ProgressRingVariants {
+  extends React.ComponentProps<typeof Progress.Root>, ProgressRingVariants {
   variant?: "solid" | "gradient";
 }
 
@@ -53,7 +49,7 @@ const ProgressRing = ({
         }}
       >
         <Progress.Indicator
-          className="mask-contain will-change absolute inset-0 rounded-full bg-orange-400"
+          className="will-change absolute inset-0 rounded-full bg-orange-400 mask-contain"
           style={{
             background:
               variant === "gradient"

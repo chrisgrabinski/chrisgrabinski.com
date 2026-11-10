@@ -8,8 +8,7 @@ export const countryLabel: ComponentData = {
   name: "country-label",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/country-label.tsx",
-  storybookUrl:
-    "https://storybook.chrisgrabinski.com/?path=/docs/countrylabel--docs",
+  storybookUrl: "https://storybook.chrisgrabinski.com/?path=/docs/countrylabel--docs",
   title: "Country Label",
   variants: [
     {

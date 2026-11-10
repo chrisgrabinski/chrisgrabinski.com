@@ -1,6 +1,5 @@
 import avatarImage from "@/app/(homepage)/images/chris-grabinski.jpg";
 import type { ComponentData } from "@/app/aura/(docs)/data/components/types";
-
 import { Avatar } from "@/components/avatar";
 import { CountryAvatar } from "@/components/avatar-country";
 import { VerifiedAvatar } from "@/components/avatar-verified";
@@ -20,24 +19,11 @@ export const avatar: ComponentData = {
       title: "Fallback",
     },
     {
-      demo: (
-        <CountryAvatar
-          code="DE"
-          fallback="Chris Grabinski"
-          size={6}
-          src={avatarImage.src}
-        />
-      ),
+      demo: <CountryAvatar code="DE" fallback="Chris Grabinski" size={6} src={avatarImage.src} />,
       title: "Country flag",
     },
     {
-      demo: (
-        <VerifiedAvatar
-          fallback="Chris Grabinski"
-          size={6}
-          src={avatarImage.src}
-        />
-      ),
+      demo: <VerifiedAvatar fallback="Chris Grabinski" size={6} src={avatarImage.src} />,
       title: "Verified badge",
     },
   ],

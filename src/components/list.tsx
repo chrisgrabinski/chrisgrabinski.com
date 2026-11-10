@@ -26,12 +26,7 @@ interface ListRootProps extends React.ComponentProps<"ul"> {
   asChild?: boolean;
 }
 
-const ListRoot = ({
-  asChild,
-  children,
-  className,
-  ...props
-}: ListRootProps) => {
+const ListRoot = ({ asChild, children, className, ...props }: ListRootProps) => {
   const Component = asChild ? Slot.Root : "ul";
 
   const { level } = useList();
@@ -57,19 +52,11 @@ interface ListItemProps extends React.ComponentProps<"li"> {
   asChild?: boolean;
 }
 
-const ListItem = ({
-  asChild,
-  children,
-  className,
-  ...props
-}: ListItemProps) => {
+const ListItem = ({ asChild, children, className, ...props }: ListItemProps) => {
   const Component = asChild ? Slot.Root : "li";
 
   return (
-    <Component
-      className={cn("col-span-full grid grid-cols-subgrid", className)}
-      {...props}
-    >
+    <Component className={cn("col-span-full grid grid-cols-subgrid", className)} {...props}>
       {children}
     </Component>
   );
@@ -89,11 +76,7 @@ const ListMarker = ({
   const Component = asChild ? Slot.Root : "span";
 
   return (
-    <Component
-      aria-hidden={ariaHidden}
-      className={cn("h-lh text-end", className)}
-      {...props}
-    >
+    <Component aria-hidden={ariaHidden} className={cn("h-lh text-end", className)} {...props}>
       {children}
     </Component>
   );

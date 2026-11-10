@@ -48,24 +48,16 @@ type AvatarProviderProps = {
 };
 
 const AvatarProvider = ({ children, value }: AvatarProviderProps) => {
-  return (
-    <AvatarContext.Provider value={value}>{children}</AvatarContext.Provider>
-  );
+  return <AvatarContext.Provider value={value}>{children}</AvatarContext.Provider>;
 };
 
 const useAvatar = () => {
   return useContext(AvatarContext);
 };
 
-type AvatarRootProps = React.ComponentProps<typeof AvatarPrimitive.Root> &
-  AvatarVariants;
+type AvatarRootProps = React.ComponentProps<typeof AvatarPrimitive.Root> & AvatarVariants;
 
-const AvatarRoot = ({
-  children,
-  className,
-  size: providedSize,
-  ...props
-}: AvatarRootProps) => {
+const AvatarRoot = ({ children, className, size: providedSize, ...props }: AvatarRootProps) => {
   const { size: contextSize } = useAvatar();
 
   const size = providedSize || contextSize;
@@ -79,16 +71,11 @@ const AvatarRoot = ({
 
 type AvatarImageProps = React.ComponentProps<typeof AvatarPrimitive.Image>;
 
-const AvatarImage = ({
-  alt = "",
-  children,
-  className,
-  asChild,
-  ...props
-}: AvatarImageProps) => {
+const AvatarImage = ({ alt = "", asChild, children, className, ...props }: AvatarImageProps) => {
   return (
     <AvatarPrimitive.Image
       alt={alt}
+      asChild={asChild}
       className={cn("object-cover", className)}
       {...props}
     >
@@ -97,17 +84,11 @@ const AvatarImage = ({
   );
 };
 
-type AvatarFallbackProps = React.ComponentProps<
-  typeof AvatarPrimitive.Fallback
->;
+type AvatarFallbackProps = React.ComponentProps<typeof AvatarPrimitive.Fallback>;
 
 const AvatarFallback = ({ children, ...props }: AvatarFallbackProps) => {
   return (
-    <AvatarPrimitive.Fallback
-      aria-hidden="true"
-      className="select-none"
-      {...props}
-    >
+    <AvatarPrimitive.Fallback aria-hidden="true" className="select-none" {...props}>
       {children}
     </AvatarPrimitive.Fallback>
   );
@@ -121,23 +102,11 @@ interface AvatarProps extends Omit<AvatarRootProps, "children"> {
   src?: string;
 }
 
-const Avatar = ({
-  delayMs,
-  fallback,
-  onLoadingStatusChange,
-  src,
-  ...props
-}: AvatarProps) => {
+const Avatar = ({ delayMs, fallback, onLoadingStatusChange, src, ...props }: AvatarProps) => {
   return (
     <AvatarRoot {...props}>
-      <AvatarImage
-        asChild
-        onLoadingStatusChange={onLoadingStatusChange}
-        src={src}
-      />
-      <AvatarFallback delayMs={delayMs}>
-        {getAvatarFallbackInitials(fallback)}
-      </AvatarFallback>
+      <AvatarImage onLoadingStatusChange={onLoadingStatusChange} src={src} />
+      <AvatarFallback delayMs={delayMs}>{getAvatarFallbackInitials(fallback)}</AvatarFallback>
     </AvatarRoot>
   );
 };

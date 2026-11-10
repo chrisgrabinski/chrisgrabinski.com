@@ -6,18 +6,10 @@ interface PlayButtonProps extends React.ComponentProps<typeof IconButton> {
   playing?: boolean;
 }
 
-const PlayButton = ({
-  children,
-  className,
-  playing,
-  ...props
-}: PlayButtonProps) => {
+const PlayButton = ({ children, className, playing, ...props }: PlayButtonProps) => {
   return (
     <IconButton
-      className={cn(
-        "group/play-button relative isolate overflow-clip",
-        className,
-      )}
+      className={cn("group/play-button relative isolate overflow-clip", className)}
       {...props}
     >
       <div

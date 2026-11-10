@@ -17,15 +17,10 @@ export default function RootPage() {
         <div className="grid shrink-0 gap-4">
           <AuraLogo className="h-10" />
           <Text as="p" className="max-w-md text-pretty" muted size={5}>
-            A collection of modular components and UI patterns designed for
-            modern web applications.
+            A collection of modular components and UI patterns designed for modern web applications.
           </Text>
           <div className="flex items-center gap-2">
-            <Avatar
-              aria-hidden
-              fallback="Chris Grabiński"
-              src={avatarImage.src}
-            />
+            <Avatar aria-hidden fallback="Chris Grabiński" src={avatarImage.src} />
             by <Link href="/">Chris Grabiński</Link>
           </div>
         </div>

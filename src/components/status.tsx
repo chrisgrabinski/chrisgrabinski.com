@@ -29,10 +29,7 @@ type StatusProps = React.ComponentProps<"span"> & StatusIndicatorVariants;
 
 const Status = ({ children, className, severity, ...props }: StatusProps) => {
   return (
-    <span
-      className={cn("isolate inline-flex items-center gap-[0.5ch]", className)}
-      {...props}
-    >
+    <span className={cn("isolate inline-flex items-center gap-[0.5ch]", className)} {...props}>
       <span className={cn(statusIndicatorVariants({ severity }))} />
       {children}
     </span>

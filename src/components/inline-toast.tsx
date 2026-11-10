@@ -3,22 +3,14 @@
 import { useState } from "react";
 import { ButtonPrimitive } from "@/primitives/button";
 
-interface InlineToastProps
-  extends React.ComponentProps<typeof ButtonPrimitive> {
+interface InlineToastProps extends React.ComponentProps<typeof ButtonPrimitive> {
   message: string;
 }
 
-const InlineToast = ({
-  children,
-  message,
-  onClick,
-  ...props
-}: InlineToastProps) => {
+const InlineToast = ({ children, message, onClick, ...props }: InlineToastProps) => {
   const [isVisible, setIsVisible] = useState(false);
 
-  const handleClick: React.MouseEventHandler<HTMLButtonElement> = async (
-    event,
-  ) => {
+  const handleClick: React.MouseEventHandler<HTMLButtonElement> = async (event) => {
     onClick?.(event);
 
     setIsVisible(true);
@@ -29,13 +21,13 @@ const InlineToast = ({
   return (
     <ButtonPrimitive
       aria-live="polite"
-      className="focus-visible:focus-ring relative rounded-action"
+      className="relative rounded-action focus-visible:focus-ring"
       onClick={handleClick}
       {...props}
     >
       {children}
       {isVisible && (
-        <span className="fade-in slide-in-from-bottom-15 pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 -translate-y-1.5 animate-in cursor-default rounded-tooltip bg-neutral-800 px-[1ch] py-1 text-neutral-50 text-xs">
+        <span className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 -translate-y-1.5 animate-in cursor-default rounded-tooltip bg-neutral-800 px-[1ch] py-1 text-xs text-neutral-50 slide-in-from-bottom-15 fade-in">
           {message}
         </span>
       )}

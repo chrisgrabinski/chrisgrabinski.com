@@ -9,7 +9,6 @@ export const audioButton: ComponentData = {
   name: "audio-button",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/audio-button.tsx",
-  storybookUrl:
-    "https://storybook.chrisgrabinski.com/?path=/docs/audiobutton--docs",
+  storybookUrl: "https://storybook.chrisgrabinski.com/?path=/docs/audiobutton--docs",
   title: "Audio Button",
 };

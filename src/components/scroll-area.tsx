@@ -7,18 +7,12 @@ const ScrollAreaScrollbar = ScrollAreaPrimitive.Scrollbar;
 const ScrollAreaThumb = ScrollAreaPrimitive.Thumb;
 const ScrollAreaCorner = ScrollAreaPrimitive.Corner;
 
-const ScrollArea = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
+const ScrollArea = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   return (
     <ScrollAreaRoot className={cn("min-h-0 overflow-clip", className)}>
       <ScrollAreaViewport className="size-full">{children}</ScrollAreaViewport>
       <ScrollAreaScrollbar
-        className="relative flex w-3 touch-none select-none p-1"
+        className="relative flex w-3 touch-none p-1 select-none"
         orientation="vertical"
       >
         <ScrollAreaThumb className="relative flex-1 rounded-full bg-accent/33 backdrop-blur-sm" />

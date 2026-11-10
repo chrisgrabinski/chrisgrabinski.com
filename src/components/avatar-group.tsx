@@ -1,6 +1,5 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import { Slot } from "radix-ui";
-
 import { AvatarProvider, type AvatarSize } from "@/components/avatar";
 import { cn } from "@/lib/styles";
 
@@ -119,8 +118,7 @@ const avatarGroupRootVariants = cva("flex", {
 type AvatarGroupRootVariants = VariantProps<typeof avatarGroupRootVariants>;
 
 interface AvatarGroupRootProps
-  extends React.ComponentProps<"div">,
-    Omit<AvatarGroupRootVariants, "size"> {
+  extends React.ComponentProps<"div">, Omit<AvatarGroupRootVariants, "size"> {
   asChild?: boolean;
   size?: AvatarSize;
 }
@@ -138,10 +136,7 @@ const AvatarGroupRoot = ({
   return (
     <AvatarProvider value={{ size }}>
       <Component
-        className={cn(
-          avatarGroupRootVariants({ orientation, size }),
-          className,
-        )}
+        className={cn(avatarGroupRootVariants({ orientation, size }), className)}
         {...props}
       >
         {children}
@@ -154,20 +149,12 @@ interface AvatarGroupItemProps extends React.ComponentProps<"div"> {
   asChild?: boolean;
 }
 
-const AvatarGroupItem = ({
-  asChild,
-  children,
-  className,
-  ...props
-}: AvatarGroupItemProps) => {
+const AvatarGroupItem = ({ asChild, children, className, ...props }: AvatarGroupItemProps) => {
   const Component = asChild ? Slot.Root : "div";
 
   return (
     <Component
-      className={cn(
-        "z-[calc(sibling-count()-sibling-index())] grid",
-        className,
-      )}
+      className={cn("z-[calc(sibling-count()-sibling-index())] grid", className)}
       {...props}
     >
       {children}

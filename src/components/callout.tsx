@@ -1,11 +1,5 @@
 import { cva, type VariantProps } from "class-variance-authority";
-import {
-  AlertTriangleIcon,
-  CheckCircleIcon,
-  InfoIcon,
-  XCircleIcon,
-  XIcon,
-} from "lucide-react";
+import { AlertTriangleIcon, CheckCircleIcon, InfoIcon, XCircleIcon, XIcon } from "lucide-react";
 import type React from "react";
 import { Card } from "@/components/card";
 import { IconButton } from "@/components/icon-button";
@@ -29,24 +23,25 @@ type CalloutVariants = VariantProps<typeof calloutVariants>;
 
 type CalloutStatus = CalloutVariants["status"];
 
-const getCalloutStatusIcon = (status: CalloutStatus) => {
+const CalloutIcon = ({
+  status,
+  ...props
+}: React.ComponentProps<typeof InfoIcon> & { status: CalloutStatus }) => {
   switch (status) {
     case "error":
-      return XCircleIcon;
+      return <XCircleIcon {...props} />;
     case "info":
-      return InfoIcon;
+      return <InfoIcon {...props} />;
     case "success":
-      return CheckCircleIcon;
+      return <CheckCircleIcon {...props} />;
     case "warning":
-      return AlertTriangleIcon;
+      return <AlertTriangleIcon {...props} />;
     default:
-      return InfoIcon;
+      return <InfoIcon {...props} />;
   }
 };
 
-interface CalloutProps
-  extends Omit<React.ComponentProps<"div">, "children">,
-    CalloutVariants {
+interface CalloutProps extends Omit<React.ComponentProps<"div">, "children">, CalloutVariants {
   description: string;
   title: string;
   onDismiss?: React.MouseEventHandler<HTMLButtonElement>;
@@ -60,19 +55,12 @@ const Callout = ({
   title,
   ...props
 }: CalloutProps) => {
-  const Icon = getCalloutStatusIcon(status);
-
   return (
-    <Card
-      className={cn("flex gap-2", calloutVariants({ status }), className)}
-      {...props}
-    >
-      <Icon className="size-6 shrink-0" />
+    <Card className={cn("flex gap-2", calloutVariants({ status }), className)} {...props}>
+      <CalloutIcon className="size-6 shrink-0" status={status} />
       <div>
         <div className="text-pretty">{title}</div>
-        <div className="mt-0.5 text-pretty text-foreground-muted">
-          {description}
-        </div>
+        <div className="mt-0.5 text-pretty text-foreground-muted">{description}</div>
       </div>
       {onDismiss && (
         <IconButton onClick={onDismiss} size={1} variant="ghost">

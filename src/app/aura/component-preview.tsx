@@ -1,7 +1,6 @@
 "use client";
 
 import { Card } from "@/components/card";
-
 import { cn } from "@/lib/styles";
 
 type PreviewProps = {
@@ -17,7 +16,7 @@ const ComponentPreview = ({ children }: PreviewProps) => {
         "after:clear-both after:table after:content-['']",
       )}
     >
-      <Card className="isolate grid size-full flex-col place-items-center gap-6 bg-canvas p-4 md:p-6">
+      <Card className="isolate grid size-full flex-col place-items-center gap-6 p-4 bg-canvas md:p-6">
         {children}
       </Card>
     </div>

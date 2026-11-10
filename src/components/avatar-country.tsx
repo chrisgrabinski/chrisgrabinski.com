@@ -1,30 +1,17 @@
 import Image from "next/image";
 import type React from "react";
+import { Avatar } from "./avatar";
 import type { CountryAlpha2Code } from "@/constants/countries";
 import { getCountry } from "@/lib/countries";
 import { cn } from "@/lib/styles";
-import { Avatar } from "./avatar";
 
-const CountryAvatarRoot = ({
-  children,
-  className,
-}: React.ComponentProps<"div">) => {
-  return (
-    <div className={cn("relative isolate inline-block w-min", className)}>
-      {children}
-    </div>
-  );
+const CountryAvatarRoot = ({ children, className }: React.ComponentProps<"div">) => {
+  return <div className={cn("relative isolate inline-block w-min", className)}>{children}</div>;
 };
 
-const CountryAvatarFlag = ({
-  className,
-  ...props
-}: React.ComponentProps<typeof Image>) => {
+const CountryAvatarFlag = ({ className, ...props }: React.ComponentProps<typeof Image>) => {
   return (
-    <Image
-      className={cn("absolute right-0 bottom-0 z-30 h-1/4 w-auto", className)}
-      {...props}
-    />
+    <Image className={cn("absolute right-0 bottom-0 z-30 h-1/4 w-auto", className)} {...props} />
   );
 };
 
@@ -39,7 +26,7 @@ const CountryAvatar = ({ className, code, ...props }: CountryAvatarProps) => {
     <CountryAvatarRoot>
       <Avatar
         className={cn(
-          "mask-cover mask-[url(/aura/avatar-country.mask.svg)] align-middle",
+          "mask-[url(/aura/avatar-country.mask.svg)] mask-cover align-middle",
           className,
         )}
         {...props}

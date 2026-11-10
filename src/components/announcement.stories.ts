@@ -6,8 +6,7 @@ import { Announcement } from "./announcement";
 const meta = {
   args: {
     buttonLabel: "Try it",
-    description:
-      "Lean back and enjoy a cup of hot cocoa while our agent finds the best gifts.",
+    description: "Lean back and enjoy a cup of hot cocoa while our agent finds the best gifts.",
     icon: ShoppingBagIcon,
     onClick: fn(),
     onClose: fn(),

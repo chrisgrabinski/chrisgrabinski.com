@@ -19,24 +19,15 @@ const useButtonGroupContext = () => {
   const context = useContext(ButtonGroupContext);
 
   if (!context) {
-    throw new Error(
-      "useButtonGroupContext must be used within a ButtonGroupRoot",
-    );
+    throw new Error("useButtonGroupContext must be used within a ButtonGroupRoot");
   }
 
   return context;
 };
 
-interface ButtonGroupRootProps
-  extends React.ComponentProps<"div">,
-    ButtonGroupContextProps {}
+interface ButtonGroupRootProps extends React.ComponentProps<"div">, ButtonGroupContextProps {}
 
-const ButtonGroupRoot = ({
-  children,
-  size,
-  variant,
-  ...props
-}: ButtonGroupRootProps) => {
+const ButtonGroupRoot = ({ children, size, variant, ...props }: ButtonGroupRootProps) => {
   return (
     <ButtonGroupContext.Provider value={{ size, variant }}>
       <div {...props}>{children}</div>
@@ -45,7 +36,7 @@ const ButtonGroupRoot = ({
 };
 
 const buttonGroupItemVariants = cva(
-  "not-last:rounded-r-none not-first:rounded-l-none focus-visible:relative",
+  "not-first:rounded-l-none not-last:rounded-r-none focus-visible:relative",
   {
     defaultVariants: {
       variant: "secondary",
@@ -61,11 +52,7 @@ const buttonGroupItemVariants = cva(
 
 type ButtonGroupItemProps = Omit<ButtonProps, "size" | "variant">;
 
-const ButtonGroupItem = ({
-  children,
-  className,
-  ...props
-}: ButtonGroupItemProps) => {
+const ButtonGroupItem = ({ children, className, ...props }: ButtonGroupItemProps) => {
   const { size, variant } = useButtonGroupContext();
 
   return (

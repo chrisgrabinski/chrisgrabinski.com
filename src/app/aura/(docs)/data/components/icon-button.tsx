@@ -13,8 +13,7 @@ export const iconButton: ComponentData = {
   name: "icon-button",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/icon-button.tsx",
-  storybookUrl:
-    "https://storybook.chrisgrabinski.com/?path=/docs/iconbutton--docs",
+  storybookUrl: "https://storybook.chrisgrabinski.com/?path=/docs/iconbutton--docs",
   title: "Icon Button",
   variants: [
     {

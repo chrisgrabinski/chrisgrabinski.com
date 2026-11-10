@@ -7,14 +7,11 @@ import * as modulesData from "@/app/aura/(docs)/data/modules";
 import { ArticleHeader } from "@/app/aura/article-header";
 import { ComponentCanvas } from "@/app/aura/component-canvas";
 import { ComponentPreview } from "@/app/aura/component-preview";
-
 import { Card } from "@/components/card";
 import { Heading } from "@/components/heading";
 
 const getComponentData = (name: string) => {
-  return Object.values(componentsData).find(
-    (component) => component.name === name,
-  );
+  return Object.values(componentsData).find((component) => component.name === name);
 };
 
 export async function generateStaticParams() {
@@ -35,9 +32,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function TestPage({
-  params,
-}: PageProps<"/aura/components/[componentName]">) {
+export default async function TestPage({ params }: PageProps<"/aura/components/[componentName]">) {
   const { componentName } = await params;
 
   const componentData = getComponentData(componentName);
@@ -46,8 +41,7 @@ export default async function TestPage({
     notFound();
   }
 
-  const { title, description, components, demo, sourceUrl, variants } =
-    componentData;
+  const { title, description, components, demo, sourceUrl, variants } = componentData;
 
   const subComponents = Object.values(componentsData).filter((component) =>
     components?.includes(component.name),
@@ -88,7 +82,7 @@ export default async function TestPage({
                   {variant.demo}
                 </ComponentCanvas>
                 <div className="p-6">
-                  <h3 className="font-medium text-lg">{variant.title}</h3>
+                  <h3 className="text-lg font-medium">{variant.title}</h3>
                 </div>
               </Card>
             ))}
@@ -104,11 +98,9 @@ export default async function TestPage({
           <div className="grid gap-6 sm:grid-cols-2">
             {subComponents.map((component) => (
               <Card className="p-0" key={component.name}>
-                <ComponentCanvas className="aspect-video flex-1">
-                  {component.demo}
-                </ComponentCanvas>
+                <ComponentCanvas className="aspect-video flex-1">{component.demo}</ComponentCanvas>
                 <div className="p-6">
-                  <h3 className="font-medium text-lg">
+                  <h3 className="text-lg font-medium">
                     <Link
                       className="flex h-full flex-col gap-1.5"
                       href={`/aura/components/${component.name}`}
@@ -137,14 +129,11 @@ export default async function TestPage({
                 key={module.name}
               >
                 <Card className="p-0">
-                  <ComponentCanvas
-                    className="pointer-events-none flex-1 p-6"
-                    inert
-                  >
+                  <ComponentCanvas className="pointer-events-none flex-1 p-6" inert>
                     {module.demo}
                   </ComponentCanvas>
                   <div className="p-6">
-                    <h3 className="font-medium text-lg">{module.title}</h3>
+                    <h3 className="text-lg font-medium">{module.title}</h3>
                   </div>
                 </Card>
               </Link>

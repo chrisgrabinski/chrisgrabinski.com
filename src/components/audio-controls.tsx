@@ -69,9 +69,7 @@ const AudioControls = ({ src }: AudioControlsProps) => {
         </IconButton>
       </div>
       <div className="flex items-center gap-1.5 text-xs">
-        <div className="tabular-nums">
-          {(progress / 60).toFixed(2).replace(".", ":")}
-        </div>
+        <div className="tabular-nums">{(progress / 60).toFixed(2).replace(".", ":")}</div>
         <div className="flex-1">
           <Scrubber
             max={duration}
@@ -80,9 +78,7 @@ const AudioControls = ({ src }: AudioControlsProps) => {
             value={[progress]}
           />
         </div>
-        <div className="tabular-nums">
-          {(duration / 60).toFixed(2).replace(".", ":")}
-        </div>
+        <div className="tabular-nums">{(duration / 60).toFixed(2).replace(".", ":")}</div>
       </div>
     </div>
   );

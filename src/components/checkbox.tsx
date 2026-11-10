@@ -12,10 +12,7 @@ const CheckboxRoot = ({
   return (
     <CheckboxPrimitive.Root
       asChild
-      className={cn(
-        "group/checkbox inline-flex items-center gap-[1ch] rounded-action",
-        className,
-      )}
+      className={cn("group/checkbox inline-flex items-center gap-[1ch] rounded-action", className)}
       {...props}
     >
       <ButtonPrimitive asChild={asChild}>{children}</ButtonPrimitive>

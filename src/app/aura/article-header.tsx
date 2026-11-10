@@ -7,8 +7,7 @@ import { IconButton } from "@/components/icon-button";
 import { Text } from "@/components/text";
 import { GitHubIcon } from "@/icons/github";
 
-interface ArticleHeaderProps
-  extends Omit<React.ComponentProps<"header">, "children"> {
+interface ArticleHeaderProps extends Omit<React.ComponentProps<"header">, "children"> {
   title: string;
   description?: string;
   previous?: {

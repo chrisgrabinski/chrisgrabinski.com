@@ -13,7 +13,6 @@ export const iconBox: ComponentData = {
   name: "icon-box",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/icon-box.tsx",
-  storybookUrl:
-    "https://storybook.chrisgrabinski.com/?path=/docs/iconbox--docs",
+  storybookUrl: "https://storybook.chrisgrabinski.com/?path=/docs/iconbox--docs",
   title: "Icon Box",
 };

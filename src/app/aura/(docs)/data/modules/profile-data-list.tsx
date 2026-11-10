@@ -16,14 +16,7 @@ import { Filename } from "@/components/filename";
 import { Status } from "@/components/status";
 
 export const profileDataList: ModuleData = {
-  components: [
-    "card",
-    "copy-text",
-    "country-label",
-    "data-list",
-    "filename",
-    "status",
-  ],
+  components: ["card", "copy-text", "country-label", "data-list", "filename", "status"],
   demo: (
     <Card className="w-full max-w-md">
       <DataListRoot>
@@ -41,9 +34,7 @@ export const profileDataList: ModuleData = {
           <DataListLabel>Contract</DataListLabel>
           <DataListValue>
             <CopyText>
-              <Filename>
-                peter_parker_united_states_employment_contract.pdf
-              </Filename>
+              <Filename>peter_parker_united_states_employment_contract.pdf</Filename>
             </CopyText>
           </DataListValue>
         </DataListItem>

@@ -13,7 +13,7 @@ export default function RootLayout({ children }: LayoutProps<"/aura">) {
         <header className="sticky top-0 z-10">
           <div className="relative z-10 flex h-18 w-full items-center justify-between gap-8 px-4 md:px-8">
             <Link
-              className="focus-visible:focus-ring grid h-8 place-items-center rounded-action"
+              className="grid h-8 place-items-center rounded-action focus-visible:focus-ring"
               href="/aura"
             >
               <AuraLogo className="h-7" />

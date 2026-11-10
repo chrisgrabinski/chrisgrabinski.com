@@ -28,8 +28,7 @@
   --radius-tooltip: var(--radius-md);
 
   --shadow-glow:
-    0 0 2px var(--color-accent), 0 0 4px var(--color-accent),
-    0 0 16px var(--color-accent);
+    0 0 2px var(--color-accent), 0 0 4px var(--color-accent), 0 0 16px var(--color-accent);
 }
 
 :root {
@@ -61,9 +60,7 @@ html {
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 @utility bg-canvas {
-  background:
-    repeating-conic-gradient(var(--canvas-1) 0 25%, var(--canvas-2) 0 50%) 50% /
-    20px 20px;
+  background: repeating-conic-gradient(var(--canvas-1) 0 25%, var(--canvas-2) 0 50%) 50% / 20px 20px;
 }
 
 @utility focus-ring {

@@ -27,13 +27,7 @@ type BoxVariants = VariantProps<typeof boxVariants>;
 
 type IconBoxProps = React.ComponentProps<"div"> & BoxVariants;
 
-const IconBox = ({
-  children,
-  className,
-  color,
-  size,
-  ...props
-}: IconBoxProps) => {
+const IconBox = ({ children, className, color, size, ...props }: IconBoxProps) => {
   return (
     <div className={boxVariants({ className, color, size })} {...props}>
       {children}

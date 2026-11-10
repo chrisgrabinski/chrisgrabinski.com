@@ -21,22 +21,11 @@ const switchRootVariants = cva(
 
 type SwitchRootVariants = VariantProps<typeof switchRootVariants>;
 
-type SwitchRootProps = React.ComponentProps<typeof SwitchPrimitive.Root> &
-  SwitchRootVariants;
+type SwitchRootProps = React.ComponentProps<typeof SwitchPrimitive.Root> & SwitchRootVariants;
 
-const SwitchRoot = ({
-  asChild,
-  children,
-  className,
-  size,
-  ...props
-}: SwitchRootProps) => {
+const SwitchRoot = ({ asChild, children, className, size, ...props }: SwitchRootProps) => {
   return (
-    <SwitchPrimitive.Root
-      asChild
-      className={switchRootVariants({ className, size })}
-      {...props}
-    >
+    <SwitchPrimitive.Root asChild className={switchRootVariants({ className, size })} {...props}>
       <ButtonPrimitive asChild={asChild}>{children}</ButtonPrimitive>
     </SwitchPrimitive.Root>
   );

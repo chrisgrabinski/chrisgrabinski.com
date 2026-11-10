@@ -55,9 +55,7 @@ export default async function RootPage() {
   const images = isPlayingSpotify && spotifyData?.item?.album?.images;
   const artists =
     isPlayingSpotify &&
-    spotifyData?.item?.artists
-      .map((artist: { name: string }) => artist.name)
-      .join(", ");
+    spotifyData?.item?.artists.map((artist: { name: string }) => artist.name).join(", ");
 
   return (
     <>
@@ -75,10 +73,10 @@ export default async function RootPage() {
             Frontend Engineer
           </Overline>
           <p className="whitespace-balance mt-3 text-lg">
-            Working with product teams to deliver beautiful, user‑friendly, and
-            goal‑driven web experiences.
+            Working with product teams to deliver beautiful, user‑friendly, and goal‑driven web
+            experiences.
           </p>
-          <p className="mt-6 font-mono text-foreground-muted text-xs uppercase tracking-wide">
+          <p className="mt-6 font-mono text-xs tracking-wide text-foreground-muted uppercase">
             Worked with
           </p>
           <ul className="mt-3 flex items-center gap-6">
@@ -95,14 +93,10 @@ export default async function RootPage() {
           <ul className="mt-12 flex gap-1.5">
             {isPlayingSpotify && (
               <li>
-                <SpotifyNowPlayingCard
-                  artists={artists}
-                  image={images[0].url}
-                  title={name}
-                >
+                <SpotifyNowPlayingCard artists={artists} image={images[0].url} title={name}>
                   <a
                     aria-label="Spotify"
-                    className="relative grid h-8 w-8 place-items-center rounded-full bg-foreground text-background outline-0 outline-transparent outline-offset-[3px] transition-all duration-150 focus-visible:outline-2 focus-visible:outline-foreground-muted"
+                    className="relative grid h-8 w-8 place-items-center rounded-full bg-foreground text-background outline-0 outline-offset-[3px] outline-transparent transition-all duration-150 focus-visible:outline-2 focus-visible:outline-foreground-muted"
                     href={href}
                     rel="noopener noreferrer"
                     target="_blank"
@@ -117,7 +111,7 @@ export default async function RootPage() {
               <li key={name}>
                 <a
                   aria-label={name}
-                  className="inline-grid aspect-square h-8 place-items-center rounded-full bg-foreground px-0 text-background text-sm hover:bg-foreground/80 [&_svg]:size-4"
+                  className="inline-grid aspect-square h-8 place-items-center rounded-full bg-foreground px-0 text-sm text-background hover:bg-foreground/80 [&_svg]:size-4"
                   href={href}
                   rel="noopener noreferrer"
                   target="_blank"
@@ -167,12 +161,7 @@ export default async function RootPage() {
               x="0"
               y="0"
             >
-              <feTurbulence
-                baseFrequency="0.05 0.1"
-                id="turbulence"
-                numOctaves="3"
-                seed="2"
-              />
+              <feTurbulence baseFrequency="0.05 0.1" id="turbulence" numOctaves="3" seed="2" />
               <feDisplacementMap in="SourceGraphic" scale="20" />
               <animate
                 attributeName="baseFrequency"

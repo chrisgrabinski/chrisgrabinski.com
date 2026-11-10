@@ -3,14 +3,16 @@
 import { ChevronDownIcon } from "lucide-react";
 import { Collapsible, Slot } from "radix-ui";
 import { createContext, useContext, useState } from "react";
-import {
-  SeparatorListItem,
-  SeparatorListRoot,
-} from "@/components/separator-list";
+import { SeparatorListItem, SeparatorListRoot } from "@/components/separator-list";
 import { cn } from "@/lib/styles";
 import { ButtonPrimitive } from "@/primitives/button";
 
 type DataListSize = "sm" | "md";
+
+const dataListSizeClassName = {
+  md: "text-sm",
+  sm: "text-xs",
+} as const satisfies Record<DataListSize, string>;
 
 const DEFAULT_SIZE: DataListSize = "md";
 
@@ -32,7 +34,8 @@ const DataListRoot = ({
     <SeparatorListRoot asChild>
       <Component
         className={cn(
-          "group/data-list col-span-full col-start-1 grid grid-cols-[2fr_3fr] text-sm",
+          "group/data-list col-span-full col-start-1 grid grid-cols-[2fr_3fr]",
+          dataListSizeClassName[size],
           className,
         )}
         {...props}
@@ -47,12 +50,7 @@ interface DataListItemProps extends React.ComponentProps<"div"> {
   asChild?: boolean;
 }
 
-const DataListItem = ({
-  asChild,
-  children,
-  className,
-  ...props
-}: DataListItemProps) => {
+const DataListItem = ({ asChild, children, className, ...props }: DataListItemProps) => {
   const Component = asChild ? Slot.Root : "div";
 
   return (
@@ -74,19 +72,11 @@ interface DataListLabelProps extends React.ComponentProps<"dt"> {
   asChild?: boolean;
 }
 
-const DataListLabel = ({
-  asChild,
-  children,
-  className,
-  ...props
-}: DataListLabelProps) => {
+const DataListLabel = ({ asChild, children, className, ...props }: DataListLabelProps) => {
   const Component = asChild ? Slot.Root : "dt";
 
   return (
-    <Component
-      className={cn("flex items-center gap-x-4", className)}
-      {...props}
-    >
+    <Component className={cn("flex items-center gap-x-4", className)} {...props}>
       {children}
     </Component>
   );
@@ -96,20 +86,12 @@ interface DataListValueProps extends React.ComponentProps<"dd"> {
   asChild?: boolean;
 }
 
-const DataListValue = ({
-  asChild,
-  children,
-  className,
-  ...props
-}: DataListValueProps) => {
+const DataListValue = ({ asChild, children, className, ...props }: DataListValueProps) => {
   const Component = asChild ? Slot.Root : "dd";
 
   return (
     <Component
-      className={cn(
-        "m-0 flex min-w-0 items-center gap-x-4 text-current/60",
-        className,
-      )}
+      className={cn("m-0 flex min-w-0 items-center gap-x-4 text-current/60", className)}
       {...props}
     >
       {children}
@@ -133,8 +115,7 @@ const useDataListSub = () => {
   return context;
 };
 
-interface DataListSubProps
-  extends React.ComponentProps<typeof Collapsible.Root> {
+interface DataListSubProps extends React.ComponentProps<typeof Collapsible.Root> {
   asChild?: boolean;
 }
 
@@ -171,14 +152,9 @@ const DataListSub = ({
   );
 };
 
-interface DataListSubTriggerProps
-  extends React.ComponentProps<typeof Collapsible.Trigger> {}
+interface DataListSubTriggerProps extends React.ComponentProps<typeof Collapsible.Trigger> {}
 
-const DataListSubTrigger = ({
-  children,
-  className,
-  ...props
-}: DataListSubTriggerProps) => {
+const DataListSubTrigger = ({ children, className, ...props }: DataListSubTriggerProps) => {
   return (
     <dt className="contents">
       <DataListLabel asChild>
@@ -196,11 +172,7 @@ const DataListSubTrigger = ({
 
 interface DataListSubIndicatorProps extends React.ComponentProps<"svg"> {}
 
-const DataListSubIndicator = ({
-  className,
-  children,
-  ...props
-}: DataListSubIndicatorProps) => {
+const DataListSubIndicator = ({ children, className, ...props }: DataListSubIndicatorProps) => {
   const { open } = useDataListSub();
 
   return (
@@ -208,18 +180,15 @@ const DataListSubIndicator = ({
       className={cn("size-4 data-[state=open]:rotate-180", className)}
       data-state={open ? "open" : "closed"}
       {...props}
-    />
+    >
+      {children}
+    </ChevronDownIcon>
   );
 };
 
-interface DataListSubIndicatorIconProps
-  extends React.ComponentProps<typeof Collapsible.Content> {}
+interface DataListSubIndicatorIconProps extends React.ComponentProps<typeof Collapsible.Content> {}
 
-const DataListSubContent = ({
-  asChild,
-  children,
-  ...props
-}: DataListSubIndicatorIconProps) => {
+const DataListSubContent = ({ asChild, children, ...props }: DataListSubIndicatorIconProps) => {
   const Component = asChild ? Slot.Root : "dd";
   return (
     <Collapsible.Content asChild {...props}>

@@ -10,20 +10,11 @@ interface OrderedListRootProps extends React.ComponentProps<"ol"> {
   asChild?: boolean;
 }
 
-const OrderedListRoot = ({
-  asChild,
-  children,
-  className,
-  ...props
-}: OrderedListRootProps) => {
+const OrderedListRoot = ({ asChild, children, className, ...props }: OrderedListRootProps) => {
   const Component = asChild ? Slot.Root : "ol";
 
   return (
-    <ListRoot
-      asChild
-      className={cn("[counter-reset:ordered-list]", className)}
-      {...props}
-    >
+    <ListRoot asChild className={cn("[counter-reset:ordered-list]", className)} {...props}>
       <Component>
         <Slot.Slottable>{children}</Slot.Slottable>
       </Component>
@@ -41,8 +32,7 @@ const orderedListItemMarkerVariants = cva("", {
   variants: {
     variant: {
       default: "after:content-['.']",
-      highlight:
-        "min-w-[1lh] rounded-full bg-accent px-1 text-center text-white",
+      highlight: "min-w-[1lh] rounded-full bg-accent px-1 text-center text-white",
     },
   },
 });

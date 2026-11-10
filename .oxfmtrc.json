@@ -1,0 +1,30 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "ignorePatterns": ["node_modules", ".next", "dist", "build", "**/*.svg"],
+  "sortImports": {
+    "groups": [
+      ["side_effect_style", "side_effect"],
+      { "newlinesBetween": true },
+      ["builtin", "type-builtin", "external", "type-external"],
+      [
+        "internal",
+        "type-internal",
+        "subpath",
+        "parent",
+        "sibling",
+        "index",
+        "type-parent",
+        "type-sibling",
+        "type-index",
+        "style",
+        "unknown"
+      ]
+    ],
+    "newlinesBetween": false
+  },
+  "sortTailwindcss": {
+    "attributes": ["classList"],
+    "functions": ["clsx", "cn", "cva", "tw"],
+    "stylesheet": "./src/styles/global.css"
+  }
+}

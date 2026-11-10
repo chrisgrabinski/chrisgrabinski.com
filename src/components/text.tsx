@@ -36,10 +36,7 @@ const Text = ({
   ...props
 }: TextProps) => {
   return (
-    <Slot.Root
-      className={cn(textVariants({ muted, size }), className)}
-      {...props}
-    >
+    <Slot.Root className={cn(textVariants({ muted, size }), className)} {...props}>
       {asChild ? children : <Tag>{children}</Tag>}
     </Slot.Root>
   );

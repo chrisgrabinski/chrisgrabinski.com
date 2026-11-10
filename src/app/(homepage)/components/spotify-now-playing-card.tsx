@@ -21,18 +21,10 @@ export const SpotifyNowPlayingCard = ({
       <HoverCard.Portal>
         <HoverCard.Content align="start" side="top" sideOffset={3}>
           <Card className="flex items-center p-0 shadow-xl">
-            <Image
-              alt=""
-              className="size-16 shrink-0"
-              height={56}
-              src={image}
-              width={56}
-            />
+            <Image alt="" className="size-16 shrink-0" height={56} src={image} width={56} />
             <div className="min-w-0 pr-4 pl-3">
               <span className="block truncate text-base">{title}</span>
-              <span className="line-clamp-1 block text-foreground-muted text-xs">
-                {artists}
-              </span>
+              <span className="line-clamp-1 block text-xs text-foreground-muted">{artists}</span>
             </div>
           </Card>
           <HoverCard.Arrow className="h-2 w-3 fill-white" />

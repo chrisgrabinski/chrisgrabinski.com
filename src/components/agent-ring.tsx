@@ -4,18 +4,10 @@ interface AgentGradientProps extends React.ComponentProps<"span"> {
   animated?: boolean;
 }
 
-export const AgentGradient = ({
-  animated,
-  className,
-  ...props
-}: AgentGradientProps) => {
+export const AgentGradient = ({ animated, className, ...props }: AgentGradientProps) => {
   return (
     <span
-      className={cn(
-        "aura-gradient",
-        animated && "aura-gradient-animation",
-        className,
-      )}
+      className={cn("aura-gradient", animated && "aura-gradient-animation", className)}
       {...props}
     />
   );
@@ -24,10 +16,7 @@ export const AgentGradient = ({
 const Ring = ({ className, style, ...props }: AgentGradientProps) => {
   return (
     <AgentGradient
-      className={cn(
-        "pointer-none absolute inset-0 rounded-[inherit] p-[3px]",
-        className,
-      )}
+      className={cn("pointer-none absolute inset-0 rounded-[inherit] p-[3px]", className)}
       style={{
         mask: "linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px) content-box exclude, linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px)",
         ...style,

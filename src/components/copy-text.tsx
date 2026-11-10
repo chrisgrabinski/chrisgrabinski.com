@@ -1,20 +1,35 @@
 "use client";
 
+import { cva, type VariantProps } from "class-variance-authority";
 import { CopyIcon } from "lucide-react";
 import { useRef } from "react";
-
-import type { IconButton } from "@/components/icon-button";
 import { InlineToast } from "@/components/inline-toast";
 import { cn } from "@/lib/styles";
+
+const copyTextVariants = cva("", {
+  defaultVariants: {
+    size: 2,
+  },
+  variants: {
+    size: {
+      1: "text-xs",
+      2: "text-sm",
+      3: "text-base",
+      4: "text-lg",
+      5: "text-xl",
+      6: "text-2xl",
+    },
+  },
+});
+
+type CopyTextVariants = VariantProps<typeof copyTextVariants>;
 
 const messages = {
   action: "Copy to clipboard",
   success: "Copied",
 } as const;
 
-interface CopyTextProps
-  extends Omit<React.ComponentProps<"button">, "onCopy">,
-    Pick<React.ComponentProps<typeof IconButton>, "size"> {
+interface CopyTextProps extends Omit<React.ComponentProps<"button">, "onCopy">, CopyTextVariants {
   children: React.ReactNode;
   onCopy?: (textContent: string) => void;
   textContent?: string;
@@ -33,8 +48,7 @@ const CopyText = ({
   const handleCopy = async () => {
     if (!childrenRef.current) return;
 
-    const textContent =
-      providedTextContent ?? (childrenRef.current?.textContent || "");
+    const textContent = providedTextContent ?? (childrenRef.current?.textContent || "");
 
     onCopy?.(textContent);
 
@@ -46,6 +60,7 @@ const CopyText = ({
       aria-description={messages.action}
       className={cn(
         "group/copy-text relative inline-flex min-w-0 rounded-action align-baseline",
+        copyTextVariants({ size }),
         className,
       )}
       message={messages.success}

@@ -1,8 +1,10 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.biome": "explicit"
+    "source.fixAll.oxc": "explicit",
+    "source.organizeImports": "never"
   },
-  "editor.defaultFormatter": "biomejs.biome",
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "editor.formatOnSaveMode": "file",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "files.associations": {

@@ -1,5 +1,4 @@
 import type { ComponentData } from "@/app/aura/(docs)/data/components/types";
-
 import { OrderedListItem, OrderedListRoot } from "@/components/ordered-list";
 
 export const orderedList: ComponentData = {

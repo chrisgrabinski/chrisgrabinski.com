@@ -2,7 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { ButtonPrimitive } from "@/primitives/button";
 
 const buttonVariants = cva(
-  "inline-flex place-items-center gap-[0.5ch] rounded-action px-[1.5ch] align-middle font-medium transition [&>svg]:size-[1.25em] [&_svg]:mt-[-0.125em]",
+  "inline-flex place-items-center gap-[0.5ch] rounded-action px-[1.5ch] align-middle font-medium transition [&_svg]:mt-[-0.125em] [&>svg]:size-[1.25em]",
   {
     defaultVariants: {
       size: 3,
@@ -19,8 +19,7 @@ const buttonVariants = cva(
       },
       variant: {
         destructive: "bg-red-500 text-red-50 hover:bg-red-500/80",
-        ghost:
-          "bg-transparent text-inherit hover:bg-foreground/80 hover:text-background",
+        ghost: "bg-transparent text-inherit hover:bg-foreground/80 hover:text-background",
         outline:
           "border bg-transparent hover:border-transparent hover:bg-foreground/80 hover:text-background",
         primary: "bg-accent text-orange-50 hover:bg-accent/80",
@@ -35,21 +34,11 @@ type ButtonVariants = VariantProps<typeof buttonVariants>;
 
 export type ButtonVariant = NonNullable<ButtonVariants["variant"]>;
 
-type ButtonProps = React.ComponentProps<typeof ButtonPrimitive> &
-  ButtonVariants;
+type ButtonProps = React.ComponentProps<typeof ButtonPrimitive> & ButtonVariants;
 
-const Button = ({
-  children,
-  className,
-  size,
-  variant,
-  ...props
-}: ButtonProps) => {
+const Button = ({ children, className, size, variant, ...props }: ButtonProps) => {
   return (
-    <ButtonPrimitive
-      className={buttonVariants({ className, size, variant })}
-      {...props}
-    >
+    <ButtonPrimitive className={buttonVariants({ className, size, variant })} {...props}>
       {children}
     </ButtonPrimitive>
   );

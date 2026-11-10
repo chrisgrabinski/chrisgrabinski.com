@@ -36,11 +36,7 @@ interface SidebarMenuItemBaseProps extends React.ComponentProps<"button"> {
   asChild?: boolean;
 }
 
-const SidebarMenuItemBase = ({
-  asChild,
-  children,
-  ...props
-}: SidebarMenuItemBaseProps) => {
+const SidebarMenuItemBase = ({ asChild, children, ...props }: SidebarMenuItemBaseProps) => {
   const Component = asChild ? Slot.Root : "button";
 
   return (
@@ -54,11 +50,7 @@ const SidebarMenuItemBase = ({
 
 type SidebarMenuItemProps = React.ComponentProps<typeof Link>;
 
-const SidebarMenuItem = ({
-  children,
-  className,
-  ...props
-}: SidebarMenuItemProps) => {
+const SidebarMenuItem = ({ children, className, ...props }: SidebarMenuItemProps) => {
   const pathname = usePathname();
 
   const isActive = pathname === props.href;

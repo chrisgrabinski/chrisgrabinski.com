@@ -11,7 +11,7 @@ const SliderRoot = ({
   return (
     <SliderPrimitive.Root
       className={cn(
-        "relative flex h-4 w-full cursor-pointer touch-none select-none items-center",
+        "relative flex h-4 w-full cursor-pointer touch-none items-center select-none",
         className,
       )}
       {...props}
@@ -45,10 +45,7 @@ const SliderRange = ({
   ...props
 }: React.ComponentProps<typeof SliderPrimitive.Range>) => {
   return (
-    <SliderPrimitive.Range
-      className={cn("absolute h-full bg-accent", className)}
-      {...props}
-    >
+    <SliderPrimitive.Range className={cn("absolute h-full bg-accent", className)} {...props}>
       {children}
     </SliderPrimitive.Range>
   );
@@ -61,10 +58,7 @@ const SliderThumb = ({
 }: React.ComponentProps<typeof SliderPrimitive.Thumb>) => {
   return (
     <SliderPrimitive.Thumb
-      className={cn(
-        "block size-3.5 cursor-pointer rounded-full bg-white shadow-sm",
-        className,
-      )}
+      className={cn("block size-3.5 cursor-pointer rounded-full bg-white shadow-sm", className)}
       {...props}
     >
       {children}
@@ -72,8 +66,7 @@ const SliderThumb = ({
   );
 };
 
-interface SliderProps
-  extends React.ComponentProps<typeof SliderPrimitive.Root> {}
+interface SliderProps extends React.ComponentProps<typeof SliderPrimitive.Root> {}
 
 const Slider = (props: SliderProps) => {
   return (

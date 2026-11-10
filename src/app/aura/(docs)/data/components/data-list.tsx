@@ -34,9 +34,7 @@ export const dataList: ComponentData = {
           <DataListLabel>Contract</DataListLabel>
           <DataListValue>
             <CopyText>
-              <Filename>
-                peter_parker_united_states_employment_contract.pdf
-              </Filename>
+              <Filename>peter_parker_united_states_employment_contract.pdf</Filename>
             </CopyText>
           </DataListValue>
         </DataListItem>

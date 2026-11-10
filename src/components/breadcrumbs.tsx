@@ -6,16 +6,9 @@ import { cn } from "@/lib/styles";
 
 type BreadcrumbsRootProps = React.ComponentProps<"ul">;
 
-const BreadcrumbsRoot = ({
-  children,
-  className,
-  ...props
-}: BreadcrumbsRootProps) => {
+const BreadcrumbsRoot = ({ children, className, ...props }: BreadcrumbsRootProps) => {
   return (
-    <ul
-      className={cn("flex items-center gap-[0.5ch] text-sm", className)}
-      {...props}
-    >
+    <ul className={cn("flex items-center gap-[0.5ch] text-sm", className)} {...props}>
       {children}
     </ul>
   );
@@ -23,17 +16,10 @@ const BreadcrumbsRoot = ({
 
 type BreadcrumbsItemProps = React.ComponentProps<"li">;
 
-const BreadcrumbsItem = ({
-  children,
-  className,
-  ...props
-}: BreadcrumbsItemProps) => {
+const BreadcrumbsItem = ({ children, className, ...props }: BreadcrumbsItemProps) => {
   return (
     <Overline asChild>
-      <li
-        className={cn("flex items-center gap-[inherit]", className)}
-        {...props}
-      >
+      <li className={cn("flex items-center gap-[inherit]", className)} {...props}>
         {children}
       </li>
     </Overline>
@@ -42,15 +28,11 @@ const BreadcrumbsItem = ({
 
 interface BreadcrumbsLinkProps extends React.ComponentProps<typeof Link> {}
 
-const BreadcrumbsLink = ({
-  children,
-  className,
-  ...props
-}: BreadcrumbsLinkProps) => {
+const BreadcrumbsLink = ({ children, className, ...props }: BreadcrumbsLinkProps) => {
   return (
     <Link
       className={cn(
-        "focus-visible:focus-ring flex items-center gap-[inherit] rounded-action text-foreground no-underline",
+        "flex items-center gap-[inherit] rounded-action text-foreground no-underline focus-visible:focus-ring",
         className,
       )}
       {...props}
@@ -62,12 +44,12 @@ const BreadcrumbsLink = ({
 
 type BreadcrumbsSeparatorProps = React.ComponentProps<LucideIcon>;
 
-const BreadcrumbsSeparator = ({
-  children,
-  className,
-  ...props
-}: BreadcrumbsSeparatorProps) => {
-  return <ChevronRightIcon className={cn("size-4", className)} {...props} />;
+const BreadcrumbsSeparator = ({ children, className, ...props }: BreadcrumbsSeparatorProps) => {
+  return (
+    <ChevronRightIcon className={cn("size-4", className)} {...props}>
+      {children}
+    </ChevronRightIcon>
+  );
 };
 
 interface BreadcrumbsProps extends BreadcrumbsRootProps {
@@ -116,7 +98,6 @@ const Breadcrumbs = ({
       </BreadcrumbsRoot>
       {includeJsonLd && (
         <script
-          // biome-ignore lint/security/noDangerouslySetInnerHtml: We need to set the inner HTML for the JSON-LD data
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           type="application/ld+json"
         />
@@ -125,10 +106,4 @@ const Breadcrumbs = ({
   );
 };
 
-export {
-  Breadcrumbs,
-  BreadcrumbsItem,
-  BreadcrumbsLink,
-  BreadcrumbsRoot,
-  BreadcrumbsSeparator,
-};
+export { Breadcrumbs, BreadcrumbsItem, BreadcrumbsLink, BreadcrumbsRoot, BreadcrumbsSeparator };

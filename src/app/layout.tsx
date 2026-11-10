@@ -33,9 +33,7 @@ export default async function RootLayout({
     >
       <body>
         <DeveloperConsole />
-        <ThemeProvider initialTheme={initialTheme ?? undefined}>
-          {children}
-        </ThemeProvider>
+        <ThemeProvider initialTheme={initialTheme ?? undefined}>{children}</ThemeProvider>
       </body>
     </html>
   );

@@ -12,7 +12,6 @@ export const filename: ComponentData = {
   name: "filename",
   sourceUrl:
     "https://github.com/chrisgrabinski/chrisgrabinski.com/blob/main/src/components/filename.tsx",
-  storybookUrl:
-    "https://storybook.chrisgrabinski.com/?path=/docs/filename--docs",
+  storybookUrl: "https://storybook.chrisgrabinski.com/?path=/docs/filename--docs",
   title: "Filename",
 };

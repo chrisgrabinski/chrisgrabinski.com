@@ -20,13 +20,7 @@ interface CardProps extends React.ComponentProps<"div">, CardVariants {
   asChild?: boolean;
 }
 
-const Card = ({
-  asChild,
-  children,
-  className,
-  variant,
-  ...props
-}: CardProps) => {
+const Card = ({ asChild, children, className, variant, ...props }: CardProps) => {
   const Component = asChild ? Slot.Root : "div";
 
   return (

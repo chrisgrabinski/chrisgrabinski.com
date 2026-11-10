@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-
 import { fn } from "storybook/test";
-
 import { AudioButton } from "./audio-button";
 
 const meta = {

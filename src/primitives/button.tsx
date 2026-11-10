@@ -50,7 +50,7 @@ const ButtonPrimitive = ({
       aria-busy={loading || undefined}
       aria-disabled={disabled || undefined}
       className={cn(
-        "focus-visible:focus-ring cursor-pointer aria-busy:cursor-wait aria-disabled:cursor-not-allowed",
+        "cursor-pointer focus-visible:focus-ring aria-busy:cursor-wait aria-disabled:cursor-not-allowed",
         className,
       )}
       onClick={handleClick}

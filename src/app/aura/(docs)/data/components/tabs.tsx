@@ -1,12 +1,7 @@
 import { ShieldIcon } from "lucide-react";
 import type { ComponentData } from "@/app/aura/(docs)/data/components/types";
 import { Card } from "@/components/card";
-import {
-  TabsContent,
-  TabsList,
-  TabsRoot,
-  TabsTrigger,
-} from "@/components/tabs";
+import { TabsContent, TabsList, TabsRoot, TabsTrigger } from "@/components/tabs";
 
 export const tabs: ComponentData = {
   demo: (

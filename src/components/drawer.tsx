@@ -1,7 +1,6 @@
 "use client";
 
 import { Dialog as DialogPrimitive } from "radix-ui";
-import { ScrollArea } from "@/components/scroll-area";
 import { cn } from "@/lib/styles";
 
 type DrawerRootProps = React.ComponentProps<typeof DialogPrimitive.Root>;
@@ -12,11 +11,7 @@ const DrawerRoot = ({ children, ...props }: DrawerRootProps) => {
 
 type DrawerTriggerProps = React.ComponentProps<typeof DialogPrimitive.Trigger>;
 
-const DrawerTrigger = ({
-  children,
-  className,
-  ...props
-}: DrawerTriggerProps) => {
+const DrawerTrigger = ({ children, className, ...props }: DrawerTriggerProps) => {
   return (
     <DialogPrimitive.Trigger className={cn("", className)} {...props}>
       {children}
@@ -32,11 +27,7 @@ const DrawerPortal = ({ children, ...props }: DrawerPortalProps) => {
 
 type DrawerOverlayProps = React.ComponentProps<typeof DialogPrimitive.Overlay>;
 
-const DrawerOverlay = ({
-  children,
-  className,
-  ...props
-}: DrawerOverlayProps) => {
+const DrawerOverlay = ({ children, className, ...props }: DrawerOverlayProps) => {
   return (
     <DialogPrimitive.Overlay
       className={cn("fixed inset-0 z-10 bg-background/80", className)}
@@ -49,11 +40,7 @@ const DrawerOverlay = ({
 
 type DrawerContentProps = React.ComponentProps<typeof DialogPrimitive.Content>;
 
-const DrawerContent = ({
-  children,
-  className,
-  ...props
-}: DrawerContentProps) => {
+const DrawerContent = ({ children, className, ...props }: DrawerContentProps) => {
   return (
     <DialogPrimitive.Content
       className={cn(
@@ -87,15 +74,9 @@ const DrawerTitle = ({ children, className, ...props }: DrawerTitleProps) => {
   );
 };
 
-type DrawerDescriptionProps = React.ComponentProps<
-  typeof DialogPrimitive.Description
->;
+type DrawerDescriptionProps = React.ComponentProps<typeof DialogPrimitive.Description>;
 
-const DrawerDescription = ({
-  children,
-  className,
-  ...props
-}: DrawerDescriptionProps) => {
+const DrawerDescription = ({ children, className, ...props }: DrawerDescriptionProps) => {
   return (
     <DialogPrimitive.Description className={cn("", className)} {...props}>
       {children}

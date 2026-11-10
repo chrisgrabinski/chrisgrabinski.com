@@ -2,11 +2,7 @@
 
 import * as componentsData from "@/app/aura/(docs)/data/components";
 import * as modulesData from "@/app/aura/(docs)/data/modules";
-import {
-  SidebarMenuGroup,
-  SidebarMenuItem,
-  SidebarMenuRoot,
-} from "@/app/aura/sidebar-menu";
+import { SidebarMenuGroup, SidebarMenuItem, SidebarMenuRoot } from "@/app/aura/sidebar-menu";
 
 const ComponentsMenuGroup = ({ onSelect }: { onSelect?: () => void }) => {
   return (

@@ -26,17 +26,14 @@ const Announcement = ({
   onClose,
 }: AnnouncementProps) => {
   return (
-    <Card
-      className="relative flex items-center gap-3 p-4 pr-12 shadow-lg sm:pr-4"
-      variant="glass"
-    >
+    <Card className="relative flex items-center gap-3 p-4 pr-12 shadow-lg sm:pr-4" variant="glass">
       <IconBox className="shrink-0 self-start">
         <Icon />
       </IconBox>
       <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-6">
         <div>
-          <div className="font-medium text-sm">{title}</div>
-          <div className="text-foreground-muted text-sm">{description}</div>
+          <div className="text-sm font-medium">{title}</div>
+          <div className="text-sm text-foreground-muted">{description}</div>
         </div>
         <Button className="shrink-0" onClick={onClick} size={2}>
           {buttonLabel}

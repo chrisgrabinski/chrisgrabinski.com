@@ -22,11 +22,7 @@ interface UnorderedListItemProps extends React.ComponentProps<"li"> {
   marker?: React.ReactNode;
 }
 
-const UnorderedListItem = ({
-  children,
-  marker,
-  ...props
-}: UnorderedListItemProps) => {
+const UnorderedListItem = ({ children, marker, ...props }: UnorderedListItemProps) => {
   const { level } = useList();
 
   return (
